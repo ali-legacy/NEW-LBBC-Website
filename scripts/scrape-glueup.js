@@ -1,0 +1,448 @@
+/**
+ * LBBC GlueUp Scraper — Reliable HTML-based extraction
+ * 
+ * Data sources:
+ *   Members: https://lbbc.glueup.com/organization/5915/widget/membership-directory/corporate/
+ *   Events:  https://lbbc.glueup.com/organization/5915/widget/event-list/full-view
+ * 
+ * This scraper parses server-rendered HTML from GlueUp widget pages.
+ * The member directory page renders all members as <dt class="BlockRow"> elements.
+ * The event list page renders events with <h2 class="content">, <time>, and background images.
+ * 
+ * Usage:
+ *   node scripts/scrape-glueup.js          # Run once (build-time)
+ *   Imported by server.js for periodic refresh
+ */
+
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import * as cheerio from 'cheerio';
+import fetch from 'node-fetch';
+import https from 'https';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const DATA_DIR = path.join(__dirname, '..', 'public', 'data');
+const ORG_ID = '5915';
+const BASE = 'https://lbbc.glueup.com';
+
+// Ensure data directory exists
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+
+// ─── HTTP Helpers ───────────────────────────────────────────────
+
+const agent = new https.Agent({ rejectUnauthorized: false });
+
+const HEADERS = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+  'Accept-Language': 'en-GB,en;q=0.9',
+  'Referer': `${BASE}/organization/${ORG_ID}/`,
+};
+
+async function fetchPage(url, retries = 3) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      console.log(`[Scraper] Fetching: ${url} (attempt ${attempt})`);
+      const res = await fetch(url, { agent, headers: HEADERS, timeout: 30000 });
+      if (!res.ok) {
+        console.warn(`[Scraper] HTTP ${res.status} for ${url}`);
+        if (attempt < retries) {
+          await sleep(2000 * attempt);
+          continue;
+        }
+        throw new Error(`HTTP ${res.status} for ${url}`);
+      }
+      return await res.text();
+    } catch (err) {
+      console.error(`[Scraper] Error on attempt ${attempt}: ${err.message}`);
+      if (attempt < retries) await sleep(2000 * attempt);
+      else throw err;
+    }
+  }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function normalizeImageUrl(src) {
+  if (!src) return null;
+  src = src.trim().replace(/['"]/g, '');
+  if (src.startsWith('//')) return 'https:' + src;
+  if (src.startsWith('/')) return BASE + src;
+  if (src.startsWith('http')) return src;
+  return BASE + '/' + src;
+}
+
+// ─── Member Scraping ────────────────────────────────────────────
+
+/**
+ * Parse members from a GlueUp membership directory widget page.
+ * Each member is a <dt class="BlockRow"> with:
+ *   - data-id: the membership record ID
+ *   - data-event: the AJAX URL for "More Information" overlay
+ *   - img: company logo
+ *   - .title: company name
+ *   - .description: industry/sector
+ */
+function parseMembersFromHtml(html, membershipType) {
+  const $ = cheerio.load(html);
+  const members = [];
+
+  $('dt.BlockRow').each((i, el) => {
+    const $el = $(el);
+
+    const name = $el.find('.title').first().text().trim();
+    if (!name) return;
+
+    const sector = $el.find('.description').first().text().trim() || 'Other';
+    const dataId = $el.attr('data-id') || `${membershipType}-${i}`;
+    
+    // Extract glueupId from the data-event URL
+    const dataEvent = $el.attr('data-event') || '';
+    let glueupId = null;
+    const idMatch = dataEvent.match(/id=(\d+)/);
+    if (idMatch) glueupId = idMatch[1];
+
+    // Extract logo from img tag
+    const imgSrc = $el.find('img').first().attr('src');
+    const logo = normalizeImageUrl(imgSrc);
+
+    // Also check for srcset (higher quality)
+    const srcset = $el.find('img').first().attr('srcset');
+    let logoHq = null;
+    if (srcset) {
+      const srcsetUrl = srcset.split(/\s+/)[0];
+      logoHq = normalizeImageUrl(srcsetUrl);
+    }
+
+    members.push({
+      name,
+      sector,
+      logo: logoHq || logo,
+      id: dataId,
+      glueupId: glueupId || dataId,
+      membershipType,
+      members: [], // sub-members (individuals) — populated separately if needed
+    });
+  });
+
+  return members;
+}
+
+export async function scrapeMembers() {
+  console.log('[Scraper] Starting member directory scrape...');
+  
+  const corporateUrl = `${BASE}/organization/${ORG_ID}/widget/membership-directory/corporate/`;
+  
+  let corporate = [];
+  let council = [];
+
+  // Known council member names — extracted from the official LBBC website.
+  // GlueUp's widget shows all company members together without distinguishing tiers.
+  // This list is the authoritative source for council membership classification.
+  // To update: add or remove company names here when membership tier changes.
+  const COUNCIL_MEMBER_NAMES = new Set([
+    'ALFA Holding Group',
+    'ALMARAJ Company for Oil and Gas',
+    'Anzar Property Investors Limited',
+    'BACB',
+    'Bank ABC',
+    'Black Gold Automation & Control',
+    'Blue Sky Oilfield Supply & Services',
+    'BP',
+    'CGG Services UK LTD',
+    'Consolidated Contractors (UK) Ltd',
+    'Core Laboratories',
+    'De La Rue International',
+    'DNO ASA',
+    'Eltumi Partners',
+    'Equinor Libya AS',
+    'Eversheds Sutherland',
+    'Expertise Consultancy',
+    'Global Consolidated Contractors International',
+    'Gulfsands Petroleum Plc',
+    'HB Group',
+    'Harbour Energy',
+    'Jawaby Services and Investment Limited',
+    'kashadah & Co',
+    'Libya Holdings',
+    'METLEN Energy & Metals SA',
+    'Misurata Free Zone',
+    'Murzuq Oil',
+    'North south global sl',
+    'Petroleum Research Centre',
+    'PROMERGON',
+    'Ribat International',
+    'Safe group investment holding company',
+    'Seawing Company Oil & Marine',
+    'Seawing-ILK Contracting and Construction',
+    'Shell International Limited',
+    'StoneTurn UK Limited',
+    'Takween',
+    'Trouvay & Cauvin Limited',
+    'Vitol SA',
+    'Zahaf & Partners Law Firm',
+  ]);
+
+  try {
+    // Fetch the main company directory page from GlueUp
+    // This page lists ALL company members (council + corporate together)
+    const html = await fetchPage(corporateUrl);
+    const allMembers = parseMembersFromHtml(html, 'corporate');
+    console.log(`[Scraper] Parsed ${allMembers.length} total company members from directory`);
+
+    // Separate council from corporate using the known council member list
+    // Uses case-insensitive matching to handle minor variations
+    const councilNamesLower = new Set([...COUNCIL_MEMBER_NAMES].map(n => n.toLowerCase()));
+    
+    for (const member of allMembers) {
+      if (councilNamesLower.has(member.name.toLowerCase())) {
+        member.membershipType = 'council';
+        council.push(member);
+      } else {
+        corporate.push(member);
+      }
+    }
+    
+    console.log(`[Scraper] Classified: ${council.length} council, ${corporate.length} corporate members`);
+
+  } catch (err) {
+    console.error('[Scraper] Member scraping failed:', err.message);
+    // Safe-update: preserve existing data
+    const cachePath = path.join(DATA_DIR, 'members.json');
+    if (fs.existsSync(cachePath)) {
+      console.log('[Scraper] SAFE-UPDATE: Preserving existing members.json');
+      return null; // Signal that we didn't update
+    }
+    throw err;
+  }
+
+  const totalMembers = council.length + corporate.length;
+  if (totalMembers === 0) {
+    console.error('[Scraper] ABORT: No members parsed. Preserving existing cache.');
+    return null;
+  }
+
+  const data = {
+    council,
+    corporate,
+    timestamp: Date.now(),
+    source: 'live-scrape',
+    totalMembers,
+  };
+
+  fs.writeFileSync(path.join(DATA_DIR, 'members.json'), JSON.stringify(data, null, 2));
+  console.log(`[Scraper] ✓ Saved ${totalMembers} members (${council.length} council, ${corporate.length} corporate)`);
+  return data;
+}
+
+// ─── Event Scraping ─────────────────────────────────────────────
+
+function parseEventsFromHtml(html) {
+  const $ = cheerio.load(html);
+  const events = [];
+
+  // GlueUp renders events in h2.content elements with links
+  // Each event block contains: h2 title, time.content date, .area.content location, .event-image background
+  $('h2.content').each((i, el) => {
+    const $h2 = $(el);
+    const $a = $h2.find('a').first();
+    const title = ($a.text() || $h2.text()).trim();
+    if (!title) return;
+
+    // Get the link
+    let link = $a.attr('href') || '';
+    if (link && !link.startsWith('http')) {
+      link = BASE + (link.startsWith('/') ? '' : '/') + link;
+    }
+
+    // Navigate to the parent event container to find date, location, image
+    // The structure is: li > (event-image div, time.content, h2.content, .area.content)
+    const $container = $h2.closest('li').length ? $h2.closest('li') : $h2.parent();
+
+    // Date
+    const date = $container.find('time.content').first().text().trim();
+
+    // Location
+    const location = $container.find('.area.content').first().text().trim();
+
+    // Image from background-image style
+    let image = null;
+    const $eventImage = $container.find('.event-image');
+    if ($eventImage.length) {
+      const style = $eventImage.attr('style') || '';
+      const imgMatch = style.match(/url\(([^)]+)\)/);
+      if (imgMatch) {
+        image = normalizeImageUrl(imgMatch[1]);
+      }
+    }
+
+    // Extract event ID from the link for stable IDs
+    const eventIdMatch = link.match(/\/event\/[^/]+-(\d+)\//);
+    const eventId = eventIdMatch ? eventIdMatch[1] : `e-${i}`;
+
+    events.push({
+      id: eventId,
+      title,
+      date,
+      location,
+      image,
+      link,
+      type: 'Event',
+    });
+  });
+
+  return events;
+}
+
+export async function scrapeEvents() {
+  console.log('[Scraper] Starting event scrape...');
+
+  const upcomingUrl = `${BASE}/organization/${ORG_ID}/widget/event-list/full-view`;
+  const pastUrl = `${BASE}/organization/${ORG_ID}/widget/event-list/full-view?listType=past`;
+
+  let upcoming = [];
+  let past = [];
+
+  try {
+    const [htmlUp, htmlPast] = await Promise.all([
+      fetchPage(upcomingUrl),
+      fetchPage(pastUrl),
+    ]);
+
+    upcoming = parseEventsFromHtml(htmlUp);
+    past = parseEventsFromHtml(htmlPast);
+
+    console.log(`[Scraper] Parsed ${upcoming.length} upcoming and ${past.length} past events`);
+  } catch (err) {
+    console.error('[Scraper] Event scraping failed:', err.message);
+    const cachePath = path.join(DATA_DIR, 'events.json');
+    if (fs.existsSync(cachePath)) {
+      console.log('[Scraper] SAFE-UPDATE: Preserving existing events.json');
+      return null;
+    }
+    // Write empty state as absolute fallback
+    const fallback = { upcoming: [], past: [], timestamp: Date.now(), error: err.message };
+    fs.writeFileSync(path.join(DATA_DIR, 'events.json'), JSON.stringify(fallback, null, 2));
+    return fallback;
+  }
+
+  const data = {
+    upcoming,
+    past,
+    timestamp: Date.now(),
+    source: 'live-scrape',
+  };
+
+  fs.writeFileSync(path.join(DATA_DIR, 'events.json'), JSON.stringify(data, null, 2));
+  console.log(`[Scraper] ✓ Saved ${upcoming.length + past.length} events`);
+  return data;
+}
+
+// ─── Member Detail Fetching (for server-side proxy) ─────────────
+
+/**
+ * Fetch the "More Information" overlay for a single member.
+ * Requires a session cookie obtained from the main directory page.
+ * Returns parsed { description, website, contacts } or null on failure.
+ */
+export async function fetchMemberDetail(glueupId, type = 'corporate') {
+  const url = `${BASE}/ajax/organization/${ORG_ID}/widget/membership-directory/ajax/requestInfoOverlay?type=${type}&id=${glueupId}`;
+  
+  try {
+    // First, establish a session by hitting the directory page
+    const dirUrl = `${BASE}/organization/${ORG_ID}/widget/membership-directory/${type}/`;
+    const sessionRes = await fetch(dirUrl, { agent, headers: HEADERS, redirect: 'follow' });
+    const cookies = sessionRes.headers.get('set-cookie') || '';
+    
+    // Now fetch the overlay with the session
+    const res = await fetch(url, {
+      agent,
+      headers: {
+        ...HEADERS,
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-Platform': 'WIDGET',
+        'Accept': 'application/json, text/javascript, */*; q=0.01',
+        'Referer': dirUrl,
+        ...(cookies ? { 'Cookie': cookies } : {}),
+      },
+    });
+
+    if (!res.ok) return null;
+
+    const data = await res.json();
+    let html = data?.data?.value?.wrapper || '';
+    
+    if (html.includes('404') && html.includes('Page not found')) {
+      return null;
+    }
+
+    const $ = cheerio.load(html);
+    
+    // Extract description text
+    const description = 
+      $('.about-content').text().trim() ||
+      $('.description').text().trim() ||
+      $('.content').text().trim() || 
+      null;
+    
+    // Extract website link
+    const website = 
+      $('.website a').attr('href') ||
+      $('a[href*="http"]').not('[href*="glueup"]').first().attr('href') ||
+      null;
+
+    return { description, website };
+  } catch (err) {
+    console.warn(`[Scraper] Detail fetch failed for ${glueupId}: ${err.message}`);
+    return null;
+  }
+}
+
+// ─── Main Entry Point ───────────────────────────────────────────
+
+export async function runScraper() {
+  console.log('[Scraper] === Starting full data refresh ===');
+  const start = Date.now();
+  
+  const results = await Promise.allSettled([
+    scrapeMembers(),
+    scrapeEvents(),
+  ]);
+
+  const elapsed = ((Date.now() - start) / 1000).toFixed(1);
+  
+  results.forEach((result, i) => {
+    const label = i === 0 ? 'Members' : 'Events';
+    if (result.status === 'fulfilled') {
+      if (result.value) {
+        console.log(`[Scraper] ${label}: ✓ Updated`);
+      } else {
+        console.log(`[Scraper] ${label}: ⚠ Preserved existing cache (scrape returned no data)`);
+      }
+    } else {
+      console.error(`[Scraper] ${label}: ✗ Failed — ${result.reason}`);
+    }
+  });
+
+  console.log(`[Scraper] === Refresh complete in ${elapsed}s ===`);
+}
+
+// Run directly if executed as a script
+const isDirectRun = process.argv[1] && (
+  process.argv[1].endsWith('scrape-glueup.js') ||
+  process.argv[1].includes('scrape-glueup')
+);
+
+if (isDirectRun) {
+  runScraper().catch(err => {
+    console.error('[Scraper] Fatal error:', err);
+    process.exit(1);
+  });
+}
