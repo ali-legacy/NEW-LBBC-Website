@@ -91,11 +91,9 @@ export const DirectoryPage = () => {
     setMemberDetail(null);
 
     try {
-      // All members are scraped from the corporate widget regardless of council/corporate classification
-      const response = await fetch(getApiUrl(`members/detail/${detailId}?type=corporate`), {
-        signal: AbortSignal.timeout(8000),
-      });
-
+      const type = member.membershipType || activeTab;
+      const response = await fetch(getApiUrl(`members/detail/${detailId}?type=${type}`));
+      
       if (response.ok) {
         const result = await response.json();
         if (result.success && result.data) {
@@ -107,7 +105,7 @@ export const DirectoryPage = () => {
     } finally {
       setIsLoadingDetail(false);
     }
-  }, [getApiUrl]);
+  }, [getApiUrl, activeTab]);
 
   useEffect(() => {
     fetchMembers();
@@ -138,10 +136,8 @@ export const DirectoryPage = () => {
   const getDescription = () => {
     if (memberDetail?.description) return memberDetail.description;
     if (selectedMember?.description) return selectedMember.description;
-    return null;
+    return "The Libyan British Business Council is pleased to represent this organization within our membership directory. Click 'Connect with Member' below for more information.";
   };
-
-  const glueupDirectoryUrl = `https://lbbc.glueup.com/organization/5915/widget/membership-directory/corporate/`;
 
   const getWebsite = () => {
     if (memberDetail?.website) return memberDetail.website;
@@ -372,24 +368,22 @@ export const DirectoryPage = () => {
                 
                 <div className="space-y-8">
                   {/* About Section */}
-                  {(isLoadingDetail || getDescription()) && (
-                    <div>
-                      <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-4 flex items-center gap-2">
-                        <span className="w-4 h-[2px] bg-lbbc-green" />
-                        About
-                      </h4>
-                      {isLoadingDetail ? (
-                        <div className="flex items-center gap-3 text-slate-400 py-4">
-                          <Loader2 size={16} className="animate-spin" />
-                          <span className="text-sm font-medium">Loading...</span>
-                        </div>
-                      ) : (
-                        <p className="text-slate-600 leading-relaxed text-sm md:text-base whitespace-pre-line text-justify">
-                          {getDescription()}
-                        </p>
-                      )}
-                    </div>
-                  )}
+                  <div>
+                    <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-4 flex items-center gap-2">
+                      <span className="w-4 h-[2px] bg-lbbc-green" />
+                      About
+                    </h4>
+                    {isLoadingDetail ? (
+                      <div className="flex items-center gap-3 text-slate-400 py-4">
+                        <Loader2 size={16} className="animate-spin" />
+                        <span className="text-sm font-medium">Loading...</span>
+                      </div>
+                    ) : (
+                      <p className="text-slate-600 leading-relaxed text-sm md:text-base whitespace-pre-line text-justify">
+                        {getDescription()}
+                      </p>
+                    )}
+                  </div>
 
                   {/* Contact Details */}
                   {(getWebsite() || memberDetail?.email || memberDetail?.phone || memberDetail?.address) && (
@@ -400,9 +394,9 @@ export const DirectoryPage = () => {
                       </h4>
                       <div className="space-y-3">
                         {getWebsite() && (
-                          <a
-                            href={getWebsite()!.startsWith('http') ? getWebsite()! : `https://${getWebsite()}`}
-                            target="_blank"
+                          <a 
+                            href={getWebsite()!.startsWith('http') ? getWebsite()! : `https://${getWebsite()}`} 
+                            target="_blank" 
                             rel="noopener noreferrer"
                             className="flex items-center gap-3 text-lbbc-green hover:text-lbbc-red font-bold text-sm transition-colors group"
                           >
@@ -412,7 +406,7 @@ export const DirectoryPage = () => {
                           </a>
                         )}
                         {memberDetail?.email && (
-                          <a
+                          <a 
                             href={`mailto:${memberDetail.email}`}
                             className="flex items-center gap-3 text-slate-600 hover:text-lbbc-green font-medium text-sm transition-colors"
                           >
@@ -421,7 +415,7 @@ export const DirectoryPage = () => {
                           </a>
                         )}
                         {memberDetail?.phone && (
-                          <a
+                          <a 
                             href={`tel:${memberDetail.phone}`}
                             className="flex items-center gap-3 text-slate-600 hover:text-lbbc-green font-medium text-sm transition-colors"
                           >
@@ -439,16 +433,7 @@ export const DirectoryPage = () => {
                     </div>
                   )}
 
-                  <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <a
-                      href={glueupDirectoryUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-lbbc-green text-white rounded-sm font-black text-[10px] uppercase tracking-widest hover:bg-lbbc-red transition-all"
-                    >
-                      <ExternalLink size={14} />
-                      View Full Profile on GlueUp
-                    </a>
+                  <div className="pt-8 border-t border-slate-100 flex justify-end">
                     <button
                       onClick={() => setSelectedMember(null)}
                       className="inline-flex items-center justify-center px-8 py-4 border border-slate-200 text-slate-500 rounded-sm font-black text-[10px] uppercase tracking-widest hover:bg-slate-50 transition-all"
