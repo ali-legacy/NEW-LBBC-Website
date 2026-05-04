@@ -1,5 +1,6 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, Component, ReactNode } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -23,14 +24,37 @@ const LoadingFallback = () => (
   </div>
 );
 
+const ErrorFallback = () => (
+  <div className="min-h-screen flex flex-col items-center justify-center bg-white gap-4 px-4 text-center">
+    <p className="text-slate-700 font-semibold text-lg">Something went wrong loading this page.</p>
+    <button
+      onClick={() => window.location.reload()}
+      className="bg-lbbc-green text-white px-6 py-2 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-lbbc-red transition-colors"
+    >
+      Retry
+    </button>
+  </div>
+);
+
+interface ErrorBoundaryState { hasError: boolean }
+class ErrorBoundary extends Component<{ children: ReactNode }, ErrorBoundaryState> {
+  state = { hasError: false };
+  static getDerivedStateFromError() { return { hasError: true }; }
+  render() {
+    return this.state.hasError ? <ErrorFallback /> : this.props.children;
+  }
+}
+
 const AppContent = () => {
   const { language } = useLanguage();
 
   if (language === 'ar') {
     return (
-      <Suspense fallback={<LoadingFallback />}>
-        <ComingSoonPage />
-      </Suspense>
+      <ErrorBoundary>
+        <Suspense fallback={<LoadingFallback />}>
+          <ComingSoonPage />
+        </Suspense>
+      </ErrorBoundary>
     );
   }
 
@@ -39,20 +63,22 @@ const AppContent = () => {
       <ScrollToTop />
       <div className="min-h-screen bg-white">
         <Navbar />
-        <Suspense fallback={<LoadingFallback />}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/events" element={<EventsPage />} />
-            <Route path="/directory" element={<DirectoryPage />} />
-            <Route path="/resources" element={<ResourcesPage />} />
-            <Route path="/membership" element={<MembershipPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/spotlight/capterio" element={<SpotlightPage />} />
-            <Route path="/news/:id" element={<NewsDetailPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={<LoadingFallback />}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/events" element={<EventsPage />} />
+              <Route path="/directory" element={<DirectoryPage />} />
+              <Route path="/resources" element={<ResourcesPage />} />
+              <Route path="/membership" element={<MembershipPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/spotlight/capterio" element={<SpotlightPage />} />
+              <Route path="/news/:id" element={<NewsDetailPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
         <Footer />
       </div>
     </Router>
@@ -61,9 +87,11 @@ const AppContent = () => {
 
 function App() {
   return (
-    <LanguageProvider>
-      <AppContent />
-    </LanguageProvider>
+    <HelmetProvider>
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
+    </HelmetProvider>
   );
 }
 
