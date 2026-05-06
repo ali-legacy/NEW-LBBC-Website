@@ -10,47 +10,17 @@ export const MemberDirectory = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchMembers = async () => {
-      try {
-        const getUrl = (path: string) => {
-          let origin = window.location.origin;
-          if (!origin || origin === 'null') {
-            origin = window.location.protocol + '//' + window.location.host;
-          }
-          const pathname = window.location.pathname;
-          const normalizedPathname = pathname.endsWith('/') ? pathname : pathname + '/';
-          const baseUrl = origin + normalizedPathname;
-          try {
-            return new URL(path, baseUrl).toString();
-          } catch (e) {
-            return baseUrl + path;
-          }
-        };
-
-        const apiPath = getUrl('api/members');
-        const response = await fetch(apiPath);
-
-        let data;
-        if (response.ok) {
-          data = await response.json();
-        } else {
-          const staticPath = getUrl('data/members.json');
-          const staticRes = await fetch(staticPath);
-          if (!staticRes.ok) throw new Error('Both API and static fallback failed');
-          data = await staticRes.json();
+    fetch('/data/members.json')
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (data) {
+          const all = [...(data.council || []), ...(data.corporate || [])];
+          const withLogos = all.filter((m: any) => m.logo);
+          setMembers(withLogos.slice(0, 20));
         }
-
-        const all = [...(data.council || []), ...(data.corporate || [])];
-        const withLogos = all.filter(m => m.logo);
-        const withoutLogos = all.filter(m => !m.logo);
-        setMembers([...withLogos, ...withoutLogos].slice(0, 20));
-      } catch (err) {
-        console.error('Error fetching members for carousel:', err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchMembers();
+      })
+      .catch(() => {})
+      .finally(() => setIsLoading(false));
   }, []);
 
   const allMembers = members.length > 0 ? [...members, ...members, ...members, ...members] : [];
@@ -125,36 +95,17 @@ export const MemberDirectory = () => {
   );
 };
 
-import { getApiUrl, getStaticDataUrl } from '../utils/api';
-
 export const UpcomingEvents = () => {
   const { t } = useLanguage();
   const [events, setEvents] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await fetch(getApiUrl('events'));
-
-        if (!response.ok) {
-          const staticRes = await fetch(getStaticDataUrl('events.json'));
-          if (!staticRes.ok) throw new Error('Both API and static fallback failed');
-          const data = await staticRes.json();
-          setEvents(data.upcoming || []);
-          return;
-        }
-
-        const data = await response.json();
-        setEvents(data.upcoming || []);
-      } catch (err) {
-        console.error('Error fetching events for home:', err);
-        setEvents([]);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchEvents();
+    fetch('/data/events.json')
+      .then(r => r.ok ? r.json() : null)
+      .then(data => { if (data) setEvents(data.upcoming || []); })
+      .catch(() => {})
+      .finally(() => setIsLoading(false));
   }, []);
 
   if (isLoading) {
@@ -167,7 +118,20 @@ export const UpcomingEvents = () => {
     );
   }
 
-  if (events.length === 0) return null;
+  if (events.length === 0) {
+    return (
+      <section id="events" className="py-16 md:py-24 bg-slate-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center space-y-6">
+          <span className="text-lbbc-green font-bold text-[10px] md:text-[11px] uppercase tracking-[0.3em] block">{t.nav.upcoming.toUpperCase()}</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">{t.nav.events}</h2>
+          <p className="text-slate-500 text-base max-w-xl mx-auto">View our full schedule of upcoming and past events on the events page.</p>
+          <Link to="/events" className="inline-flex items-center gap-3 bg-lbbc-green text-white px-8 py-4 rounded-sm text-[10px] font-black uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-xl active:scale-95">
+            {t.events.viewAll} <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="events" className="py-16 md:py-24 bg-slate-50/50">
