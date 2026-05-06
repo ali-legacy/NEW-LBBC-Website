@@ -135,11 +135,69 @@ function parseMembersFromHtml(html, membershipType) {
   return members;
 }
 
+// ─── Member Detail Fetching ─────────────────────────────────────
+
+/**
+ * Fetch the "More Information" overlay for a single member using a
+ * pre-established session cookie. Returns { about, website } or {}.
+ */
+async function fetchDetail(glueupId, sessionCookie) {
+  const url = `${BASE}/ajax/organization/${ORG_ID}/widget/membership-directory/ajax/requestInfoOverlay?type=corporate&id=${glueupId}`;
+  try {
+    const res = await fetch(url, {
+      agent,
+      headers: {
+        ...HEADERS,
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-Platform': 'WIDGET',
+        'Accept': 'application/json, text/javascript, */*; q=0.01',
+        'Referer': `${BASE}/organization/${ORG_ID}/widget/membership-directory/corporate/`,
+        ...(sessionCookie ? { 'Cookie': sessionCookie } : {}),
+      },
+    });
+    if (!res.ok) return {};
+    const json = await res.json();
+    const html = json?.data?.value?.wrapper || '';
+    if (!html || html.includes('Page not found')) return {};
+
+    const $ = cheerio.load(html);
+
+    const about =
+      $('.about-content').text().trim() ||
+      $('[class*="about"]').text().trim() ||
+      $('.description').text().trim() ||
+      null;
+
+    const website =
+      $('a[href^="http"]').not('[href*="glueup"]').first().attr('href') ||
+      null;
+
+    return { about: about || null, website: website || null };
+  } catch {
+    return {};
+  }
+}
+
+/**
+ * Run fn on items in batches of `size` with a small delay between batches
+ * to avoid hammering GlueUp's servers.
+ */
+async function batchMap(items, size, fn) {
+  const results = [];
+  for (let i = 0; i < items.length; i += size) {
+    const batch = items.slice(i, i + size);
+    const batchResults = await Promise.all(batch.map(fn));
+    results.push(...batchResults);
+    if (i + size < items.length) await sleep(600);
+  }
+  return results;
+}
+
 export async function scrapeMembers() {
   console.log('[Scraper] Starting member directory scrape...');
-  
+
   const corporateUrl = `${BASE}/organization/${ORG_ID}/widget/membership-directory/corporate/`;
-  
+
   let corporate = [];
   let council = [];
 
@@ -190,17 +248,20 @@ export async function scrapeMembers() {
     'Zahaf & Partners Law Firm',
   ]);
 
+  let sessionCookie = '';
+
   try {
-    // Fetch the main company directory page from GlueUp
-    // This page lists ALL company members (council + corporate together)
-    const html = await fetchPage(corporateUrl);
+    // Fetch the main company directory — capture session cookie for detail requests
+    const dirRes = await fetch(corporateUrl, { agent, headers: HEADERS, timeout: 30000 });
+    if (!dirRes.ok) throw new Error(`HTTP ${dirRes.status} for ${corporateUrl}`);
+    sessionCookie = dirRes.headers.get('set-cookie') || '';
+    const html = await dirRes.text();
+
     const allMembers = parseMembersFromHtml(html, 'corporate');
     console.log(`[Scraper] Parsed ${allMembers.length} total company members from directory`);
 
     // Separate council from corporate using the known council member list
-    // Uses case-insensitive matching to handle minor variations
     const councilNamesLower = new Set([...COUNCIL_MEMBER_NAMES].map(n => n.toLowerCase()));
-    
     for (const member of allMembers) {
       if (councilNamesLower.has(member.name.toLowerCase())) {
         member.membershipType = 'council';
@@ -209,16 +270,14 @@ export async function scrapeMembers() {
         corporate.push(member);
       }
     }
-    
     console.log(`[Scraper] Classified: ${council.length} council, ${corporate.length} corporate members`);
 
   } catch (err) {
     console.error('[Scraper] Member scraping failed:', err.message);
-    // Safe-update: preserve existing data
     const cachePath = path.join(DATA_DIR, 'members.json');
     if (fs.existsSync(cachePath)) {
       console.log('[Scraper] SAFE-UPDATE: Preserving existing members.json');
-      return null; // Signal that we didn't update
+      return null;
     }
     throw err;
   }
@@ -228,6 +287,17 @@ export async function scrapeMembers() {
     console.error('[Scraper] ABORT: No members parsed. Preserving existing cache.');
     return null;
   }
+
+  // Fetch about + website for every member in batches of 5
+  console.log(`[Scraper] Fetching member details (about + website) for ${totalMembers} members…`);
+  const allMembers = [...council, ...corporate];
+  const details = await batchMap(allMembers, 5, m => fetchDetail(m.glueupId, sessionCookie));
+  details.forEach((detail, i) => {
+    allMembers[i].about   = detail.about   || null;
+    allMembers[i].website = detail.website || null;
+  });
+  const withDetails = details.filter(d => d.about || d.website).length;
+  console.log(`[Scraper] Got details for ${withDetails}/${totalMembers} members`);
 
   const data = {
     council,

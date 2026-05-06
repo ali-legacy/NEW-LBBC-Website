@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Building2, Search, X } from 'lucide-react';
+import { Building2, Search, X, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { SEO } from '../components/SEO';
 
@@ -10,6 +10,8 @@ type Member = {
   logo: string | null;
   id: string;
   membershipType: 'council' | 'corporate';
+  about: string | null;
+  website: string | null;
 };
 
 type Tab = 'all' | 'council' | 'corporate';
@@ -20,6 +22,7 @@ export const DirectoryPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<Tab>('all');
   const [search, setSearch] = useState('');
+  const [selected, setSelected] = useState<Member | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -52,8 +55,84 @@ export const DirectoryPage = () => {
     { id: 'corporate', label: 'Corporate Members', count: corporateCount },
   ];
 
+  // Close modal on Escape
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') setSelected(null); };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []);
+
   return (
     <div className="pt-32">
+
+      {/* Member detail modal */}
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm"
+            onClick={() => setSelected(null)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.25 }}
+              className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden"
+              onClick={e => e.stopPropagation()}
+            >
+              {/* Modal header */}
+              <div className="flex items-start justify-between p-6 border-b border-slate-100">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center flex-shrink-0 p-2">
+                    {selected.logo
+                      ? <img src={selected.logo} alt={selected.name} className="max-w-full max-h-full object-contain" />
+                      : <Building2 size={24} className="text-slate-300" />
+                    }
+                  </div>
+                  <div>
+                    <h2 className="text-base font-black text-slate-900 leading-tight">{selected.name}</h2>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-[9px] font-bold uppercase tracking-widest text-slate-400">{selected.sector}</span>
+                      {selected.membershipType === 'council' && (
+                        <span className="text-[8px] font-black uppercase tracking-widest bg-lbbc-green/10 text-lbbc-green px-2 py-0.5 rounded-full">Council</span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <button onClick={() => setSelected(null)} className="text-slate-400 hover:text-slate-600 transition-colors ml-4 flex-shrink-0">
+                  <X size={20} />
+                </button>
+              </div>
+
+              {/* Modal body */}
+              <div className="p-6 space-y-5">
+                {selected.about ? (
+                  <div>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">About</p>
+                    <p className="text-sm text-slate-600 leading-relaxed">{selected.about}</p>
+                  </div>
+                ) : (
+                  <p className="text-sm text-slate-400 italic">No company description available.</p>
+                )}
+
+                {selected.website && (
+                  <a
+                    href={selected.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-lbbc-green text-white px-6 py-3 rounded-sm text-[10px] font-black uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-md active:scale-95"
+                  >
+                    Visit Website <ExternalLink size={13} />
+                  </a>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <SEO
         title={t.nav.directory}
         description="Explore the LBBC Member Directory to find leading British and Libyan companies across various sectors."
@@ -174,7 +253,8 @@ export const DirectoryPage = () => {
                       initial={{ opacity: 0, y: 16 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: Math.min(i * 0.03, 0.4) }}
-                      className="bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col overflow-hidden group"
+                      className="bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col overflow-hidden group cursor-pointer"
+                      onClick={() => setSelected(member)}
                     >
                       {/* Logo area */}
                       <div className="flex items-center justify-center p-5 bg-white aspect-[3/2]">
