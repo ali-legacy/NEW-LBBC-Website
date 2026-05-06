@@ -1,0 +1,50 @@
+name: Scrape GlueUp Data
+
+on:
+  schedule:
+    # Runs every day at 02:00 UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    # Allows manual trigger from the GitHub Actions tab
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run GlueUp scraper
+        run: npm run scrape
+
+      - name: Check for data changes
+        id: changes
+        run: |
+          git diff --quiet public/data/ && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push updated data
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/members.json public/data/events.json
+          git commit -m "chore: refresh GlueUp member and event data [skip ci]"
+          git push origin main
+
+      - name: No changes detected
+        if: steps.changes.outputs.changed == 'false'
+        run: echo "GlueUp data is already up to date — no commit needed."
