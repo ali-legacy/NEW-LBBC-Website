@@ -14,13 +14,13 @@ type Member = {
   website: string | null;
 };
 
-type Tab = 'all' | 'council' | 'corporate';
+type Tab = 'council' | 'corporate';
 
 export const DirectoryPage = () => {
   const { t } = useLanguage();
   const [members, setMembers] = useState<{ council: Member[]; corporate: Member[] } | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<Tab>('all');
+  const [activeTab, setActiveTab] = useState<Tab>('council');
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState<Member | null>(null);
 
@@ -36,10 +36,7 @@ export const DirectoryPage = () => {
   const filtered = useMemo(() => {
     if (!members) return [];
     const q = search.toLowerCase().trim();
-    const pool =
-      activeTab === 'council'   ? members.council :
-      activeTab === 'corporate' ? members.corporate :
-      [...members.council, ...members.corporate];
+    const pool = activeTab === 'council' ? members.council : members.corporate;
     return pool.filter(m =>
       !q || m.name.toLowerCase().includes(q) || m.sector.toLowerCase().includes(q)
     );
@@ -47,10 +44,8 @@ export const DirectoryPage = () => {
 
   const councilCount   = members?.council.length ?? 0;
   const corporateCount = members?.corporate.length ?? 0;
-  const totalCount     = councilCount + corporateCount;
 
   const tabs: { id: Tab; label: string; count: number }[] = [
-    { id: 'all',       label: 'All Members',      count: totalCount },
     { id: 'council',   label: 'Council Members',   count: councilCount },
     { id: 'corporate', label: 'Corporate Members', count: corporateCount },
   ];
