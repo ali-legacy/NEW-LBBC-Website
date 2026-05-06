@@ -2,9 +2,6 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import { SEO } from '../components/SEO';
-import { GlueUpWidget } from '../components/GlueUpWidget';
-
-const DIRECTORY_WIDGET = 'https://lbbc.glueup.com/organization/5915/widget/membership-directory/corporate';
 
 export const DirectoryPage = () => {
   const { t } = useLanguage();
@@ -57,15 +54,26 @@ export const DirectoryPage = () => {
         </div>
       </section>
 
-      {/* Directory iframe */}
+      {/* Directory — temporarily offline */}
       <section className="pb-16 md:pb-24 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <GlueUpWidget
-            src={DIRECTORY_WIDGET}
-            title="LBBC Member Directory"
-            minHeight="700px"
-            className="rounded-xl overflow-hidden shadow-sm border border-slate-100 bg-white"
-          />
+          <div className="rounded-xl border border-slate-100 bg-white shadow-sm py-24 flex flex-col items-center gap-6 text-center px-6">
+            <div className="w-16 h-16 rounded-full bg-lbbc-green/10 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-lbbc-green"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-black text-slate-900 uppercase tracking-tight">Directory Being Updated</h3>
+              <p className="text-slate-500 text-sm leading-relaxed max-w-md">
+                Our member directory is currently undergoing maintenance. Please check back soon — we are working to bring you an improved experience.
+              </p>
+            </div>
+            <a
+              href="mailto:secretariat@lbbc.org.uk"
+              className="inline-flex items-center gap-2 bg-lbbc-green text-white px-8 py-3 rounded-sm text-[10px] font-black uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-md active:scale-95"
+            >
+              Contact Us
+            </a>
+          </div>
         </div>
       </section>
     </div>
