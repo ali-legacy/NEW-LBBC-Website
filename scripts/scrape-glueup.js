@@ -137,40 +137,62 @@ function parseMembersFromHtml(html, membershipType) {
 
 // ─── Member Detail Fetching ─────────────────────────────────────
 
+const WIDGET_BASE = `${BASE}/organization/${ORG_ID}/widget/membership-directory`;
+const WIDGET_PAGE = `${WIDGET_BASE}/corporate/`;
+const AJAX_URL    = `${WIDGET_BASE}/ajax`;
+
 /**
- * Fetch the "More Information" overlay for a single member using a
- * pre-established session cookie. Returns { about, website } or {}.
+ * Fetch the "More Information" overlay for a single member.
+ * Uses a POST to GlueUp's AJAX endpoint with the session cookie
+ * obtained from the directory page. Returns { about, website } or {}.
  */
-async function fetchDetail(glueupId, sessionCookie) {
-  const url = `${BASE}/ajax/organization/${ORG_ID}/widget/membership-directory/ajax/requestInfoOverlay?type=corporate&id=${glueupId}`;
+async function fetchDetail(glueupId, cookieHeader) {
   try {
-    const res = await fetch(url, {
+    const postBody = new URLSearchParams({
+      action: 'requestInfoOverlay',
+      data: JSON.stringify({ type: 'corporate', id: Number(glueupId) }),
+      orgID: ORG_ID,
+      currentPath: `/organization/${ORG_ID}/widget/membership-directory/corporate/`,
+      returnUrl: '',
+    }).toString();
+
+    const res = await fetch(AJAX_URL, {
+      method: 'POST',
       agent,
       headers: {
-        ...HEADERS,
+        'User-Agent': HEADERS['User-Agent'],
         'X-Requested-With': 'XMLHttpRequest',
-        'X-Platform': 'WIDGET',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
         'Accept': 'application/json, text/javascript, */*; q=0.01',
-        'Referer': `${BASE}/organization/${ORG_ID}/widget/membership-directory/corporate/`,
-        ...(sessionCookie ? { 'Cookie': sessionCookie } : {}),
+        'Referer': WIDGET_PAGE,
+        'Origin': BASE,
+        ...(cookieHeader ? { 'Cookie': cookieHeader } : {}),
       },
+      body: postBody,
     });
+
     if (!res.ok) return {};
+
     const json = await res.json();
-    const html = json?.data?.value?.wrapper || '';
-    if (!html || html.includes('Page not found')) return {};
+    const html = json?.partials?.Overlay ?? '';
+    if (!html || html.length < 100) return {};
 
     const $ = cheerio.load(html);
 
-    const about =
-      $('.about-content').text().trim() ||
-      $('[class*="about"]').text().trim() ||
-      $('.description').text().trim() ||
-      null;
+    // GlueUp renders details as .labelledListItem with .label and .value
+    let about = null;
+    let website = null;
 
-    const website =
-      $('a[href^="http"]').not('[href*="glueup"]').first().attr('href') ||
-      null;
+    $('.labelledListItem').each((_, el) => {
+      const label = $(el).find('.label').text().trim().toLowerCase();
+      const value = $(el).find('.value');
+      if (!about && (label.includes('description') || label.includes('about'))) {
+        about = value.text().trim() || null;
+      }
+      if (!website && label.includes('website')) {
+        website = value.find('a').attr('href') || value.text().trim() || null;
+      }
+    });
 
     return { about: about || null, website: website || null };
   } catch {
@@ -251,10 +273,13 @@ export async function scrapeMembers() {
   let sessionCookie = '';
 
   try {
-    // Fetch the main company directory — capture session cookie for detail requests
+    // Fetch the main company directory — capture ALL session cookies for detail requests
     const dirRes = await fetch(corporateUrl, { agent, headers: HEADERS, timeout: 30000 });
     if (!dirRes.ok) throw new Error(`HTTP ${dirRes.status} for ${corporateUrl}`);
-    sessionCookie = dirRes.headers.get('set-cookie') || '';
+    // node-fetch returns multiple Set-Cookie as a comma-joined string; split and rejoin as Cookie header
+    const rawCookies = dirRes.headers.raw?.()['set-cookie'] ?? [dirRes.headers.get('set-cookie') ?? ''];
+    sessionCookie = rawCookies.map(c => c.split(';')[0]).filter(Boolean).join('; ');
+    console.log(`[Scraper] Session cookie obtained: ${sessionCookie ? 'YES' : 'NONE'}`);
     const html = await dirRes.text();
 
     const allMembers = parseMembersFromHtml(html, 'corporate');
