@@ -1,15 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import { SEO } from '../components/SEO';
 import { GlueUpWidget } from '../components/GlueUpWidget';
 
-const COUNCIL_WIDGET = 'https://lbbc.glueup.com/organization/5915/widget/membership-directory/council/';
-const CORPORATE_WIDGET = 'https://lbbc.glueup.com/organization/5915/widget/membership-directory/corporate';
+const DIRECTORY_WIDGET = 'https://lbbc.glueup.com/organization/5915/widget/membership-directory/corporate';
 
 export const DirectoryPage = () => {
   const { t } = useLanguage();
-  const [activeTab, setActiveTab] = useState<'council' | 'corporate'>('council');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -48,53 +46,24 @@ export const DirectoryPage = () => {
         </div>
       </section>
 
-      {/* Intro & Tabs */}
+      {/* Intro */}
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="mb-10">
-            <p className="text-slate-600 leading-relaxed text-base max-w-2xl">
-              {t.directory.intro}
-            </p>
-          </div>
-
-          <div className="border-b border-slate-100 pb-6">
-            <div className="flex bg-slate-100 p-1 rounded-lg w-full md:w-auto">
-              <button
-                onClick={() => setActiveTab('council')}
-                className={`flex-1 md:flex-none px-8 py-2.5 rounded-md text-[10px] font-black uppercase tracking-widest transition-all ${activeTab === 'council' ? 'bg-white text-lbbc-green shadow-sm' : 'text-slate-500 hover:text-slate-900'}`}
-              >
-                {t.directory.councilTab}
-              </button>
-              <button
-                onClick={() => setActiveTab('corporate')}
-                className={`flex-1 md:flex-none px-8 py-2.5 rounded-md text-[10px] font-black uppercase tracking-widest transition-all ${activeTab === 'corporate' ? 'bg-white text-lbbc-green shadow-sm' : 'text-slate-500 hover:text-slate-900'}`}
-              >
-                {t.directory.corporateTab}
-              </button>
-            </div>
-          </div>
+          <p className="text-slate-600 leading-relaxed text-base max-w-2xl">
+            {t.directory.intro}
+          </p>
         </div>
       </section>
 
-      {/* Directory iframes — both loaded on mount so tab switching is instant */}
+      {/* Directory iframe */}
       <section className="pb-16 md:pb-24 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div style={{ display: activeTab === 'council' ? 'block' : 'none' }}>
-            <GlueUpWidget
-              src={COUNCIL_WIDGET}
-              title="LBBC Council Members"
-              minHeight="700px"
-              className="rounded-xl overflow-hidden shadow-sm border border-slate-100 bg-white"
-            />
-          </div>
-          <div style={{ display: activeTab === 'corporate' ? 'block' : 'none' }}>
-            <GlueUpWidget
-              src={CORPORATE_WIDGET}
-              title="LBBC Corporate Members"
-              minHeight="700px"
-              className="rounded-xl overflow-hidden shadow-sm border border-slate-100 bg-white"
-            />
-          </div>
+          <GlueUpWidget
+            src={DIRECTORY_WIDGET}
+            title="LBBC Member Directory"
+            minHeight="700px"
+            className="rounded-xl overflow-hidden shadow-sm border border-slate-100 bg-white"
+          />
         </div>
       </section>
     </div>
