@@ -81,3 +81,22 @@
 .custom-scrollbar::-webkit-scrollbar-thumb {
   @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
 }
+
+/* ─── RTL / Arabic ───────────────────────────────────────────────────────────
+   Arabic is a connected script — letter-spacing breaks glyph joining.
+   Remove it universally in RTL mode. */
+body[dir="rtl"] * {
+  letter-spacing: 0 !important;
+}
+
+/* Bump minimum readable size for very small text in Arabic */
+body[dir="rtl"] .text-\[9px\],
+body[dir="rtl"] .text-\[8px\],
+body[dir="rtl"] .text-\[10px\] {
+  font-size: 12px !important;
+}
+
+/* Keep tag labels (small caps-style labels) legible in RTL */
+body[dir="rtl"] [class*="uppercase"] {
+  text-transform: none;
+}

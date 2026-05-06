@@ -16,7 +16,6 @@ const MembershipPage = React.lazy(() => import('./pages/MembershipPage'));
 const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 const SpotlightPage = React.lazy(() => import('./pages/SpotlightPage'));
 const NewsDetailPage = React.lazy(() => import('./pages/NewsDetailPage'));
-const ComingSoonPage = React.lazy(() => import('./pages/ComingSoonPage'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-white">
@@ -46,17 +45,7 @@ class ErrorBoundary extends Component<{ children: ReactNode }, ErrorBoundaryStat
 }
 
 const AppContent = () => {
-  const { language } = useLanguage();
-
-  if (language === 'ar') {
-    return (
-      <ErrorBoundary>
-        <Suspense fallback={<LoadingFallback />}>
-          <ComingSoonPage />
-        </Suspense>
-      </ErrorBoundary>
-    );
-  }
+  useLanguage(); // ensures RTL dir is applied on language change
 
   return (
     <Router>

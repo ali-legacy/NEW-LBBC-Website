@@ -46,8 +46,8 @@ export const DirectoryPage = () => {
   const corporateCount = members?.corporate.length ?? 0;
 
   const tabs: { id: Tab; label: string; count: number }[] = [
-    { id: 'council',   label: 'Council Members',   count: councilCount },
-    { id: 'corporate', label: 'Corporate Members', count: corporateCount },
+    { id: 'council',   label: t.directory.councilTab,   count: councilCount },
+    { id: 'corporate', label: t.directory.corporateTab, count: corporateCount },
   ];
 
   // Close modal on Escape
@@ -81,7 +81,7 @@ export const DirectoryPage = () => {
               {/* Modal header */}
               <div className="flex items-start justify-between p-6 border-b border-slate-100">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center flex-shrink-0 p-2">
+                  <div className="w-16 h-16 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center flex-shrink-0 p-2 overflow-hidden">
                     {selected.logo
                       ? <img src={selected.logo} alt={selected.name} className="max-w-full max-h-full object-contain" />
                       : <Building2 size={24} className="text-slate-300" />
@@ -89,15 +89,15 @@ export const DirectoryPage = () => {
                   </div>
                   <div>
                     <h2 className="text-base font-black text-slate-900 leading-tight">{selected.name}</h2>
-                    <div className="flex items-center gap-2 mt-1">
-                      <span className="text-[9px] font-bold uppercase tracking-widest text-slate-400">{selected.sector}</span>
+                    <div className="flex items-center gap-2 mt-1 flex-wrap">
+                      <span className="text-xs font-bold text-slate-400">{selected.sector}</span>
                       {selected.membershipType === 'council' && (
-                        <span className="text-[8px] font-black uppercase tracking-widest bg-lbbc-green/10 text-lbbc-green px-2 py-0.5 rounded-full">Council</span>
+                        <span className="text-xs font-black bg-lbbc-green/10 text-lbbc-green px-2 py-0.5 rounded-full">{t.directory.councilBadge}</span>
                       )}
                     </div>
                   </div>
                 </div>
-                <button onClick={() => setSelected(null)} className="text-slate-400 hover:text-slate-600 transition-colors ml-4 flex-shrink-0">
+                <button onClick={() => setSelected(null)} className="text-slate-400 hover:text-slate-600 transition-colors ms-4 flex-shrink-0">
                   <X size={20} />
                 </button>
               </div>
@@ -106,11 +106,11 @@ export const DirectoryPage = () => {
               <div className="p-6 space-y-5">
                 {selected.about ? (
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">About</p>
+                    <p className="text-xs font-black text-slate-400 mb-2">{t.directory.about}</p>
                     <p className="text-sm text-slate-600 leading-relaxed">{selected.about}</p>
                   </div>
                 ) : (
-                  <p className="text-sm text-slate-400 italic">No company description available.</p>
+                  <p className="text-sm text-slate-400 italic">{t.directory.noDescription}</p>
                 )}
 
                 {selected.website && (
@@ -118,9 +118,9 @@ export const DirectoryPage = () => {
                     href={selected.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-lbbc-green text-white px-6 py-3 rounded-sm text-[10px] font-black uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-md active:scale-95"
+                    className="inline-flex items-center gap-2 bg-lbbc-green text-white px-6 py-3 rounded-sm text-[11px] font-black hover:bg-lbbc-red transition-all shadow-md active:scale-95"
                   >
-                    Visit Website <ExternalLink size={13} />
+                    {t.directory.visitWebsite} <ExternalLink size={13} />
                   </a>
                 )}
               </div>
@@ -128,6 +128,7 @@ export const DirectoryPage = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
       <SEO
         title={t.nav.directory}
         description="Explore the LBBC Member Directory to find leading British and Libyan companies across various sectors."
@@ -144,10 +145,10 @@ export const DirectoryPage = () => {
             className="w-full h-full object-cover opacity-60"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-r from-lbbc-green/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-lbbc-green/80 to-transparent rtl:bg-gradient-to-l" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="inline-block bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white font-black text-[8px] md:text-[9px] uppercase tracking-[0.4em] mb-4 md:mb-6 border border-white/20">
+            <span className="inline-block bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white font-black text-[9px] mb-4 md:mb-6 border border-white/20">
               {t.directory.pageTag}
             </span>
             <h1 className="text-2xl md:text-5xl font-black text-white leading-tight max-w-3xl tracking-tight">
@@ -170,14 +171,14 @@ export const DirectoryPage = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-sm text-[10px] font-black uppercase tracking-widest transition-all border-2 ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-sm text-[11px] font-black transition-all border-2 ${
                   activeTab === tab.id
                     ? 'bg-lbbc-green border-lbbc-green text-white shadow-md'
                     : 'bg-white border-slate-200 text-slate-500 hover:border-lbbc-green hover:text-lbbc-green'
                 }`}
               >
                 {tab.label}
-                <span className={`text-[9px] px-1.5 py-0.5 rounded-full font-black ${
+                <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-black ${
                   activeTab === tab.id ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-400'
                 }`}>
                   {tab.count}
@@ -188,16 +189,16 @@ export const DirectoryPage = () => {
 
           {/* Search */}
           <div className="relative max-w-md">
-            <Search size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+            <Search size={15} className="absolute start-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
             <input
               type="text"
-              placeholder="Search by name or sector…"
+              placeholder={t.directory.searchLabel}
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full pl-10 pr-10 py-3 border border-slate-200 rounded-sm text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:border-lbbc-green focus:ring-1 focus:ring-lbbc-green/20 transition-all"
+              className="w-full ps-10 pe-10 py-3 border border-slate-200 rounded-sm text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:border-lbbc-green focus:ring-1 focus:ring-lbbc-green/20 transition-all"
             />
             {search && (
-              <button onClick={() => setSearch('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
+              <button onClick={() => setSearch('')} className="absolute end-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
                 <X size={15} />
               </button>
             )}
@@ -224,14 +225,14 @@ export const DirectoryPage = () => {
           {!isLoading && filtered.length === 0 && (
             <div className="text-center py-24 text-slate-400">
               <Building2 size={40} className="mx-auto mb-4 opacity-30" />
-              <p className="font-bold text-sm uppercase tracking-widest">No members found</p>
+              <p className="font-bold text-sm">{t.directory.noMembers}</p>
             </div>
           )}
 
           {!isLoading && filtered.length > 0 && (
             <>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-6">
-                Showing {filtered.length} {filtered.length === 1 ? 'member' : 'members'}
+              <p className="text-xs font-bold text-slate-400 mb-6">
+                {t.directory.showing} {filtered.length} {filtered.length === 1 ? t.directory.memberSingular : t.directory.memberPlural}
               </p>
               <AnimatePresence mode="wait">
                 <motion.div
@@ -252,7 +253,7 @@ export const DirectoryPage = () => {
                       onClick={() => setSelected(member)}
                     >
                       {/* Logo area */}
-                      <div className="flex items-center justify-center p-5 bg-white aspect-[3/2]">
+                      <div className="flex items-center justify-center p-5 bg-white aspect-[3/2] overflow-hidden">
                         {member.logo ? (
                           <img
                             src={member.logo}
@@ -268,19 +269,12 @@ export const DirectoryPage = () => {
 
                       {/* Info */}
                       <div className="px-4 pb-4 pt-2 border-t border-slate-50 flex flex-col gap-1.5 flex-1">
-                        <p className="text-[11px] md:text-xs font-black text-slate-900 leading-tight line-clamp-2 group-hover:text-lbbc-green transition-colors">
+                        <p className="text-xs font-black text-slate-900 leading-tight line-clamp-2 group-hover:text-lbbc-green transition-colors">
                           {member.name}
                         </p>
-                        <div className="flex items-center gap-1.5 flex-wrap">
-                          <span className="text-[8px] md:text-[9px] font-black uppercase tracking-widest text-slate-400 leading-none">
-                            {member.sector}
-                          </span>
-                          {member.membershipType === 'council' && activeTab !== 'council' && (
-                            <span className="text-[7px] font-black uppercase tracking-widest bg-lbbc-green/10 text-lbbc-green px-1.5 py-0.5 rounded-full leading-none">
-                              Council
-                            </span>
-                          )}
-                        </div>
+                        <span className="text-xs font-bold text-slate-400 leading-none">
+                          {member.sector}
+                        </span>
                       </div>
                     </motion.div>
                   ))}

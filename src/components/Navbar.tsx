@@ -15,6 +15,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 export const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
+  const isRtl = language === 'ar';
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -100,7 +101,7 @@ export const Navbar = () => {
             </div>
             <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-3 sm:gap-6">
               {/* Language Switcher */}
-              <div className="flex items-center border-r border-white/20 pr-4 mr-2">
+              <div className="flex items-center border-r rtl:border-r-0 rtl:border-l border-white/20 pr-4 rtl:pr-0 rtl:pl-4 mr-2 rtl:mr-0 rtl:ml-2">
                 <div className="flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-full p-1 gap-1">
                   <button 
                     onClick={() => setLanguage('en')}
@@ -175,7 +176,7 @@ export const Navbar = () => {
                     {link.name}
                   </Link>
                 )}
-                <span className={`absolute -bottom-2 left-0 h-0.5 transition-all duration-300 bg-lbbc-green ${location.pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                <span className={`absolute -bottom-2 start-0 h-0.5 transition-all duration-300 bg-lbbc-green ${location.pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
 
                 {/* Dropdown Menu */}
                 {link.dropdown && (
@@ -185,7 +186,7 @@ export const Navbar = () => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
-                        className="absolute top-full left-0 w-56 bg-white shadow-2xl rounded-sm border-t-2 border-lbbc-green py-4 mt-2"
+                        className="absolute top-full start-0 w-56 bg-white shadow-2xl rounded-sm border-t-2 border-lbbc-green py-4 mt-2"
                       >
                         {link.dropdown.map((item) => (
                           <Link
@@ -215,7 +216,7 @@ export const Navbar = () => {
                     exit={{ width: 0, opacity: 0 }}
                     type="text"
                     placeholder="Search..."
-                    className="mr-2 px-3 py-1.5 text-sm rounded-sm border border-slate-200 text-slate-900 bg-slate-50 focus:outline-none transition-all"
+                    className="me-2 px-3 py-1.5 text-sm rounded-sm border border-slate-200 text-slate-900 bg-slate-50 focus:outline-none transition-all"
                     autoFocus
                   />
                 )}
@@ -241,10 +242,10 @@ export const Navbar = () => {
       {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, x: '100%' }}
+          <motion.div
+            initial={{ opacity: 0, x: isRtl ? '-100%' : '100%' }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
+            exit={{ opacity: 0, x: isRtl ? '-100%' : '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className="lg:hidden fixed inset-0 z-[60] bg-white overflow-y-auto"
           >
@@ -296,7 +297,7 @@ export const Navbar = () => {
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            className="pl-6 space-y-4 border-l-2 border-lbbc-green/20 overflow-hidden"
+                            className="ps-6 space-y-4 border-s-2 border-lbbc-green/20 overflow-hidden"
                           >
                             {link.dropdown.map((item) => (
                               <Link

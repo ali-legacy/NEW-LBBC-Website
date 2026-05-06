@@ -45,8 +45,8 @@ export const EventsPage = () => {
   const activeEvents = activeTab === 'upcoming' ? (eventsData?.upcoming ?? []) : (eventsData?.past ?? []);
 
   const tabs: { id: Tab; label: string; count: number }[] = [
-    { id: 'upcoming', label: 'Upcoming Events', count: upcomingCount },
-    { id: 'past',     label: 'Past Events',     count: pastCount },
+    { id: 'upcoming', label: t.events.upcomingTab, count: upcomingCount },
+    { id: 'past',     label: t.events.pastTab,     count: pastCount },
   ];
 
   return (
@@ -67,14 +67,14 @@ export const EventsPage = () => {
             className="w-full h-full object-cover opacity-60"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-r from-lbbc-green/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-lbbc-green/80 to-transparent rtl:bg-gradient-to-l"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white font-black text-[8px] md:text-[9px] uppercase tracking-[0.4em] mb-4 md:mb-6 border border-white/20">
+            <span className="inline-block bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white font-black text-[9px] mb-4 md:mb-6 border border-white/20">
               {t.events.pageTag}
             </span>
             <h1 className="text-2xl md:text-5xl font-black text-white leading-tight max-w-3xl tracking-tight">
@@ -91,10 +91,10 @@ export const EventsPage = () => {
           {/* Section header */}
           <div className="max-w-3xl mb-10 md:mb-14">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-lbbc-green/10 rounded-lg flex items-center justify-center text-lbbc-green">
+              <div className="w-10 h-10 bg-lbbc-green/10 rounded-lg flex items-center justify-center text-lbbc-green flex-shrink-0">
                 <Calendar size={20} />
               </div>
-              <span className="text-lbbc-green font-bold text-[10px] md:text-[11px] uppercase tracking-[0.3em]">{t.events.tag}</span>
+              <span className="text-lbbc-green font-bold text-[11px]">{t.events.tag}</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-6">{t.events.calendarTitle}</h2>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
@@ -108,14 +108,14 @@ export const EventsPage = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-sm text-[10px] font-black uppercase tracking-widest transition-all border-2 ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-sm text-[11px] font-black transition-all border-2 ${
                   activeTab === tab.id
                     ? 'bg-lbbc-green border-lbbc-green text-white shadow-md'
                     : 'bg-white border-slate-200 text-slate-500 hover:border-lbbc-green hover:text-lbbc-green'
                 }`}
               >
                 {tab.label}
-                <span className={`text-[9px] px-1.5 py-0.5 rounded-full font-black ${
+                <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-black ${
                   activeTab === tab.id ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-400'
                 }`}>
                   {tab.count}
@@ -154,8 +154,8 @@ export const EventsPage = () => {
                 {activeEvents.length === 0 ? (
                   <div className="text-center py-24 text-slate-400">
                     <Calendar size={40} className="mx-auto mb-4 opacity-30" />
-                    <p className="font-bold text-sm uppercase tracking-widest">
-                      {activeTab === 'upcoming' ? 'No upcoming events scheduled' : 'No past events'}
+                    <p className="font-bold text-sm">
+                      {activeTab === 'upcoming' ? t.events.noUpcoming : t.events.noPast}
                     </p>
                   </div>
                 ) : (
@@ -186,9 +186,9 @@ export const EventsPage = () => {
                               <Calendar size={32} className="text-lbbc-green/30" />
                             </div>
                           )}
-                          {/* Date badge */}
+                          {/* Date badge — positioned at bottom-start (flips with RTL) */}
                           {event.date && (
-                            <div className="absolute bottom-3 left-3 bg-lbbc-green text-white text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-sm shadow-md">
+                            <div className="absolute bottom-3 start-3 bg-lbbc-green text-white text-[11px] font-black px-2.5 py-1 rounded-sm shadow-md">
                               {event.date.split('(')[0].trim()}
                             </div>
                           )}
@@ -202,13 +202,13 @@ export const EventsPage = () => {
                           {event.location && (
                             <div className="flex items-start gap-1.5 text-slate-500">
                               <MapPin size={12} className="mt-0.5 flex-shrink-0 text-lbbc-red/70" />
-                              <span className="text-[11px] font-medium leading-tight line-clamp-1">{event.location}</span>
+                              <span className="text-xs font-medium leading-tight line-clamp-1">{event.location}</span>
                             </div>
                           )}
                           <div className="mt-auto pt-3">
-                            <span className="inline-flex items-center gap-1.5 bg-lbbc-green text-white text-[9px] font-black uppercase tracking-widest px-4 py-2.5 rounded-sm shadow-sm group-hover:bg-lbbc-red transition-colors">
-                              {activeTab === 'upcoming' ? 'Register Now' : 'View Details'}
-                              <ExternalLink size={10} />
+                            <span className="inline-flex items-center gap-1.5 bg-lbbc-green text-white text-[11px] font-black px-4 py-2.5 rounded-sm shadow-sm group-hover:bg-lbbc-red transition-colors">
+                              {activeTab === 'upcoming' ? t.events.registerNow : t.events.viewDetails}
+                              <ExternalLink size={11} />
                             </span>
                           </div>
                         </div>
@@ -226,13 +226,13 @@ export const EventsPage = () => {
               href="https://lbbc.glueup.com/home/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-lbbc-green text-white px-10 py-4 rounded-sm text-[11px] font-black uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-xl active:scale-95 text-center"
+              className="w-full sm:w-auto bg-lbbc-green text-white px-10 py-4 rounded-sm text-[11px] font-black hover:bg-lbbc-red transition-all shadow-xl active:scale-95 text-center"
             >
               {t.events.memberSignIn}
             </a>
             <Link
               to="/membership"
-              className="w-full sm:w-auto border-2 border-lbbc-green text-lbbc-green px-10 py-4 rounded-sm text-[11px] font-black uppercase tracking-widest hover:bg-lbbc-green hover:text-white transition-all shadow-lg active:scale-95 text-center"
+              className="w-full sm:w-auto border-2 border-lbbc-green text-lbbc-green px-10 py-4 rounded-sm text-[11px] font-black hover:bg-lbbc-green hover:text-white transition-all shadow-lg active:scale-95 text-center"
             >
               {t.events.joinLBBC}
             </Link>
@@ -244,7 +244,7 @@ export const EventsPage = () => {
       <section className="py-20 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <span className="text-lbbc-red font-bold text-[10px] md:text-[11px] uppercase tracking-[0.3em] block mb-4">{t.events.sponsorsTag}</span>
+            <span className="text-lbbc-red font-bold text-[11px] block mb-4">{t.events.sponsorsTag}</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">{t.events.sponsorsTitle}</h2>
           </div>
           <div className="max-w-3xl mx-auto text-center space-y-8">
@@ -253,7 +253,7 @@ export const EventsPage = () => {
             </p>
             <a
               href="mailto:events@lbbc.org.uk"
-              className="inline-flex items-center justify-center gap-3 bg-lbbc-green text-white px-10 py-4 rounded-sm text-[11px] font-black uppercase tracking-[0.2em] hover:bg-lbbc-red transition-all shadow-xl active:scale-95"
+              className="inline-flex items-center justify-center gap-3 bg-lbbc-green text-white px-10 py-4 rounded-sm text-[11px] font-black hover:bg-lbbc-red transition-all shadow-xl active:scale-95"
             >
               {t.events.contactUs} <Mail size={16} />
             </a>
