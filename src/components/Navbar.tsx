@@ -1,26 +1,39 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Linkedin, 
-  Facebook, 
-  Phone, 
-  Mail, 
-  Search, 
-  Menu, 
-  X, 
-  ChevronDown 
+import {
+  Linkedin,
+  Facebook,
+  Phone,
+  Mail,
+  Search,
+  Menu,
+  X,
+  ChevronDown
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { CommandPalette } from './CommandPalette';
 
 export const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
   const isRtl = language === 'ar';
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isPaletteOpen, setIsPaletteOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
+
+  // ⌘K / Ctrl+K global shortcut
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsPaletteOpen(p => !p);
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []);
 
   useEffect(() => {
     let ticking = false;
@@ -207,35 +220,29 @@ export const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <div className="relative flex items-center">
-              <AnimatePresence>
-                {isSearchOpen && (
-                  <motion.input
-                    initial={{ width: 0, opacity: 0 }}
-                    animate={{ width: 200, opacity: 1 }}
-                    exit={{ width: 0, opacity: 0 }}
-                    type="text"
-                    placeholder="Search..."
-                    className="me-2 px-3 py-1.5 text-sm rounded-sm border border-slate-200 text-slate-900 bg-slate-50 focus:outline-none transition-all"
-                    autoFocus
-                  />
-                )}
-              </AnimatePresence>
-              <button 
-                onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="p-2.5 rounded-full transition-all text-slate-600 hover:bg-slate-100 hover:text-lbbc-red"
-              >
-                {isSearchOpen ? <X size={20} /> : <Search size={20} />}
-              </button>
-            </div>
-            
-            <button 
-              onClick={() => setIsOpen(!isOpen)} 
+            {/* Search trigger — opens command palette */}
+            <button
+              onClick={() => setIsPaletteOpen(true)}
+              aria-label="Open search"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 text-slate-400 hover:text-slate-600 hover:border-slate-300 hover:bg-slate-50 transition-all group"
+            >
+              <Search size={15} />
+              <span className="hidden md:inline text-[11px] font-medium text-slate-400 group-hover:text-slate-500 transition-colors">Search</span>
+              <kbd className="hidden lg:inline-flex items-center gap-0.5 text-[9px] font-bold text-slate-300 bg-slate-100 border border-slate-200 rounded px-1.5 py-0.5 group-hover:text-slate-400 transition-colors">
+                ⌘K
+              </kbd>
+            </button>
+
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
               className="lg:hidden p-2.5 rounded-full transition-all text-slate-600 hover:bg-slate-100"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
+
+          <CommandPalette isOpen={isPaletteOpen} onClose={() => setIsPaletteOpen(false)} />
         </div>
       </div>
 
@@ -321,6 +328,14 @@ export const Navbar = () => {
               </div>
 
               <div className="pt-12 border-t border-slate-100 space-y-6">
+                {/* Mobile Search */}
+                <button
+                  onClick={() => { setIsOpen(false); setIsPaletteOpen(true); }}
+                  className="w-full flex items-center gap-3 px-5 py-4 rounded-lg border border-slate-200 text-slate-500 hover:border-lbbc-green hover:text-lbbc-green transition-all"
+                >
+                  <Search size={18} />
+                  <span className="text-sm font-bold">Search pages, members, events…</span>
+                </button>
                 {/* Mobile Language Switcher */}
                 <div className="flex justify-center">
                   <div className="flex items-center bg-slate-100 rounded-full p-1.5 gap-2 border border-slate-200 shadow-inner">
