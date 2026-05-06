@@ -41,12 +41,15 @@ export const About = () => {
           </div>
           <div className="lg:w-3/5 w-full relative">
             <div className="aspect-video lg:aspect-[16/10] rounded-xl md:rounded-2xl overflow-hidden shadow-2xl relative z-10 bg-slate-200">
-              <img 
-                src="/images/1vl2WDNPa1kGhixUCXHLuwlueyT1JLMNX.jpg" 
-                alt="The Bridge Between British and Libyan Business" 
-                className="w-full h-full object-cover lg:object-center"
-                referrerPolicy="no-referrer"
-              />
+              <picture className="block w-full h-full">
+                <source srcSet="/images/1vl2WDNPa1kGhixUCXHLuwlueyT1JLMNX.webp" type="image/webp" />
+                <img
+                  src="/images/1vl2WDNPa1kGhixUCXHLuwlueyT1JLMNX.jpg"
+                  alt="The Bridge Between British and Libyan Business"
+                  className="w-full h-full object-cover lg:object-center"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="absolute -top-6 -right-6 md:-top-12 md:-right-12 w-48 h-48 md:w-64 md:h-64 bg-lbbc-green/5 rounded-full blur-2xl md:blur-3xl -z-0"></div>
           </div>

@@ -137,12 +137,15 @@ export const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="group">
-              <img 
-                src="/images/1PGomWa780IpyKLEScVCwx5SOUtqGimcM.png" 
-                alt="LBBC Logo" 
-                className="h-8 sm:h-10 md:h-12 transition-all duration-500 group-hover:scale-105" 
-                referrerPolicy="no-referrer" 
-              />
+              <picture>
+                <source srcSet="/images/1PGomWa780IpyKLEScVCwx5SOUtqGimcM.webp" type="image/webp" />
+                <img
+                  src="/images/1PGomWa780IpyKLEScVCwx5SOUtqGimcM.png"
+                  alt="LBBC Logo"
+                  className="h-8 sm:h-10 md:h-12 transition-all duration-500 group-hover:scale-105"
+                  fetchPriority="high"
+                />
+              </picture>
             </Link>
           </div>
           
@@ -247,12 +250,10 @@ export const Navbar = () => {
           >
             <div className="p-6 flex flex-col h-full">
               <div className="flex justify-between items-center mb-12">
-                <img 
-                  src="/images/1PGomWa780IpyKLEScVCwx5SOUtqGimcM.png" 
-                  alt="LBBC Logo" 
-                  className="h-10" 
-                  referrerPolicy="no-referrer" 
-                />
+                <picture>
+                  <source srcSet="/images/1PGomWa780IpyKLEScVCwx5SOUtqGimcM.webp" type="image/webp" />
+                  <img src="/images/1PGomWa780IpyKLEScVCwx5SOUtqGimcM.png" alt="LBBC Logo" className="h-10" />
+                </picture>
                 <button 
                   onClick={() => {
                     setIsOpen(false);

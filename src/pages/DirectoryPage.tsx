@@ -23,12 +23,14 @@ export const DirectoryPage = () => {
 
       {/* Hero Banner */}
       <section className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-slate-900">
-        <img
-          src="/images/1m0pcFsUJoAa0h4oTj57jnTosPbhuOTjS.png"
-          alt="Directory Header"
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
-          referrerPolicy="no-referrer"
-        />
+        <picture className="absolute inset-0 w-full h-full">
+          <source srcSet="/images/1m0pcFsUJoAa0h4oTj57jnTosPbhuOTjS.webp" type="image/webp" />
+          <img
+            src="/images/1m0pcFsUJoAa0h4oTj57jnTosPbhuOTjS.png"
+            alt="Directory Header"
+            className="w-full h-full object-cover opacity-60"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-lbbc-green/80 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
           <motion.div

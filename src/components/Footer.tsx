@@ -36,46 +36,34 @@ export const Footer = () => {
             <div className="grid grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
               <div className="group">
                 <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 transition-all group-hover:scale-[1.02] shadow-lg">
-                  <img 
-                    src="/images/15wu-9uxhuoq3tQF9RdMj5JKCm4UQlOXl.png" 
-                    alt="British Embassy" 
-                    className="max-h-full max-w-full object-contain" 
-                    referrerPolicy="no-referrer" 
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcSet="/images/15wu-9uxhuoq3tQF9RdMj5JKCm4UQlOXl.webp" type="image/webp" />
+                    <img src="/images/15wu-9uxhuoq3tQF9RdMj5JKCm4UQlOXl.png" alt="British Embassy" className="max-h-full max-w-full object-contain" loading="lazy" />
+                  </picture>
                 </div>
               </div>
               <div className="group">
                 <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 transition-all group-hover:scale-[1.02] shadow-lg">
-                  <img 
-                    src="/images/14Vz7QDoZA0mY0wfWOYtv4oNXC-fWsfIA.png" 
-                    alt="UK FCDO" 
-                    className="max-h-full max-w-full object-contain" 
-                    referrerPolicy="no-referrer" 
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcSet="/images/14Vz7QDoZA0mY0wfWOYtv4oNXC-fWsfIA.webp" type="image/webp" />
+                    <img src="/images/14Vz7QDoZA0mY0wfWOYtv4oNXC-fWsfIA.png" alt="UK FCDO" className="max-h-full max-w-full object-contain" loading="lazy" />
+                  </picture>
                 </div>
               </div>
               <div className="group">
                 <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 transition-all group-hover:scale-[1.02] shadow-lg">
-                  <img 
-                    src="/images/1298kn4VMFdwtdchqygp_Edk5XbaBty8B.png" 
-                    alt="NOC" 
-                    className="max-h-full max-w-full object-contain" 
-                    referrerPolicy="no-referrer" 
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcSet="/images/1298kn4VMFdwtdchqygp_Edk5XbaBty8B.webp" type="image/webp" />
+                    <img src="/images/1298kn4VMFdwtdchqygp_Edk5XbaBty8B.png" alt="NOC" className="max-h-full max-w-full object-contain" loading="lazy" />
+                  </picture>
                 </div>
               </div>
               <div className="group">
                 <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 transition-all group-hover:scale-[1.02] shadow-lg">
-                  <img 
-                    src="/images/1WjTH2bcM6soZgKQuXBbmGgwQobDMiFNg.png" 
-                    alt="REAOL" 
-                    className="max-h-full max-w-full object-contain" 
-                    referrerPolicy="no-referrer" 
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcSet="/images/1WjTH2bcM6soZgKQuXBbmGgwQobDMiFNg.webp" type="image/webp" />
+                    <img src="/images/1WjTH2bcM6soZgKQuXBbmGgwQobDMiFNg.png" alt="REAOL" className="max-h-full max-w-full object-contain" loading="lazy" />
+                  </picture>
                 </div>
               </div>
             </div>
@@ -87,35 +75,26 @@ export const Footer = () => {
             <div className="grid grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
               <div className="group">
                 <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 transition-all group-hover:scale-[1.02] shadow-lg">
-                  <img 
-                    src="/images/19aNWVHPT2e7qVKzaGZ1FKDt7i7Ffygu-.png" 
-                    alt="Sponsor 1" 
-                    className="max-h-full max-w-full object-contain" 
-                    referrerPolicy="no-referrer" 
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcSet="/images/19aNWVHPT2e7qVKzaGZ1FKDt7i7Ffygu-.webp" type="image/webp" />
+                    <img src="/images/19aNWVHPT2e7qVKzaGZ1FKDt7i7Ffygu-.png" alt="Sponsor 1" className="max-h-full max-w-full object-contain" loading="lazy" />
+                  </picture>
                 </div>
               </div>
               <div className="group">
                 <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 transition-all group-hover:scale-[1.02] shadow-lg">
-                  <img 
-                    src="/images/1LGlEbIlkn_Dxfh9ZidHXLUpFopfhBTfW.png" 
-                    alt="Sponsor 2" 
-                    className="max-h-full max-w-full object-contain" 
-                    referrerPolicy="no-referrer" 
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcSet="/images/1LGlEbIlkn_Dxfh9ZidHXLUpFopfhBTfW.webp" type="image/webp" />
+                    <img src="/images/1LGlEbIlkn_Dxfh9ZidHXLUpFopfhBTfW.png" alt="Sponsor 2" className="max-h-full max-w-full object-contain" loading="lazy" />
+                  </picture>
                 </div>
               </div>
               <div className="group">
                 <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 transition-all group-hover:scale-[1.02] shadow-lg">
-                  <img 
-                    src="/images/1BVL2nJgbXbjecGcFNW9WbU74MbOAnD0P.png" 
-                    alt="Sponsor 3" 
-                    className="max-h-full max-w-full object-contain" 
-                    referrerPolicy="no-referrer" 
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcSet="/images/1BVL2nJgbXbjecGcFNW9WbU74MbOAnD0P.webp" type="image/webp" />
+                    <img src="/images/1BVL2nJgbXbjecGcFNW9WbU74MbOAnD0P.png" alt="Sponsor 3" className="max-h-full max-w-full object-contain" loading="lazy" />
+                  </picture>
                 </div>
               </div>
             </div>
@@ -161,13 +140,15 @@ export const Footer = () => {
             </p>
           </div>
           <Link to="/" className="flex flex-col items-center md:items-end gap-3 md:gap-4 group">
-            <img 
-              src="/images/1PGomWa780IpyKLEScVCwx5SOUtqGimcM.png" 
-              alt="LBBC Logo" 
-              className="h-12 md:h-16 brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-500" 
-              referrerPolicy="no-referrer" 
-              loading="lazy"
-            />
+            <picture>
+              <source srcSet="/images/1PGomWa780IpyKLEScVCwx5SOUtqGimcM.webp" type="image/webp" />
+              <img
+                src="/images/1PGomWa780IpyKLEScVCwx5SOUtqGimcM.png"
+                alt="LBBC Logo"
+                className="h-12 md:h-16 brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                loading="lazy"
+              />
+            </picture>
             <span className="text-[8px] md:text-[9px] uppercase tracking-[0.5em] text-white font-black group-hover:text-white transition-colors">Libyan British Business Council</span>
           </Link>
         </div>

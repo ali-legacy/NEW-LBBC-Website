@@ -23,12 +23,14 @@ export const ComingSoonPage = () => {
           transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <img 
-            src="/images/1PGomWa780IpyKLEScVCwx5SOUtqGimcM.png" 
-            alt="LBBC Logo" 
-            className="h-20 md:h-24 mx-auto" 
-            referrerPolicy="no-referrer" 
-          />
+          <picture>
+            <source srcSet="/images/1PGomWa780IpyKLEScVCwx5SOUtqGimcM.webp" type="image/webp" />
+            <img
+              src="/images/1PGomWa780IpyKLEScVCwx5SOUtqGimcM.png"
+              alt="LBBC Logo"
+              className="h-20 md:h-24 mx-auto"
+            />
+          </picture>
         </motion.div>
 
         <motion.div

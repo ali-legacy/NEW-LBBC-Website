@@ -12,6 +12,7 @@ export const Hero = () => {
     {
       id: 1,
       image: '/images/1fzfMN6hXA9CDWB_2RMIU6azYmksCSkCe.png',
+      imageWebp: '/images/1fzfMN6hXA9CDWB_2RMIU6azYmksCSkCe.webp',
       title: t.hero.slides[0].title,
       subtitle: t.hero.slides[0].subtitle,
       cta1: t.hero.slides[0].cta1,
@@ -22,6 +23,7 @@ export const Hero = () => {
     {
       id: 2,
       image: '/images/1G7_hqOMqyE9YeNN58gubHQ2W3gtv5SQI.png',
+      imageWebp: '/images/1G7_hqOMqyE9YeNN58gubHQ2W3gtv5SQI.webp',
       title: t.hero.slides[1].title,
       subtitle: t.hero.slides[1].subtitle,
       cta1: t.hero.slides[1].cta1,
@@ -32,6 +34,7 @@ export const Hero = () => {
     {
       id: 3,
       image: '/images/1PG3cPBxL9ce2a8nIgqmSPT1UWejsH8qZ.png',
+      imageWebp: '/images/1PG3cPBxL9ce2a8nIgqmSPT1UWejsH8qZ.webp',
       title: t.hero.slides[2].title,
       subtitle: t.hero.slides[2].subtitle,
       cta1: t.hero.slides[2].cta1,
@@ -42,10 +45,10 @@ export const Hero = () => {
   ];
 
   useEffect(() => {
-    // Preload images
+    // Preload webp versions of all slides
     slides.forEach((slide) => {
       const img = new Image();
-      img.src = slide.image;
+      img.src = slide.imageWebp;
     });
 
     const timer = setInterval(() => {
@@ -65,12 +68,15 @@ export const Hero = () => {
           transition={{ duration: 1.5, ease: "easeOut" }}
           className="absolute inset-0 z-0 gpu"
         >
-          <img 
-            src={slides[currentSlide].image} 
-            alt="Hero Background" 
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
+          <picture className="block w-full h-full">
+            <source srcSet={slides[currentSlide].imageWebp} type="image/webp" />
+            <img
+              src={slides[currentSlide].image}
+              alt="Hero Background"
+              className="w-full h-full object-cover"
+              fetchPriority={currentSlide === 0 ? 'high' : 'auto'}
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950/90"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-transparent to-transparent"></div>
         </motion.div>

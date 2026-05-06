@@ -228,12 +228,15 @@ export const FeaturedStory = () => {
           </div>
           <div className="lg:w-1/2 w-full relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_32px_64px_-12px_rgba(64,119,79,0.2)] relative z-10 bg-slate-100 flex items-center justify-center">
-              <img
-                src="/images/1-Z-120GLfzNq146Ri6nfEDakfstYNxUy.png"
-                alt="Capterio Spotlight"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
+              <picture className="block w-full h-full">
+                <source srcSet="/images/1-Z-120GLfzNq146Ri6nfEDakfstYNxUy.webp" type="image/webp" />
+                <img
+                  src="/images/1-Z-120GLfzNq146Ri6nfEDakfstYNxUy.png"
+                  alt="Capterio Spotlight"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="absolute -top-6 -right-6 md:-top-12 md:-right-12 w-48 h-48 md:w-64 md:h-64 bg-lbbc-green/5 rounded-full blur-3xl -z-0"></div>
             <div className="absolute -bottom-6 -left-6 md:-bottom-12 md:-left-12 w-48 h-48 md:w-64 md:h-64 bg-lbbc-green/10 rounded-full blur-3xl -z-0"></div>

@@ -64,12 +64,14 @@ export const MembershipPage = () => {
       />
       {/* Hero Banner */}
       <section className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-slate-900">
-        <img 
-          src="/images/1AZ2sT2x2_l17cXYFOK3EwBg5Uocf-PVi.png" 
-          alt="Membership Header" 
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
-          referrerPolicy="no-referrer"
-        />
+        <picture className="absolute inset-0 w-full h-full">
+          <source srcSet="/images/1AZ2sT2x2_l17cXYFOK3EwBg5Uocf-PVi.webp" type="image/webp" />
+          <img
+            src="/images/1AZ2sT2x2_l17cXYFOK3EwBg5Uocf-PVi.png"
+            alt="Membership Header"
+            className="w-full h-full object-cover opacity-60"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-lbbc-green/80 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
           <motion.div
@@ -133,12 +135,15 @@ export const MembershipPage = () => {
             >
               <div className="absolute -inset-4 bg-lbbc-green/5 rounded-2xl -rotate-2"></div>
               <div className="relative rounded-xl overflow-hidden shadow-2xl aspect-[4/3]">
-                <img 
-                  src="/images/1x6yFFfjnyRp7zKI70QDJrPyWt702-G7P.png" 
-                  alt="LBBC Membership" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
+                <picture className="block w-full h-full">
+                  <source srcSet="/images/1x6yFFfjnyRp7zKI70QDJrPyWt702-G7P.webp" type="image/webp" />
+                  <img
+                    src="/images/1x6yFFfjnyRp7zKI70QDJrPyWt702-G7P.png"
+                    alt="LBBC Membership"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
             </motion.div>
           </div>
