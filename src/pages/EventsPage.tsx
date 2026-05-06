@@ -67,7 +67,7 @@ export const EventsPage = () => {
             className="w-full h-full object-cover opacity-60"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-r from-lbbc-green/80 to-transparent rtl:bg-gradient-to-l"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-lbbc-green/30 to-transparent rtl:from-slate-950/90 rtl:via-lbbc-green/30 rtl:to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

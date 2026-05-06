@@ -26,7 +26,7 @@ export const ContactPage = () => {
       {/* Header Banner */}
       <section className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-slate-900">
         <img src="/images/1VGQO92bvZODdTICHp8t8oKeGl4XcA5pd.png" alt="Contact Header" className="absolute inset-0 w-full h-full object-cover opacity-60" referrerPolicy="no-referrer" />
-        <div className="absolute inset-0 bg-gradient-to-r from-lbbc-green/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-lbbc-green/30 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="space-y-4 md:space-y-6">
             <span className="inline-block bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white font-black text-[8px] md:text-[9px] uppercase tracking-[0.4em] border border-white/20">{t.contact.tag}</span>

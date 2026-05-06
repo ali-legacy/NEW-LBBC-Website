@@ -82,7 +82,7 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-lg">
       {/* Mini Menu */}
-      <div className="bg-lbbc-green text-white py-2.5 md:py-2 border-b border-white/5 transition-all duration-500">
+      <div className="bg-slate-950 text-white py-2.5 md:py-2 border-b border-white/5 transition-all duration-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
           <div className="hidden sm:flex items-center gap-4 md:gap-6">
             <a href="https://www.linkedin.com/company/libyan-british-business-council/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-all hover:scale-110"><Linkedin size={14} /></a>

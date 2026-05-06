@@ -145,7 +145,7 @@ export const DirectoryPage = () => {
             className="w-full h-full object-cover opacity-60"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-r from-lbbc-green/80 to-transparent rtl:bg-gradient-to-l" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-lbbc-green/30 to-transparent rtl:from-slate-950/90 rtl:via-lbbc-green/30 rtl:to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="inline-block bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white font-black text-[9px] mb-4 md:mb-6 border border-white/20">
