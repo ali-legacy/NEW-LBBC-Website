@@ -1,52 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import { SEO } from '../components/SEO';
-import { GlueUpWidget } from '../components/GlueUpWidget';
-
-const DIRECTORY_WIDGET = 'https://lbbc.glueup.com/organization/5915/widget/membership-directory/corporate';
-
-// ─── Overlay tuning ───────────────────────────────────────────────────────────
-// These values control where the "Individuals" tab cover sits.
-// Adjust them if GlueUp changes their layout.
-//
-//  TAB_BAR_TOP    – px from the top of the iframe to the top of the tab row
-//  TAB_BAR_HEIGHT – height of the tab row in px
-//  TAB_LEFT       – left edge of the Individuals tab as % of iframe width
-//  TAB_WIDTH      – width of the Individuals tab as % of iframe width
-//
-// Desktop vs mobile can differ — tweak MOBILE_* for narrow screens.
-const OVERLAY = {
-  TAB_BAR_TOP:    56,   // px — adjust if tabs appear lower/higher
-  TAB_BAR_HEIGHT: 52,   // px — height of the tab strip
-  TAB_LEFT:       66,   // %  — where the Individuals tab starts (0=left edge)
-  TAB_WIDTH:      34,   // %  — how wide the Individuals tab is
-  BG_COLOR:       '#ffffff', // match the widget's tab bar background
-};
-
-const OVERLAY_MOBILE = {
-  TAB_BAR_TOP:    100,  // px — tabs often shift lower on mobile
-  TAB_BAR_HEIGHT: 48,
-  TAB_LEFT:       0,
-  TAB_WIDTH:      100,  // cover full width on mobile (tabs usually stack)
-  BG_COLOR:       '#ffffff',
-};
-// ─────────────────────────────────────────────────────────────────────────────
 
 export const DirectoryPage = () => {
   const { t } = useLanguage();
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const mq = window.matchMedia('(max-width: 640px)');
-    setIsMobile(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
   }, []);
-
-  const o = isMobile ? OVERLAY_MOBILE : OVERLAY;
 
   return (
     <div className="pt-32">
@@ -92,31 +54,25 @@ export const DirectoryPage = () => {
         </div>
       </section>
 
-      {/* Directory widget + overlay */}
+      {/* Directory — temporarily offline */}
       <section className="pb-16 md:pb-24 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Wrapper must be relative so the overlay is anchored to it */}
-          <div className="relative rounded-xl overflow-hidden shadow-sm border border-slate-100 bg-white">
-            <GlueUpWidget
-              src={DIRECTORY_WIDGET}
-              title="LBBC Member Directory"
-              minHeight="700px"
-            />
-
-            {/* Individuals tab cover — positioned over the tab strip */}
-            <div
-              aria-hidden="true"
-              style={{
-                position: 'absolute',
-                top:    o.TAB_BAR_TOP,
-                left:   `${o.TAB_LEFT}%`,
-                width:  `${o.TAB_WIDTH}%`,
-                height: o.TAB_BAR_HEIGHT,
-                background: o.BG_COLOR,
-                pointerEvents: 'none',
-                zIndex: 10,
-              }}
-            />
+          <div className="rounded-xl border border-slate-100 bg-white shadow-sm py-24 flex flex-col items-center gap-6 text-center px-6">
+            <div className="w-16 h-16 rounded-full bg-lbbc-green/10 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-lbbc-green"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-black text-slate-900 uppercase tracking-tight">Directory Being Updated</h3>
+              <p className="text-slate-500 text-sm leading-relaxed max-w-md">
+                Our member directory is currently undergoing maintenance. Please check back soon — we are working to bring you an improved experience.
+              </p>
+            </div>
+            <a
+              href="mailto:secretariat@lbbc.org.uk"
+              className="inline-flex items-center gap-2 bg-lbbc-green text-white px-8 py-3 rounded-sm text-[10px] font-black uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-md active:scale-95"
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       </section>
