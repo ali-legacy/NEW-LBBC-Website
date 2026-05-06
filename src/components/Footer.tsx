@@ -35,7 +35,7 @@ export const Footer = () => {
             <h4 className="font-bold text-white mb-6 md:mb-8 uppercase tracking-widest text-xs md:text-sm border-b border-white/10 pb-4">{t.footer.partners}</h4>
             <div className="grid grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
               <div className="group">
-                <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 transition-all group-hover:scale-[1.02] shadow-lg">
+                <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 overflow-hidden transition-all group-hover:scale-[1.02] shadow-lg">
                   <picture>
                     <source srcSet="/images/15wu-9uxhuoq3tQF9RdMj5JKCm4UQlOXl.webp" type="image/webp" />
                     <img src="/images/15wu-9uxhuoq3tQF9RdMj5JKCm4UQlOXl.png" alt="British Embassy" className="max-h-full max-w-full object-contain" loading="lazy" />
@@ -43,7 +43,7 @@ export const Footer = () => {
                 </div>
               </div>
               <div className="group">
-                <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 transition-all group-hover:scale-[1.02] shadow-lg">
+                <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 overflow-hidden transition-all group-hover:scale-[1.02] shadow-lg">
                   <picture>
                     <source srcSet="/images/14Vz7QDoZA0mY0wfWOYtv4oNXC-fWsfIA.webp" type="image/webp" />
                     <img src="/images/14Vz7QDoZA0mY0wfWOYtv4oNXC-fWsfIA.png" alt="UK FCDO" className="max-h-full max-w-full object-contain" loading="lazy" />
@@ -51,7 +51,7 @@ export const Footer = () => {
                 </div>
               </div>
               <div className="group">
-                <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 transition-all group-hover:scale-[1.02] shadow-lg">
+                <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 overflow-hidden transition-all group-hover:scale-[1.02] shadow-lg">
                   <picture>
                     <source srcSet="/images/1298kn4VMFdwtdchqygp_Edk5XbaBty8B.webp" type="image/webp" />
                     <img src="/images/1298kn4VMFdwtdchqygp_Edk5XbaBty8B.png" alt="NOC" className="max-h-full max-w-full object-contain" loading="lazy" />
@@ -59,7 +59,7 @@ export const Footer = () => {
                 </div>
               </div>
               <div className="group">
-                <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 transition-all group-hover:scale-[1.02] shadow-lg">
+                <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 overflow-hidden transition-all group-hover:scale-[1.02] shadow-lg">
                   <picture>
                     <source srcSet="/images/1WjTH2bcM6soZgKQuXBbmGgwQobDMiFNg.webp" type="image/webp" />
                     <img src="/images/1WjTH2bcM6soZgKQuXBbmGgwQobDMiFNg.png" alt="REAOL" className="max-h-full max-w-full object-contain" loading="lazy" />
@@ -74,7 +74,7 @@ export const Footer = () => {
             <h4 className="font-bold text-white mb-6 md:mb-8 uppercase tracking-widest text-xs md:text-sm border-b border-white/10 pb-4">{t.footer.sponsors}</h4>
             <div className="grid grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
               <div className="group">
-                <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 transition-all group-hover:scale-[1.02] shadow-lg">
+                <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 overflow-hidden transition-all group-hover:scale-[1.02] shadow-lg">
                   <picture>
                     <source srcSet="/images/19aNWVHPT2e7qVKzaGZ1FKDt7i7Ffygu-.webp" type="image/webp" />
                     <img src="/images/19aNWVHPT2e7qVKzaGZ1FKDt7i7Ffygu-.png" alt="Sponsor 1" className="max-h-full max-w-full object-contain" loading="lazy" />
@@ -82,7 +82,7 @@ export const Footer = () => {
                 </div>
               </div>
               <div className="group">
-                <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 transition-all group-hover:scale-[1.02] shadow-lg">
+                <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 overflow-hidden transition-all group-hover:scale-[1.02] shadow-lg">
                   <picture>
                     <source srcSet="/images/1LGlEbIlkn_Dxfh9ZidHXLUpFopfhBTfW.webp" type="image/webp" />
                     <img src="/images/1LGlEbIlkn_Dxfh9ZidHXLUpFopfhBTfW.png" alt="Sponsor 2" className="max-h-full max-w-full object-contain" loading="lazy" />
@@ -90,7 +90,7 @@ export const Footer = () => {
                 </div>
               </div>
               <div className="group">
-                <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 transition-all group-hover:scale-[1.02] shadow-lg">
+                <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 overflow-hidden transition-all group-hover:scale-[1.02] shadow-lg">
                   <picture>
                     <source srcSet="/images/1BVL2nJgbXbjecGcFNW9WbU74MbOAnD0P.webp" type="image/webp" />
                     <img src="/images/1BVL2nJgbXbjecGcFNW9WbU74MbOAnD0P.png" alt="Sponsor 3" className="max-h-full max-w-full object-contain" loading="lazy" />
