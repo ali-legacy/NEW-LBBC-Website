@@ -31,15 +31,6 @@ window.addEventListener('unhandledrejection', (e) => {
   }
 });
 
-// Also suppress from console.error
-const originalError = console.error;
-console.error = (...args) => {
-  if (args.length > 0 && typeof args[0] === 'string' && resizeObserverErrors.some(err => args[0].includes(err))) {
-    return;
-  }
-  originalError.apply(console, args);
-};
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />

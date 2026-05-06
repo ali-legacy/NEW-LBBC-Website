@@ -84,8 +84,8 @@ async function createServer() {
     throw new Error('Max retries reached');
   };
 
-  // Diagnostic endpoint
-  app.get("/api/debug-glueup", async (req, res) => {
+  // Diagnostic endpoint — development only, never expose in production
+  if (process.env.NODE_ENV !== 'production') app.get("/api/debug-glueup", async (req, res) => {
     const diagnostics: any = {
       timestamp: new Date().toISOString(),
       env: process.env.NODE_ENV,
@@ -137,7 +137,7 @@ async function createServer() {
     }
 
     res.json(diagnostics);
-  });
+  }); // end debug-glueup
 
   // GlueUp requires a fresh session cookie from the widget page before the overlay POST will work.
   // Both council and corporate members use type=corporate in the overlay endpoint.
