@@ -5,7 +5,8 @@ import { ArrowRight, Building2, Calendar, MapPin, Newspaper, Clock, ArrowUpRight
 import { useLanguage } from '../context/LanguageContext';
 
 export const MemberDirectory = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const isRtl = language === 'ar';
   const [members, setMembers] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -41,22 +42,20 @@ export const MemberDirectory = () => {
         </Link>
       </div>
 
-      <div className="relative flex overflow-hidden">
+      {/* w-full prevents RTL flex shrink-to-content on first render */}
+      <div className="relative flex overflow-hidden w-full">
         {isLoading ? (
-          <div className="flex gap-12 px-4">
+          <div className="flex gap-12 px-4 w-full">
             {Array.from({ length: 8 }).map((_, i) => (
-              <div key={i} className="w-24 md:w-32 aspect-square rounded-full bg-slate-50 animate-pulse" />
+              <div key={i} className="w-24 md:w-32 aspect-square rounded-full bg-slate-50 animate-pulse flex-shrink-0" />
             ))}
           </div>
         ) : (
-          <motion.div
-            className="flex gap-6 md:gap-12 whitespace-nowrap px-4"
-            animate={{ x: [0, -2000] }}
-            transition={{
-              duration: 40,
-              repeat: Infinity,
-              ease: "linear"
-            }}
+          /* CSS marquee: content is ×4 so scrolling 25% of total = one full copy = seamless loop.
+             Direction flips for RTL so items scroll in the reading direction. */
+          <div
+            key={language}
+            className={`flex gap-6 md:gap-12 px-4 ${isRtl ? 'animate-marquee-rtl' : 'animate-marquee-ltr'}`}
           >
             {allMembers.map((member, i) => (
               <div key={`${member.id || member.name}-${i}`} className="flex-shrink-0 w-24 md:w-32 text-center group">
@@ -75,7 +74,7 @@ export const MemberDirectory = () => {
                 <p className="text-[8px] font-bold uppercase tracking-widest text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity truncate px-2">{member.name}</p>
               </div>
             ))}
-          </motion.div>
+          </div>
         )}
 
         <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>

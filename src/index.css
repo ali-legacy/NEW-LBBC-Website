@@ -100,3 +100,24 @@ body[dir="rtl"] .text-\[10px\] {
 body[dir="rtl"] [class*="uppercase"] {
   text-transform: none;
 }
+
+/* ─── Member carousel marquee ────────────────────────────────────────────────
+   CSS-driven infinite marquee. Content is quadrupled so scrolling by 25% of
+   total width (= one full copy) creates a perfectly seamless loop with no
+   JavaScript snap-back. Direction flips for RTL. */
+@keyframes marquee-ltr {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-25%); }
+}
+@keyframes marquee-rtl {
+  from { transform: translateX(0); }
+  to   { transform: translateX(25%); }
+}
+.animate-marquee-ltr {
+  animation: marquee-ltr 40s linear infinite;
+  will-change: transform;
+}
+.animate-marquee-rtl {
+  animation: marquee-rtl 40s linear infinite;
+  will-change: transform;
+}
