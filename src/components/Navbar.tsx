@@ -95,8 +95,13 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-lg">
       {/* Mini Menu */}
-      <div className="bg-slate-950 text-white py-2.5 md:py-2 border-b border-white/5 transition-all duration-500">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+      <div className="bg-gradient-to-r from-[#264d31] via-lbbc-green to-[#335e42] text-white py-2.5 md:py-2 border-b border-white/10 transition-all duration-500 relative overflow-hidden">
+        {/* Dot texture */}
+        <div className="absolute inset-0 pointer-events-none" style={{backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px)', backgroundSize: '20px 20px'}} />
+        {/* Ambient glow orbs */}
+        <div className="absolute right-1/4 -top-10 w-72 h-20 bg-white/6 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute left-1/3 bottom-0 w-48 h-10 bg-[#1a3323]/60 rounded-full blur-xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center relative z-10">
           <div className="hidden sm:flex items-center gap-4 md:gap-6">
             <a href="https://www.linkedin.com/company/libyan-british-business-council/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-all hover:scale-110"><Linkedin size={14} /></a>
             <a href="https://x.com/LBBCnews" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-all hover:scale-110">
