@@ -641,6 +641,17 @@
       "website": "https://www.capterio.com"
     },
     {
+      "name": "Chris Penketh Associates Ltd.",
+      "sector": "Business Consulting",
+      "logo": null,
+      "id": "4330731",
+      "glueupId": "3660112",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "Business development consultancy specialising in the Libyan Energy Sector. 30+ years operating in advisory and representative capacities for U.K. service providers and manufacturers.",
+      "website": null
+    },
+    {
       "name": "City of Glasgow College",
       "sector": "Education Management",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/5a8fd188-1295-4f87-ba6d-636f99209131.png",
@@ -993,6 +1004,17 @@
       "website": "https://www.mees.com/"
     },
     {
+      "name": "Miller and Lents",
+      "sector": "Oil & Gas",
+      "logo": null,
+      "id": "4330853",
+      "glueupId": "3658659",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "Miller and Lents have served in the oil and gas industry with trusted upstream insights and reservoir evaluation since 1948. Headquartered in Houston, Texas, our team provides reliable, independent analysis to clients across the globe. Every project we perform is backed by our history of excellence and unparalleled client service. Our accomplished staff includes many oil and gas veterans who have decades of experience in the field. They joined M&L from major oil companies like BP, Chevron, and ExxonMobil, as well as many large independents. The firm’s interdisciplinary team includes petroleum engineers, petroleum geologists, geophysicists, and economists. Their diverse expertise allows us to provide a multifaceted technical approach bolstered by on-the-ground experience.Miller & Lents’ energy transition expertise enables us to support clients in the areas of carbon capture, utilization and storage (CCUS) and Energy Storage. M&L provides support in the areas of ESG and susteinability reporting including Scope 1 and 2.",
+      "website": "https://millerandlents.com/"
+    },
+    {
       "name": "MS Risk Limited",
       "sector": "Security & Investigations",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/a9f0650e-920e-4201-b398-19e1480fb105.png",
@@ -1167,6 +1189,17 @@
       "members": [],
       "about": "Onshore Drilling Contractor",
       "website": "https://www.marriottdrillnng.com"
+    },
+    {
+      "name": "Premier Corex Limited",
+      "sector": "Other",
+      "logo": null,
+      "id": "4330946",
+      "glueupId": "3660338",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "Geological laboratory based testing",
+      "website": "https://www.premiercorex.com/"
     },
     {
       "name": "Qa3 Ltd",
@@ -1477,7 +1510,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1778132279365,
+  "timestamp": 1778216270967,
   "source": "live-scrape",
-  "totalMembers": 134
+  "totalMembers": 137
 }
