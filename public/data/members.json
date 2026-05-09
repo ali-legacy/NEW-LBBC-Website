@@ -982,6 +982,17 @@
       "website": "https://embuk.foreign.gov.ly/"
     },
     {
+      "name": "Maghreb Venture Partners",
+      "sector": "Financial Services",
+      "logo": null,
+      "id": "4332810",
+      "glueupId": "3661636",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "Investment Consultancy",
+      "website": "https://www.maghrebventurepartners.org"
+    },
+    {
       "name": "Manchester Metropolitan University",
       "sector": "Other",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/a90e77eb-2b48-410d-8087-8003fbdd6682.png",
@@ -1510,7 +1521,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1778216270967,
+  "timestamp": 1778304447007,
   "source": "live-scrape",
-  "totalMembers": 137
+  "totalMembers": 138
 }
