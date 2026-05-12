@@ -1433,6 +1433,17 @@
       "website": "https://www.tumifirm.com/"
     },
     {
+      "name": "United Development Petroleum Services (UDP Oilfield Services CO.)",
+      "sector": "Oil & Gas",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/4743a783-0feb-4849-a692-dd2be8fc54da.png",
+      "id": "4355633",
+      "glueupId": "3664655",
+      "membershipType": "corporate",
+      "members": [],
+      "about": null,
+      "website": "https://www.udp.com.ly"
+    },
+    {
       "name": "University of Portsmouth",
       "sector": "Higher Education",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/2aa5efe5-cd69-4058-86d2-9649cfb6fe4f.png",
@@ -1521,7 +1532,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1778479523728,
+  "timestamp": 1778564657426,
   "source": "live-scrape",
-  "totalMembers": 138
+  "totalMembers": 139
 }
