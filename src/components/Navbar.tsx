@@ -115,7 +115,7 @@ export const Navbar = () => {
             <div className="hidden lg:flex items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-white/90">
               <span className="flex items-center gap-2 hover:text-lbbc-red transition-colors cursor-default"><Phone size={10} className="text-white" /> +44 (0) 20 7788 7935</span>
               <span className="w-px h-3 bg-white/20"></span>
-              <span className="flex items-center gap-2 hover:text-lbbc-red transition-colors cursor-default"><Mail size={10} className="text-white" /> secretariat@lbbc.org.uk</span>
+              <a href="mailto:events@lbbc.org.uk" className="flex items-center gap-2 hover:text-lbbc-red transition-colors"><Mail size={10} className="text-white" /> events@lbbc.org.uk</a>
             </div>
             <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-3 sm:gap-6">
               {/* Language Switcher */}

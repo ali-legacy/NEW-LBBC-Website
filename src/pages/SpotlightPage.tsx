@@ -61,8 +61,8 @@ export const SpotlightPage = () => {
               <div className="space-y-6">
                 <h4 className="font-black text-slate-900 uppercase tracking-widest text-xs">{t.footer.contact}</h4>
                 <div className="space-y-4">
-                  <a href="mailto:secretariat@lbbc.org.uk" className="flex items-center gap-3 text-sm text-slate-600 hover:text-lbbc-green transition-colors font-bold">
-                    <Mail size={18} className="text-lbbc-green" /> secretariat@lbbc.org.uk
+                  <a href="mailto:events@lbbc.org.uk" className="flex items-center gap-3 text-sm text-slate-600 hover:text-lbbc-green transition-colors font-bold">
+                    <Mail size={18} className="text-lbbc-green" /> events@lbbc.org.uk
                   </a>
                   <a href="tel:+442077887935" className="flex items-center gap-3 text-sm text-slate-600 hover:text-lbbc-green transition-colors font-bold">
                     <Phone size={18} className="text-lbbc-green" /> +44 (0) 20 7788 7935

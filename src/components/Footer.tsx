@@ -111,11 +111,11 @@ export const Footer = () => {
             <h4 className="font-bold text-white mb-6 md:mb-8 uppercase tracking-widest text-xs md:text-sm border-b border-white/15 pb-4">{t.footer.contact}</h4>
             <div className="space-y-6 md:space-y-8">
               <div className="space-y-3 md:space-y-4">
-                <a href="mailto:secretariat@lbbc.org.uk" className="flex items-center gap-3 md:gap-4 text-[11px] md:text-xs text-white hover:text-white transition-colors group font-bold">
+                <a href="mailto:events@lbbc.org.uk" className="flex items-center gap-3 md:gap-4 text-[11px] md:text-xs text-white hover:text-white transition-colors group font-bold">
                   <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
                     <Mail size={14} className="text-white" />
                   </div>
-                  {t.footer.email}: secretariat@lbbc.org.uk
+                  {t.footer.email}: events@lbbc.org.uk
                 </a>
                 <a href="tel:+442077887935" className="flex items-center gap-3 md:gap-4 text-[11px] md:text-xs text-white hover:text-white transition-colors group font-bold">
                   <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
