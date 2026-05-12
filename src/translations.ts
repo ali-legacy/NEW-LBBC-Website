@@ -334,7 +334,7 @@ export const translations = {
             },
             {
               q: 'Is membership limited to commercial businesses or can NGOs and academic institutions join?',
-              a: 'No, LBBC membership is not exclusively limited to commercial enterprises. We recognise the role that non-governmental organisations (NGOs) and academic institutions play within the UK-Libya ecosystem, particularly in areas of capacity building, research and bilateral cooperation.\n\nTo support their participation and engagement with the business community, the LBBC offers specially discounted membership rates for qualifying non-profits and academic institutions.\n\nFor more information regarding these discounted rates or to submit an enquiry about your organisation’s eligibility, please contact our team at secretariat@lbbc.org.uk.'
+              a: 'No, LBBC membership is not exclusively limited to commercial enterprises. We recognise the role that non-governmental organisations (NGOs) and academic institutions play within the UK-Libya ecosystem, particularly in areas of capacity building, research and bilateral cooperation.\n\nTo support their participation and engagement with the business community, the LBBC offers specially discounted membership rates for qualifying non-profits and academic institutions.\n\nFor more information regarding these discounted rates or to submit an enquiry about your organisation’s eligibility, please contact our team at events@lbbc.org.uk.'
             }
           ]
         },
@@ -389,6 +389,7 @@ export const translations = {
       tel: 'Telephone',
       form: {
         name: 'Full Name',
+        email: 'Email Address',
         job: 'Job Title',
         company: 'Company Name',
         inquiry: 'Nature of Inquiry',
@@ -399,7 +400,12 @@ export const translations = {
         opt4: 'General Trade Support',
         message: 'Message',
         placeholder: 'Please provide brief details on your commercial objectives or specific inquiry.',
-        submit: 'Submit Inquiry'
+        submit: 'Submit Inquiry',
+        sending: 'Sending…',
+        successTitle: 'Enquiry Sent',
+        successMsg: 'Thank you for reaching out. A member of our team will be in touch with you shortly.',
+        errorMsg: 'Something went wrong. Please try again or email us directly at events@lbbc.org.uk.',
+        tryAgain: 'Send Another Message',
       },
       socialTag: 'STAY CONNECTED',
       socialTitle: 'Connect For the Latest on UK-Libya Trade',
@@ -756,7 +762,7 @@ export const translations = {
             },
             {
               q: 'هل تقتصر العضوية على الشركات التجارية أم يمكن للمنظمات غير الحكومية والمؤسسات الأكاديمية الانضمام؟',
-              a: 'لا، لا تقتصر عضوية المجلس حصرياً على الشركات التجارية. نحن ندرك الدور الذي تلعبه المنظمات غير الحكومية (NGOs) والمؤسسات الأكاديمية داخل النظام البيئي بين المملكة المتحدة وليبيا، لا سيما في مجالات بناء القدرات والبحث والتعاون الثنائي.\n\nولدعم مشاركتهم وتفاعلهم مع مجتمع الأعمال، يقدم المجلس أسعار عضوية مخفضة بشكل خاص للمنظمات غير الربحية والمؤسسات الأكاديمية المؤهلة.\n\nلمزيد من المعلومات بخصوص هذه الأسعار المخفضة أو لتقديم استفسار حول أهلية منظمتك، يرجى الاتصال بفريقنا على secretariat@lbbc.org.uk.'
+              a: 'لا، لا تقتصر عضوية المجلس حصرياً على الشركات التجارية. نحن ندرك الدور الذي تلعبه المنظمات غير الحكومية (NGOs) والمؤسسات الأكاديمية داخل النظام البيئي بين المملكة المتحدة وليبيا، لا سيما في مجالات بناء القدرات والبحث والتعاون الثنائي.\n\nولدعم مشاركتهم وتفاعلهم مع مجتمع الأعمال، يقدم المجلس أسعار عضوية مخفضة بشكل خاص للمنظمات غير الربحية والمؤسسات الأكاديمية المؤهلة.\n\nلمزيد من المعلومات بخصوص هذه الأسعار المخفضة أو لتقديم استفسار حول أهلية منظمتك، يرجى الاتصال بفريقنا على events@lbbc.org.uk.'
             }
           ]
         },
@@ -811,6 +817,7 @@ export const translations = {
       tel: 'الهاتف',
       form: {
         name: 'الاسم الكامل',
+        email: 'البريد الإلكتروني',
         job: 'المسمى الوظيفي',
         company: 'اسم الشركة',
         inquiry: 'طبيعة الاستفسار',
@@ -821,7 +828,12 @@ export const translations = {
         opt4: 'دعم التجارة العامة',
         message: 'الرسالة',
         placeholder: 'يرجى تقديم تفاصيل موجزة عن أهدافك التجارية أو استفسارك المحدد.',
-        submit: 'إرسال الاستفسار'
+        submit: 'إرسال الاستفسار',
+        sending: 'جارٍ الإرسال…',
+        successTitle: 'تم إرسال الاستفسار',
+        successMsg: 'شكراً لتواصلك معنا. سيتواصل معك أحد أعضاء فريقنا قريباً.',
+        errorMsg: 'حدث خطأ ما. يرجى المحاولة مرة أخرى أو مراسلتنا مباشرةً على events@lbbc.org.uk',
+        tryAgain: 'إرسال رسالة أخرى',
       },
       socialTag: 'ابق على اتصال',
       socialTitle: 'تواصل للحصول على أحدث المعلومات حول التجارة بين المملكة المتحدة وليبيا',
