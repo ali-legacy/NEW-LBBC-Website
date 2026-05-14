@@ -1,15 +1,6 @@
 {
   "upcoming": [
     {
-      "id": "173494",
-      "title": "Libya Energy Forum: Realising Energy Ambitions",
-      "date": "May 13, 2026 (09:00 - 17:00) (GMT+1)",
-      "location": "London, England, United Kingdom",
-      "image": "https://lbbc.glueup.com/resources/public/images/fixed-width/600/2752095d-16ba-4a67-bc29-ad9cf76e56ba.jpg",
-      "link": "https://lbbc.glueup.com/event/libya-energy-forum-realising-energy-ambitions-173494/?pk_campaign=widget-event-list",
-      "type": "Event"
-    },
-    {
       "id": "160914",
       "title": "LBBC Summer Reception",
       "date": "Jun 18, 2026 (12:00 - 14:30) (GMT+1)",
@@ -29,6 +20,15 @@
     }
   ],
   "past": [
+    {
+      "id": "173494",
+      "title": "Libya Energy Forum: Realising Energy Ambitions",
+      "date": "May 13, 2026 (09:00 - 17:00) (GMT+1)",
+      "location": "London, England, United Kingdom",
+      "image": "https://lbbc.glueup.com/resources/public/images/fixed-width/600/2752095d-16ba-4a67-bc29-ad9cf76e56ba.jpg",
+      "link": "https://lbbc.glueup.com/event/libya-energy-forum-realising-energy-ambitions-173494/?pk_campaign=widget-event-list",
+      "type": "Event"
+    },
     {
       "id": "179021",
       "title": "Realising Libya's Energy Ambitions: The Conversation Begins",
@@ -64,17 +64,8 @@
       "image": "https://lbbc.glueup.com/resources/public/images/fixed-width/600/b8e83b8d-0625-4e90-89b1-43cd8f4aedd0.png",
       "link": "https://lbbc.glueup.com/event/libya-uk-reception-celebrating-collaboration-in-business-culture-heritage-161297/?pk_campaign=widget-event-list",
       "type": "Event"
-    },
-    {
-      "id": "156386",
-      "title": "Libya Energy Transition Conference: Renewable Investment Opportunities",
-      "date": "Nov 26, 2025 (12:30 - 17:00) (GMT+0)",
-      "location": "London, United Kingdom",
-      "image": "https://lbbc.glueup.com/resources/public/images/fixed-width/600/eadcb398-19de-4122-b1af-73b7b6c4ca17.png",
-      "link": "https://lbbc.glueup.com/event/libya-energy-transition-conference-renewable-investment-opportunities-156386/?pk_campaign=widget-event-list",
-      "type": "Event"
     }
   ],
-  "timestamp": 1778651661296,
+  "timestamp": 1778738022769,
   "source": "live-scrape"
 }
