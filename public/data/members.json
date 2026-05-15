@@ -210,17 +210,6 @@
       "website": "https://gulfsands.com/"
     },
     {
-      "name": "Harbour Energy",
-      "sector": "Oil & Gas",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/12087104-a816-437b-aa00-c98510c8c738.png",
-      "id": "3005937",
-      "glueupId": "2466656",
-      "membershipType": "council",
-      "members": [],
-      "about": "About Harbour EnergySince its creation in 2014, Harbour has grown to become one of the world’s largest and most geographically diverse independent oil and gas companies.Today, Harbour is producing between 475,000 and 485,000 barrels of oil equivalent per day with significant production in Norway, the UK, Germany, Argentina and North Africa. Harbour benefits from competitive operating costs and resilient margins, and a broad set of growth options including near-infrastructure opportunities in Norway, unconventional scalable opportunities in Argentina and conventional offshore projects in Mexico and Indonesia.With low GHG emissions intensity and a leading CO2 storage position in Europe, Harbour remains committed to producing oil and gas safely and responsibly to help meet the world’s energy needs. Harbour is headquartered in London with approximately 5,000 staff and contractors across its operations and offices.",
-      "website": "https://www.harbourenergy.com"
-    },
-    {
       "name": "HB Group",
       "sector": "Consumer Services",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/64d047f1-f2fd-41b5-b156-2cc44576e6df.png",
@@ -1532,7 +1521,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1778738047551,
+  "timestamp": 1778824849337,
   "source": "live-scrape",
-  "totalMembers": 139
+  "totalMembers": 138
 }
