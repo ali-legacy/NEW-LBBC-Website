@@ -1433,17 +1433,6 @@
       "website": "https://www.udp.com.ly"
     },
     {
-      "name": "University of Portsmouth",
-      "sector": "Higher Education",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/2aa5efe5-cd69-4058-86d2-9649cfb6fe4f.png",
-      "id": "2014222",
-      "glueupId": "1682103",
-      "membershipType": "corporate",
-      "members": [],
-      "about": "Located on England’s south coast, Portsmouth is a vibrant, cosmopolitan city with some of the UK’s best weather. Most university buildings are in the heart of the compact city. Everything you need is close by, including: four miles of beautiful beach, excellent entertainment, and accommodation. Portsmouth welcomes 5,200 international and EU students from around 150 countries and has around 31,000 students total.The University has a five star rating for teaching, employability, internationalisation, facilities, arts and culture, and inclusiveness (QS Top University Guide 2021) and teaching is rated Gold in the UK Government’s Teaching Excellence Framework (TEF).With courses designed to meet the challenges of the competitive global jobs market, our students are well prepared for a successful life after graduation. 94% of Portsmouth students are working or in further study after finishing their course (HESA Graduate Outcomes Survey 2017/18).We have hundreds of undergraduate and postgraduate degrees spanning business, creativity and culture, humanities, science and technology. Portsmouth focuses on making are students more employable, with paid work placements, or opportunities to practice their skills in simulated environments like our mock courtroom.The Portsmouth Students’ Union offers 150 sports clubs and societies for all interests, so there’s always a lot of opportunities to be had on campus. Portsmouth is one of the UK’s most affordable cities for students (NatWest Student Living Index 2020). London is just 90 minutes away, and ferries cross regularly to Europe.",
-      "website": "https://www.port.ac.uk/"
-    },
-    {
       "name": "Wazen Oil Services",
       "sector": "Energy",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/73ffe5e7-3daf-4801-b24f-14560d165963.png",
@@ -1521,7 +1510,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1778909567362,
+  "timestamp": 1778997289646,
   "source": "live-scrape",
-  "totalMembers": 138
+  "totalMembers": 137
 }
