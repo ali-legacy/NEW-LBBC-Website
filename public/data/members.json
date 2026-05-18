@@ -1257,6 +1257,17 @@
       "website": "https://rida-ts.com"
     },
     {
+      "name": "Rowad Elmemar",
+      "sector": "Construction",
+      "logo": null,
+      "id": "4357568",
+      "glueupId": "3666223",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "rowad Elememar is general contracting company and is considered to be one of the biggest piling contractors in Libya that specializes in the construction of piling foundations and ground improvements.",
+      "website": "https://www.rowad-elmemar.ly"
+    },
+    {
       "name": "RPS Energy Ltd",
       "sector": "Energy",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/94f71263-5ef3-407b-9ba6-8cb551d7edae.png",
@@ -1510,7 +1521,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1778997289646,
+  "timestamp": 1779085274519,
   "source": "live-scrape",
-  "totalMembers": 137
+  "totalMembers": 138
 }
