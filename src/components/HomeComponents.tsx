@@ -228,9 +228,9 @@ export const FeaturedStory = () => {
           <div className="lg:w-1/2 w-full relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_32px_64px_-12px_rgba(64,119,79,0.2)] relative z-10 bg-slate-100 flex items-center justify-center">
               <picture className="block w-full h-full">
-                <source srcSet="/images/lbbc-noc-mou-signing.webp" type="image/webp" />
+                <source srcSet="/images/lbbc-noc-mou-signing-v2.webp" type="image/webp" />
                 <img
-                  src="/images/lbbc-noc-mou-signing.png"
+                  src="/images/lbbc-noc-mou-signing-v2.png"
                   alt="NOC and LBBC MoU Signing"
                   className="w-full h-full object-cover"
                   loading="lazy"

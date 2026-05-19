@@ -1,7 +1,7 @@
 export const newsData = [
   {
     id: 'lbbc-noc-mou-energy-forum',
-    image: '/images/lbbc-noc-mou-signing.png',
+    image: '/images/lbbc-noc-mou-signing-v2.png',
     category: 'PARTNERSHIPS',
     title: 'National Oil Corporation and the LBBC Sign MoU at the Libya Energy Forum',
     date: 'MAY 13, 2026',

@@ -22,8 +22,8 @@ export const Hero = () => {
     },
     {
       id: 2,
-      image: '/images/lbbc-noc-mou-signing.png',
-      imageWebp: '/images/lbbc-noc-mou-signing.webp',
+      image: '/images/lbbc-noc-mou-signing-v2.png',
+      imageWebp: '/images/lbbc-noc-mou-signing-v2.webp',
       title: t.hero.slides[1].title,
       subtitle: t.hero.slides[1].subtitle,
       cta1: t.hero.slides[1].cta1,
