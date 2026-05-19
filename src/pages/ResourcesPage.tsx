@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FileText, Download, ExternalLink, ArrowRight, ArrowUpRight, Camera, Image as ImageIcon } from 'lucide-react';
+import { FileText, Download, ExternalLink, ArrowRight, ArrowUpRight, Image as ImageIcon } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { SEO } from '../components/SEO';
 import { newsData } from '../data/news';
@@ -20,22 +20,6 @@ export const ResourcesPage = () => {
     } else {
       window.scrollTo(0, 0);
     }
-    
-    // Load Flickr script
-    const script = document.createElement('script');
-    script.src = "https://embedr.flickr.com/assets/client-code.js";
-    script.async = true;
-    script.charset = "utf-8";
-    script.onerror = () => {
-      console.warn('Flickr script failed to load or threw an error.');
-    };
-    document.body.appendChild(script);
-
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
   }, [hash]);
 
   const pdfs = [
@@ -225,26 +209,61 @@ export const ResourcesPage = () => {
             </motion.div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-            {/* Albums simplified for extraction */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {[
-              { id: "54447167750", album: "72177720325034652", img: "54447167750_dde7fdc886_w.jpg", title: "NOC Libya Bid Round London Roadshow", label: "Album 01" },
-              { id: "54125991549", photostream: true, img: "54125991549_65f81a748b_w.jpg", title: "LBBC Delegation: LibyaBuild Benghazi", label: "Album 02" },
-              { id: "54125538111", album: "72177720321806753", img: "54125538111_ddc0cf1cb5_w.jpg", title: "Benghazi Business Delegation AGOCO, Wahda Bank, LDRF Meetings", label: "Album 03" }
+              {
+                href: "https://www.flickr.com/photos/legacy_libya/albums/72177720333647017",
+                img: "https://live.staticflickr.com/65535/55270007271_5432eebf11_w.jpg",
+                title: "Libya Energy Forum in London at AES 2026",
+                label: "Album 01"
+              },
+              {
+                href: "https://www.flickr.com/photos/legacy_libya/albums/72177720325034652",
+                img: "https://live.staticflickr.com/65535/54447167750_dde7fdc886_w.jpg",
+                title: "NOC Libya Bid Round London Roadshow",
+                label: "Album 02"
+              },
+              {
+                href: "https://www.flickr.com/photos/legacy_libya/54125991549/",
+                img: "https://live.staticflickr.com/65535/54125991549_65f81a748b_w.jpg",
+                title: "LBBC Delegation: LibyaBuild Benghazi",
+                label: "Album 03"
+              },
+              {
+                href: "https://www.flickr.com/photos/legacy_libya/albums/72177720321806753",
+                img: "https://live.staticflickr.com/65535/54125538111_ddc0cf1cb5_w.jpg",
+                title: "Benghazi Business Delegation: AGOCO, Wahda Bank, LDRF Meetings",
+                label: "Album 04"
+              }
             ].map((album, idx) => (
-              <div key={idx} className="group">
-                <div className="rounded-2xl overflow-hidden shadow-2xl bg-black/40 backdrop-blur-sm p-1 border border-white/10 hover:border-lbbc-red/50 transition-all duration-500">
-                  <div className="w-full aspect-[4/3] flex items-center justify-center overflow-hidden rounded-xl bg-slate-950 relative">
-                    <a data-flickr-embed="true" href={`https://www.flickr.com/photos/legacy_libya/${album.id}/`} title={album.title} className="w-full h-full">
-                      <img src={`https://live.staticflickr.com/65535/${album.img}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={album.title} referrerPolicy="no-referrer" />
-                    </a>
+              <a
+                key={idx}
+                href={album.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <div className="rounded-2xl overflow-hidden shadow-2xl bg-black/40 backdrop-blur-sm p-1 border border-white/10 group-hover:border-lbbc-red/50 group-hover:shadow-[0_30px_60px_-15px_rgba(239,68,68,0.4)] transition-all duration-500">
+                  <div className="w-full aspect-[4/3] overflow-hidden rounded-xl bg-slate-950 relative">
+                    <img
+                      src={album.img}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      alt={album.title}
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                 </div>
                 <div className="mt-6 space-y-2">
-                  <h3 className="text-sm md:text-base font-bold text-white group-hover:text-lbbc-red transition-colors leading-tight">{album.title}</h3>
                   <p className="text-[10px] text-white/40 uppercase tracking-widest font-black">{album.label}</p>
+                  <h3 className="text-base md:text-lg font-bold text-white group-hover:text-lbbc-red transition-colors leading-tight">{album.title}</h3>
+                  <span className="inline-flex items-center gap-2 text-lbbc-red font-black text-[10px] uppercase tracking-widest pt-1 group-hover:gap-3 transition-all">
+                    View Album
+                    <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </span>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

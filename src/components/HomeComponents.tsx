@@ -251,7 +251,7 @@ export const FeaturedStory = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6 md:gap-8 pt-4">
               <Link
-                to="/spotlight/capterio"
+                to="/news/lbbc-noc-mou-energy-forum"
                 className="w-full sm:w-auto bg-lbbc-green text-white px-8 md:px-10 py-4 rounded-sm text-xs font-bold hover:bg-lbbc-red transition-all uppercase tracking-widest shadow-xl text-center"
               >
                 {t.featured.cta}
@@ -265,8 +265,8 @@ export const FeaturedStory = () => {
           <div className="lg:w-1/2 w-full relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_32px_64px_-12px_rgba(64,119,79,0.2)] relative z-10 bg-slate-100 flex items-center justify-center">
               <img
-                src="/images/1-Z-120GLfzNq146Ri6nfEDakfstYNxUy.png"
-                alt="Capterio Spotlight"
+                src="/images/lbbc-noc-mou-signing.png"
+                alt="NOC and LBBC MoU Signing"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />

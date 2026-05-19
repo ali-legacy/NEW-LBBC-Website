@@ -33,10 +33,10 @@ export const translations = {
           cta2: 'Member sign in'
         },
         {
-          title: 'Strategic Dialogue with Libya’s National Oil Corporation in London',
-          subtitle: 'Step into the room with the National Oil Corporation and industry leaders to explore the priorities and practical frameworks defining Libya’s energy future.',
-          cta1: 'View Event Details',
-          cta2: 'Event enquiries'
+          title: 'National Oil Corporation and LBBC Sign MoU at the Libya Energy Forum',
+          subtitle: "Explore the outcomes of the Libya Energy Forum, where the NOC's largest London delegation formalised its partnership with the LBBC.",
+          cta1: 'Read Full Story',
+          cta2: 'Join the LBBC'
         },
         {
           title: 'On the Ground Access to Libya’s Key Decision-Makers',
@@ -154,9 +154,9 @@ export const translations = {
       contactUs: 'Contact Us'
     },
     featured: {
-      tag: 'SPOTLIGHT ON',
-      title: "Capterio Aims to Capture and Monetise Flared Gas in Libya",
-      text: "Our member, Capterio, played a central role in the conversation on how Libya can turn gas flaring from waste into value. As part of a UK–Libya Roundtable hosted by the LBBC, Capterio’s CEO, Mark Jonathan Davis joined Libyan and international stakeholders in Tripoli to explore practical pathways to capture and monetise flared gas in support of Libya’s economic goals.",
+      tag: 'FEATURED STORY',
+      title: "National Oil Corporation and LBBC Sign MoU at the Libya Energy Forum",
+      text: "Explore the outcomes of the Libya Energy Forum, where the NOC's largest London delegation formalised its partnership with the LBBC through a landmark Memorandum of Understanding, strengthening UK–Libya energy ties.",
       cta: 'Read Full Story',
       allNews: 'All News',
       fullStory: {
@@ -442,10 +442,10 @@ export const translations = {
           cta2: 'تسجيل دخول الأعضاء'
         },
         {
-          title: 'حوار استراتيجي مع المؤسسة الوطنية للنفط في لندن',
-          subtitle: 'انضم إلى المؤسسة الوطنية للنفط وقادة الصناعة لاستكشاف الأولويات والأطر العملية التي تحدد مستقبل الطاقة في ليبيا.',
-          cta1: 'عرض تفاصيل الفعالية',
-          cta2: 'استفسارات الفعاليات'
+          title: 'المؤسسة الوطنية للنفط والمجلس الليبي البريطاني للأعمال يوقعان مذكرة تفاهم في منتدى ليبيا للطاقة',
+          subtitle: 'استكشف نتائج منتدى ليبيا للطاقة، حيث رسّخ أكبر وفد للمؤسسة الوطنية للنفط في لندن شراكته مع المجلس الليبي البريطاني للأعمال.',
+          cta1: 'اقرأ القصة الكاملة',
+          cta2: 'انضم إلى المجلس'
         },
         {
           title: 'الوصول الميداني إلى صناع القرار الرئيسيين في ليبيا',
@@ -563,9 +563,9 @@ export const translations = {
       contactUs: 'اتصل بنا'
     },
     featured: {
-      tag: 'تسليط الضوء على',
-      title: 'كابتيريو تهدف إلى التقاط واستغلال الغاز المصاحب في ليبيا',
-      text: 'لعب عضو المجلس، شركة كابتيريو، دوراً مركزياً في الحوار حول كيفية تحويل حرق الغاز في ليبيا من هدر إلى قيمة. وكجزء من مائدة مستديرة بين المملكة المتحدة وليبيا استضافها المجلس، انضم الرئيس التنفيذي لشركة كابتيريو، مارك جوناثان ديفيس، إلى أصحاب المصلحة الليبيين والدوليين في طرابلس لاستكشاف مسارات عملية لالتقاط واستغلال الغاز المصاحب دعماً للأهداف الاقتصادية لليبيا.',
+      tag: 'القصة الرئيسية',
+      title: 'المؤسسة الوطنية للنفط والمجلس الليبي البريطاني للأعمال يوقعان مذكرة تفاهم في منتدى ليبيا للطاقة',
+      text: 'استكشف نتائج منتدى ليبيا للطاقة، حيث رسّخ أكبر وفد للمؤسسة الوطنية للنفط في لندن شراكته مع المجلس الليبي البريطاني للأعمال من خلال مذكرة تفاهم تاريخية، تعزّز العلاقات في قطاع الطاقة بين المملكة المتحدة وليبيا.',
       cta: 'اقرأ القصة الكاملة',
       allNews: 'كل الأخبار',
       fullStory: {
