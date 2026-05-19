@@ -163,7 +163,7 @@ Bob has over 25 years of management experience, in both private and public secto
         canonical="about"
       />
       {/* Header Banner */}
-      <section className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-slate-900">
+      <section className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-gradient-to-br from-[#1a3323] via-lbbc-green to-[#0f2117]">
         <img 
           src="/images/1Gvq_EVuoyOiiBD4ZQvVIOwMOVlMQAC0h.png" 
           alt="About Header" 

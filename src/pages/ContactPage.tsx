@@ -70,7 +70,7 @@ export const ContactPage = () => {
       />
 
       {/* Header Banner */}
-      <section className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-slate-900">
+      <section className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-gradient-to-br from-[#1a3323] via-lbbc-green to-[#0f2117]">
         <img src="/images/1VGQO92bvZODdTICHp8t8oKeGl4XcA5pd.png" alt="Contact Header" className="absolute inset-0 w-full h-full object-cover opacity-60" referrerPolicy="no-referrer" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#1a3323]/95 via-lbbc-green/50 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">

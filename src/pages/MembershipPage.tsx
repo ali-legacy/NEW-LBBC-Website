@@ -63,7 +63,7 @@ export const MembershipPage = () => {
         canonical="membership"
       />
       {/* Hero Banner */}
-      <section className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-slate-900">
+      <section className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-gradient-to-br from-[#1a3323] via-lbbc-green to-[#0f2117]">
         <picture className="absolute inset-0 w-full h-full">
           <source srcSet="/images/1AZ2sT2x2_l17cXYFOK3EwBg5Uocf-PVi.webp" type="image/webp" />
           <img
@@ -474,7 +474,7 @@ export const MembershipPage = () => {
             ))}
           </div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="bg-slate-900 rounded-2xl p-8 md:p-16 text-center space-y-8 relative overflow-hidden">
+          <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="bg-gradient-to-br from-[#1a3323] via-lbbc-green to-[#0f2117] rounded-2xl p-8 md:p-16 text-center space-y-8 relative overflow-hidden">
             <div className="relative z-10 space-y-6">
               <h3 className="text-2xl md:text-4xl font-black text-white tracking-tight">{t.membership.cta}</h3>
               <div className="pt-4">

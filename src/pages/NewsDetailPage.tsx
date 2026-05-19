@@ -95,7 +95,7 @@ export const NewsDetailPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-slate-950 py-16 md:py-24 text-white">
+      <section className="bg-gradient-to-br from-[#1a3323] via-lbbc-green to-[#0f2117] py-16 md:py-24 text-white relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-8">
           <h2 className="text-2xl md:text-4xl font-black tracking-tight">Stay informed with LBBC insights</h2>
           <div className="flex flex-wrap justify-center gap-4">

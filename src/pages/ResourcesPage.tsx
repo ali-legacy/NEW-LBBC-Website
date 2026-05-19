@@ -41,7 +41,7 @@ export const ResourcesPage = () => {
         canonical="resources"
       />
       {/* Hero Banner */}
-      <section className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-slate-900">
+      <section className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-gradient-to-br from-[#1a3323] via-lbbc-green to-[#0f2117]">
         <img 
           src="/images/1BV2ibrdYUyOZxrelp0xPGek2TsVWISM5.png" 
           alt="Resources Header" 
@@ -189,7 +189,11 @@ export const ResourcesPage = () => {
       </section>
 
       {/* Media Gallery Section */}
-      <section id="gallery" className="py-20 md:py-32 bg-slate-950 relative overflow-hidden text-white">
+      <section id="gallery" className="py-20 md:py-32 bg-gradient-to-br from-[#1a3323] via-lbbc-green to-[#0f2117] relative overflow-hidden text-white">
+        {/* Polish: dot texture + ambient glow */}
+        <div className="absolute inset-0 pointer-events-none" style={{backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)', backgroundSize: '24px 24px'}} />
+        <div className="absolute -top-32 right-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute -bottom-32 left-1/4 w-[500px] h-[500px] bg-[#0f2117]/60 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 md:mb-20">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="max-w-2xl">

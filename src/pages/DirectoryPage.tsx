@@ -136,7 +136,7 @@ export const DirectoryPage = () => {
       />
 
       {/* Hero Banner */}
-      <section className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-slate-900">
+      <section className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-gradient-to-br from-[#1a3323] via-lbbc-green to-[#0f2117]">
         <picture className="absolute inset-0 w-full h-full">
           <source srcSet="/images/1m0pcFsUJoAa0h4oTj57jnTosPbhuOTjS.webp" type="image/webp" />
           <img

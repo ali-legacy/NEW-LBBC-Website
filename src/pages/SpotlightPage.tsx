@@ -16,7 +16,7 @@ export const SpotlightPage = () => {
         canonical="spotlight/capterio"
       />
       {/* Hero Section */}
-      <section className="relative h-[300px] md:h-[400px] flex items-center overflow-hidden bg-slate-900">
+      <section className="relative h-[300px] md:h-[400px] flex items-center overflow-hidden bg-gradient-to-br from-[#1a3323] via-lbbc-green to-[#0f2117]">
         <img src="/images/1-Z-120GLfzNq146Ri6nfEDakfstYNxUy.png" alt="Capterio Spotlight" className="absolute inset-0 w-full h-full object-cover opacity-50" referrerPolicy="no-referrer" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
