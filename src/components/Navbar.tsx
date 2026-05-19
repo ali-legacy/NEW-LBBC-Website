@@ -176,24 +176,17 @@ export const Navbar = () => {
                 onMouseEnter={() => link.dropdown && setActiveDropdown(link.name)}
                 onMouseLeave={() => link.dropdown && setActiveDropdown(null)}
               >
-                {link.dropdown ? (
-                  <div className="flex items-center gap-1 cursor-pointer">
-                    <Link 
-                      to={link.href} 
-                      className={`text-[12px] font-black transition-colors uppercase tracking-[0.25em] ${location.pathname === link.href ? 'text-lbbc-green' : 'text-slate-800 hover:text-lbbc-red'}`}
-                    >
-                      {link.name}
-                    </Link>
-                    <ChevronDown size={14} className={`transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''} text-slate-400`} />
-                  </div>
-                ) : (
-                  <Link 
-                    to={link.href} 
-                    className={`text-[12px] font-black transition-colors uppercase tracking-[0.25em] ${location.pathname === link.href ? 'text-lbbc-green' : 'text-slate-800 hover:text-lbbc-red'}`}
+                <div className="flex items-center gap-1 cursor-pointer h-5">
+                  <Link
+                    to={link.href}
+                    className={`text-[12px] font-black leading-none transition-colors uppercase tracking-[0.25em] ${location.pathname === link.href ? 'text-lbbc-green' : 'text-slate-800 hover:text-lbbc-red'}`}
                   >
                     {link.name}
                   </Link>
-                )}
+                  {link.dropdown && (
+                    <ChevronDown size={14} className={`transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''} text-slate-400`} />
+                  )}
+                </div>
                 <span className={`absolute -bottom-2 start-0 h-0.5 transition-all duration-300 bg-lbbc-green ${location.pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
 
                 {/* Dropdown Menu */}
