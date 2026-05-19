@@ -24,6 +24,7 @@ export const Hero = () => {
       id: 2,
       image: '/images/lbbc-noc-mou-signing-v2.png',
       imageWebp: '/images/lbbc-noc-mou-signing-v2.webp',
+      objectPosition: '75% center',
       title: t.hero.slides[1].title,
       subtitle: t.hero.slides[1].subtitle,
       cta1: t.hero.slides[1].cta1,
@@ -74,6 +75,7 @@ export const Hero = () => {
               src={slides[currentSlide].image}
               alt="Hero Background"
               className="w-full h-full object-cover"
+              style={{ objectPosition: slides[currentSlide].objectPosition || 'center' }}
               fetchPriority={currentSlide === 0 ? 'high' : 'auto'}
             />
           </picture>
