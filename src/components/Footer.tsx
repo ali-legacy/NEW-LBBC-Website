@@ -124,7 +124,7 @@ export const Footer = () => {
                   {t.footer.tel}: +44 (0) 20 7788 7935
                 </a>
               </div>
-              <Link to="/contact" className="w-full block text-center py-3 md:py-4 bg-white text-lbbc-green rounded-sm text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-lbbc-red hover:text-white transition-all shadow-xl active:scale-95">
+              <Link to="/contact" className="glossy w-full block text-center py-3 md:py-4 bg-white text-lbbc-green rounded-sm text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-lbbc-red hover:text-white transition-all shadow-xl active:scale-95">
                 {t.nav.contact}
               </Link>
             </div>

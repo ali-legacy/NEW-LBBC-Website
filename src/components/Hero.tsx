@@ -115,7 +115,7 @@ export const Hero = () => {
                   href={slides[currentSlide].link1}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative overflow-hidden bg-lbbc-green text-white px-8 md:px-10 py-3.5 md:py-4 rounded-sm text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:shadow-[0_20px_40px_-10px_rgba(239,68,68,0.5)] active:scale-95 w-full sm:w-auto text-center"
+                  className="glossy group relative overflow-hidden bg-lbbc-green text-white px-8 md:px-10 py-3.5 md:py-4 rounded-sm text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:shadow-[0_20px_40px_-10px_rgba(239,68,68,0.5)] active:scale-95 w-full sm:w-auto text-center"
                 >
                   <span className="relative z-10">{slides[currentSlide].cta1}</span>
                   <div className="absolute inset-0 bg-lbbc-red translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
@@ -123,7 +123,7 @@ export const Hero = () => {
               ) : (
                 <Link 
                   to={slides[currentSlide].link1}
-                  className="group relative overflow-hidden bg-lbbc-green text-white px-8 md:px-10 py-3.5 md:py-4 rounded-sm text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:shadow-[0_20px_40px_-10px_rgba(239,68,68,0.5)] active:scale-95 w-full sm:w-auto text-center"
+                  className="glossy group relative overflow-hidden bg-lbbc-green text-white px-8 md:px-10 py-3.5 md:py-4 rounded-sm text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:shadow-[0_20px_40px_-10px_rgba(239,68,68,0.5)] active:scale-95 w-full sm:w-auto text-center"
                 >
                   <span className="relative z-10">{slides[currentSlide].cta1}</span>
                   <div className="absolute inset-0 bg-lbbc-red translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
@@ -135,14 +135,14 @@ export const Hero = () => {
                   href={slides[currentSlide].link2}
                   target={slides[currentSlide].link2.startsWith('http') ? "_blank" : undefined}
                   rel={slides[currentSlide].link2.startsWith('http') ? "noopener noreferrer" : undefined}
-                  className="bg-slate-900 border border-slate-900 text-white px-8 md:px-10 py-3.5 md:py-4 rounded-sm text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] hover:bg-black transition-all active:scale-95 w-full sm:w-auto text-center"
+                  className="glossy bg-slate-900 border border-slate-900 text-white px-8 md:px-10 py-3.5 md:py-4 rounded-sm text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] hover:bg-black transition-all active:scale-95 w-full sm:w-auto text-center"
                 >
                   {slides[currentSlide].cta2}
                 </a>
               ) : (
                 <Link 
                   to={slides[currentSlide].link2 || '#'}
-                  className="bg-slate-900 border border-slate-900 text-white px-8 md:px-10 py-3.5 md:py-4 rounded-sm text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] hover:bg-black transition-all active:scale-95 w-full sm:w-auto text-center"
+                  className="glossy bg-slate-900 border border-slate-900 text-white px-8 md:px-10 py-3.5 md:py-4 rounded-sm text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] hover:bg-black transition-all active:scale-95 w-full sm:w-auto text-center"
                 >
                   {slides[currentSlide].cta2}
                 </Link>

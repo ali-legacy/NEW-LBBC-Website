@@ -142,7 +142,7 @@ export const Navbar = () => {
               
               <Link 
                 to="/membership"
-                className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] bg-white text-lbbc-green px-3 md:px-5 py-1.5 md:py-2 rounded-sm hover:bg-lbbc-red hover:text-white transition-all shadow-lg active:scale-95 whitespace-nowrap"
+                className="glossy text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] bg-white text-lbbc-green px-3 md:px-5 py-1.5 md:py-2 rounded-sm hover:bg-lbbc-red hover:text-white transition-all shadow-lg active:scale-95 whitespace-nowrap"
               >
                 {t.nav.joinUs}
               </Link>
@@ -363,7 +363,7 @@ export const Navbar = () => {
                 <Link 
                   to="/membership"
                   onClick={() => setIsOpen(false)}
-                  className="w-full py-5 bg-lbbc-green text-white font-black uppercase tracking-[0.2em] rounded-sm shadow-xl hover:bg-lbbc-red transition-all text-center block"
+                  className="glossy w-full py-5 bg-lbbc-green text-white font-black uppercase tracking-[0.2em] rounded-sm shadow-xl hover:bg-lbbc-red transition-all text-center block"
                 >
                   {t.nav.joinUs}
                 </Link>

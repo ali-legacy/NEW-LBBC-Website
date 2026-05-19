@@ -28,7 +28,7 @@ const ErrorFallback = () => (
     <p className="text-slate-700 font-semibold text-lg">Something went wrong loading this page.</p>
     <button
       onClick={() => window.location.reload()}
-      className="bg-lbbc-green text-white px-6 py-2 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-lbbc-red transition-colors"
+      className="glossy bg-lbbc-green text-white px-6 py-2 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-lbbc-red transition-colors"
     >
       Retry
     </button>

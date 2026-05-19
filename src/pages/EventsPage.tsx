@@ -226,7 +226,7 @@ export const EventsPage = () => {
               href="https://lbbc.glueup.com/home/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-lbbc-green text-white px-10 py-4 rounded-sm text-[11px] font-black hover:bg-lbbc-red transition-all shadow-xl active:scale-95 text-center"
+              className="glossy w-full sm:w-auto bg-lbbc-green text-white px-10 py-4 rounded-sm text-[11px] font-black hover:bg-lbbc-red transition-all shadow-xl active:scale-95 text-center"
             >
               {t.events.memberSignIn}
             </a>
@@ -253,7 +253,7 @@ export const EventsPage = () => {
             </p>
             <a
               href="mailto:events@lbbc.org.uk"
-              className="inline-flex items-center justify-center gap-3 bg-lbbc-green text-white px-10 py-4 rounded-sm text-[11px] font-black hover:bg-lbbc-red transition-all shadow-xl active:scale-95"
+              className="glossy inline-flex items-center justify-center gap-3 bg-lbbc-green text-white px-10 py-4 rounded-sm text-[11px] font-black hover:bg-lbbc-red transition-all shadow-xl active:scale-95"
             >
               {t.events.contactUs} <Mail size={16} />
             </a>

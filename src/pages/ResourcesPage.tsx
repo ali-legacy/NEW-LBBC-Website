@@ -100,7 +100,7 @@ export const ResourcesPage = () => {
                     <span className="text-lbbc-green font-black text-[9px] tracking-widest uppercase">{pdf.category}</span>
                     <h3 className="text-sm md:text-base font-extrabold text-slate-900 group-hover:text-lbbc-red transition-colors leading-tight min-h-[3rem] line-clamp-2">{pdf.title}</h3>
                   </div>
-                  <button className="mt-auto flex items-center justify-center gap-2 bg-slate-900 text-white px-4 py-3 rounded-sm text-[9px] font-bold uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-lg group/btn">
+                  <button className="glossy mt-auto flex items-center justify-center gap-2 bg-slate-900 text-white px-4 py-3 rounded-sm text-[9px] font-bold uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-lg group/btn">
                     <Download size={14} className="group-hover/btn:translate-y-0.5 transition-transform" />
                     {t.resources.download}
                   </button>
@@ -142,7 +142,7 @@ export const ResourcesPage = () => {
               <div className="pt-4">
                 <Link 
                   to="/membership" 
-                  className="inline-flex items-center gap-3 bg-lbbc-green text-white px-10 py-5 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-2xl shadow-lbbc-green/20 group"
+                  className="glossy inline-flex items-center gap-3 bg-lbbc-green text-white px-10 py-5 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-2xl shadow-lbbc-green/20 group"
                 >
                   {t.resources.supporting.cta}
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -189,11 +189,11 @@ export const ResourcesPage = () => {
       </section>
 
       {/* Media Gallery Section */}
-      <section id="gallery" className="py-20 md:py-32 bg-gradient-to-br from-[#1a3323] via-lbbc-green to-[#0f2117] relative overflow-hidden text-white">
+      <section id="gallery" className="py-20 md:py-32 bg-gradient-to-br from-[#0a1f3d] via-[#1e3a8a] to-[#091224] relative overflow-hidden text-white">
         {/* Polish: dot texture + ambient glow */}
         <div className="absolute inset-0 pointer-events-none" style={{backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)', backgroundSize: '24px 24px'}} />
         <div className="absolute -top-32 right-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute -bottom-32 left-1/4 w-[500px] h-[500px] bg-[#0f2117]/60 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute -bottom-32 left-1/4 w-[500px] h-[500px] bg-[#091224]/60 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 md:mb-20">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="max-w-2xl">
@@ -206,7 +206,7 @@ export const ResourcesPage = () => {
               </h2>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <a href="https://www.flickr.com/photos/legacy_libya/albums" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-white text-lbbc-green px-8 py-4 rounded-sm text-xs font-black uppercase tracking-widest hover:bg-lbbc-red hover:text-white transition-all shadow-2xl group">
+              <a href="https://www.flickr.com/photos/legacy_libya/albums" target="_blank" rel="noopener noreferrer" className="glossy inline-flex items-center gap-3 bg-white text-lbbc-green px-8 py-4 rounded-sm text-xs font-black uppercase tracking-widest hover:bg-lbbc-red hover:text-white transition-all shadow-2xl group">
                 {t.gallery.cta}
                 <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </a>

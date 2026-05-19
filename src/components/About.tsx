@@ -33,7 +33,7 @@ export const About = () => {
             <div className="pt-6 md:pt-8">
               <Link 
                 to="/about"
-                className="inline-flex items-center justify-center gap-3 bg-lbbc-green text-white px-10 py-4 rounded-sm text-[11px] font-black uppercase tracking-[0.2em] hover:bg-lbbc-red transition-all shadow-xl active:scale-95"
+                className="glossy inline-flex items-center justify-center gap-3 bg-lbbc-green text-white px-10 py-4 rounded-sm text-[11px] font-black uppercase tracking-[0.2em] hover:bg-lbbc-red transition-all shadow-xl active:scale-95"
               >
                 {t.about.cta} <ArrowRight size={16} />
               </Link>

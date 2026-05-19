@@ -99,7 +99,7 @@ export const NewsDetailPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-8">
           <h2 className="text-2xl md:text-4xl font-black tracking-tight">Stay informed with LBBC insights</h2>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/membership" className="bg-lbbc-green text-white px-8 py-4 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-lbbc-accent transition-all shadow-xl">
+            <Link to="/membership" className="glossy bg-lbbc-green text-white px-8 py-4 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-lbbc-accent transition-all shadow-xl">
               Become a Member
             </Link>
             <Link to="/contact" className="border border-white/20 text-white px-8 py-4 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-white hover:text-slate-950 transition-all">

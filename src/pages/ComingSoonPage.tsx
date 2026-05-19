@@ -62,7 +62,7 @@ export const ComingSoonPage = () => {
           <div className="pt-8">
             <button 
               onClick={() => setLanguage('en')}
-              className="inline-flex items-center gap-3 bg-slate-900 text-white px-10 py-5 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-lbbc-green transition-all shadow-2xl active:scale-95 group"
+              className="glossy inline-flex items-center gap-3 bg-slate-900 text-white px-10 py-5 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-lbbc-green transition-all shadow-2xl active:scale-95 group"
             >
               <ArrowUpRight size={18} className="rotate-180 group-hover:-translate-x-1 transition-transform" />
               Return to English Site / العودة إلى الموقع الإنجليزي
