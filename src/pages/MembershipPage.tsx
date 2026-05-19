@@ -118,7 +118,7 @@ export const MembershipPage = () => {
               >
                 <Link 
                   to="/membership#tiers"
-                  className="glossy inline-flex items-center gap-2 bg-lbbc-green text-white px-8 py-4 rounded-sm font-black uppercase tracking-widest text-[10px] hover:bg-lbbc-accent transition-all shadow-lg hover:shadow-xl group"
+                  className="inline-flex items-center gap-2 bg-lbbc-green text-white px-8 py-4 rounded-sm font-black uppercase tracking-widest text-[10px] hover:bg-lbbc-accent transition-all shadow-lg hover:shadow-xl group"
                 >
                   {t.membership.exploreTiers}
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -425,13 +425,13 @@ export const MembershipPage = () => {
                 <tr className="bg-slate-50/30">
                   <td className="px-6 py-10 font-extrabold text-slate-900 border-r border-slate-100 bg-slate-50/50">{t.membership.cta}</td>
                   <td className="px-6 py-10 text-center border-r border-slate-100">
-                    <a href={tiers[0].link.url} target="_blank" rel="noopener noreferrer" className="glossy bg-lbbc-green text-white px-4 py-3 rounded-sm font-black text-[9px] uppercase tracking-widest hover:bg-lbbc-accent transition-all shadow-md w-full max-w-[200px] text-center inline-block">{tiers[0].link.label}</a>
+                    <a href={tiers[0].link.url} target="_blank" rel="noopener noreferrer" className="bg-lbbc-green text-white px-4 py-3 rounded-sm font-black text-[9px] uppercase tracking-widest hover:bg-lbbc-accent transition-all shadow-md w-full max-w-[200px] text-center inline-block">{tiers[0].link.label}</a>
                   </td>
                   <td className="px-6 py-10 text-center border-r border-slate-100">
-                    <a href={tiers[1].link.url} target="_blank" rel="noopener noreferrer" className="glossy bg-slate-900 text-white px-4 py-3 rounded-sm font-black text-[9px] uppercase tracking-widest hover:bg-slate-800 transition-all shadow-md w-full max-w-[200px] text-center inline-block">{tiers[1].link.label}</a>
+                    <a href={tiers[1].link.url} target="_blank" rel="noopener noreferrer" className="bg-slate-900 text-white px-4 py-3 rounded-sm font-black text-[9px] uppercase tracking-widest hover:bg-slate-800 transition-all shadow-md w-full max-w-[200px] text-center inline-block">{tiers[1].link.label}</a>
                   </td>
                   <td className="px-6 py-10 text-center">
-                    <a href={tiers[2].link.url} target="_blank" rel="noopener noreferrer" className="glossy bg-slate-900 text-white px-4 py-3 rounded-sm font-black text-[9px] uppercase tracking-widest hover:bg-slate-800 transition-all shadow-md w-full max-w-[200px] text-center inline-block">{tiers[2].link.label}</a>
+                    <a href={tiers[2].link.url} target="_blank" rel="noopener noreferrer" className="bg-slate-900 text-white px-4 py-3 rounded-sm font-black text-[9px] uppercase tracking-widest hover:bg-slate-800 transition-all shadow-md w-full max-w-[200px] text-center inline-block">{tiers[2].link.label}</a>
                   </td>
                 </tr>
               </tbody>
@@ -478,7 +478,7 @@ export const MembershipPage = () => {
             <div className="relative z-10 space-y-6">
               <h3 className="text-2xl md:text-4xl font-black text-white tracking-tight">{t.membership.cta}</h3>
               <div className="pt-4">
-                <Link to="/membership#tiers" className="glossy inline-flex items-center gap-3 bg-lbbc-green text-white px-10 py-4 rounded-sm font-black text-xs uppercase tracking-[0.2em] hover:bg-lbbc-accent transition-all shadow-xl group">
+                <Link to="/membership#tiers" className="inline-flex items-center gap-3 bg-lbbc-green text-white px-10 py-4 rounded-sm font-black text-xs uppercase tracking-[0.2em] hover:bg-lbbc-accent transition-all shadow-xl group">
                   {t.hero.slides[0].cta1}
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>

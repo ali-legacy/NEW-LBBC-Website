@@ -42,7 +42,7 @@ export const SpotlightPage = () => {
                 <p>{story.p5}</p>
                 <p>{story.p6}</p>
                 <div className="pt-12 border-t border-slate-100">
-                  <Link to="/membership" className="glossy inline-flex items-center gap-3 bg-lbbc-green text-white px-8 py-4 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-lbbc-accent transition-all shadow-xl group">
+                  <Link to="/membership" className="inline-flex items-center gap-3 bg-lbbc-green text-white px-8 py-4 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-lbbc-accent transition-all shadow-xl group">
                     {story.cta}
                     <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </Link>

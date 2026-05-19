@@ -100,7 +100,7 @@ export const ResourcesPage = () => {
                     <span className="text-lbbc-green font-black text-[9px] tracking-widest uppercase">{pdf.category}</span>
                     <h3 className="text-sm md:text-base font-extrabold text-slate-900 group-hover:text-lbbc-red transition-colors leading-tight min-h-[3rem] line-clamp-2">{pdf.title}</h3>
                   </div>
-                  <button className="glossy mt-auto flex items-center justify-center gap-2 bg-slate-900 text-white px-4 py-3 rounded-sm text-[9px] font-bold uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-lg group/btn">
+                  <button className="mt-auto flex items-center justify-center gap-2 bg-slate-900 text-white px-4 py-3 rounded-sm text-[9px] font-bold uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-lg group/btn">
                     <Download size={14} className="group-hover/btn:translate-y-0.5 transition-transform" />
                     {t.resources.download}
                   </button>
@@ -142,7 +142,7 @@ export const ResourcesPage = () => {
               <div className="pt-4">
                 <Link 
                   to="/membership" 
-                  className="glossy inline-flex items-center gap-3 bg-lbbc-green text-white px-10 py-5 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-2xl shadow-lbbc-green/20 group"
+                  className="inline-flex items-center gap-3 bg-lbbc-green text-white px-10 py-5 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-2xl shadow-lbbc-green/20 group"
                 >
                   {t.resources.supporting.cta}
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -206,7 +206,7 @@ export const ResourcesPage = () => {
               </h2>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <a href="https://www.flickr.com/photos/legacy_libya/albums" target="_blank" rel="noopener noreferrer" className="glossy inline-flex items-center gap-3 bg-white text-lbbc-green px-8 py-4 rounded-sm text-xs font-black uppercase tracking-widest hover:bg-lbbc-red hover:text-white transition-all shadow-2xl group">
+              <a href="https://www.flickr.com/photos/legacy_libya/albums" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-white text-lbbc-green px-8 py-4 rounded-sm text-xs font-black uppercase tracking-widest hover:bg-lbbc-red hover:text-white transition-all shadow-2xl group">
                 {t.gallery.cta}
                 <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </a>

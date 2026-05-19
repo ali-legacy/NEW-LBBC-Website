@@ -247,7 +247,7 @@ export const ContactPage = () => {
                         <button
                           type="submit"
                           disabled={isDisabled}
-                          className="glossy inline-flex items-center gap-3 bg-lbbc-green text-white px-10 py-4 rounded-sm font-black text-xs uppercase tracking-[0.2em] hover:bg-lbbc-accent transition-all shadow-xl group w-full md:w-auto justify-center disabled:opacity-70 disabled:cursor-not-allowed"
+                          className="inline-flex items-center gap-3 bg-lbbc-green text-white px-10 py-4 rounded-sm font-black text-xs uppercase tracking-[0.2em] hover:bg-lbbc-accent transition-all shadow-xl group w-full md:w-auto justify-center disabled:opacity-70 disabled:cursor-not-allowed"
                         >
                           {status === 'submitting' ? (
                             <>

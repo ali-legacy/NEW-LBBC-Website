@@ -124,7 +124,7 @@ export const UpcomingEvents = () => {
           <span className="text-lbbc-green font-bold text-[10px] md:text-[11px] uppercase tracking-[0.3em] block">{t.nav.upcoming.toUpperCase()}</span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">{t.nav.events}</h2>
           <p className="text-slate-500 text-base max-w-xl mx-auto">View our full schedule of upcoming and past events on the events page.</p>
-          <Link to="/events" className="glossy inline-flex items-center gap-3 bg-lbbc-green text-white px-8 py-4 rounded-sm text-[10px] font-black uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-xl active:scale-95">
+          <Link to="/events" className="inline-flex items-center gap-3 bg-lbbc-green text-white px-8 py-4 rounded-sm text-[10px] font-black uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-xl active:scale-95">
             {t.events.viewAll} <ArrowRight size={16} />
           </Link>
         </div>
@@ -215,7 +215,7 @@ export const FeaturedStory = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6 md:gap-8 pt-4">
               <Link
                 to="/news/lbbc-noc-mou-energy-forum"
-                className="glossy w-full sm:w-auto bg-lbbc-green text-white px-8 md:px-10 py-4 rounded-sm text-xs font-bold hover:bg-lbbc-red transition-all uppercase tracking-widest shadow-xl text-center"
+                className="w-full sm:w-auto bg-lbbc-green text-white px-8 md:px-10 py-4 rounded-sm text-xs font-bold hover:bg-lbbc-red transition-all uppercase tracking-widest shadow-xl text-center"
               >
                 {t.featured.cta}
               </Link>
@@ -293,7 +293,7 @@ export const LatestNews = () => {
         <div className="mt-12 md:mt-20 flex flex-col sm:flex-row justify-center gap-4 md:gap-6 px-4">
           <Link
             to="/resources#news"
-            className="glossy w-full sm:w-auto bg-lbbc-green text-white px-8 md:px-10 py-3 md:py-4 rounded-sm text-xs font-bold hover:bg-lbbc-red transition-all uppercase tracking-widest shadow-xl text-center"
+            className="w-full sm:w-auto bg-lbbc-green text-white px-8 md:px-10 py-3 md:py-4 rounded-sm text-xs font-bold hover:bg-lbbc-red transition-all uppercase tracking-widest shadow-xl text-center"
           >
             {t.news.more}
           </Link>

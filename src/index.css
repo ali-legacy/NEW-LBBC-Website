@@ -58,34 +58,6 @@
   @apply bg-white/90 backdrop-blur-md border border-slate-200;
 }
 
-/* ─── Glossy button polish ───────────────────────────────────────────────────
-   Adds a premium top-to-bottom sheen (light → fade → soft shadow) over any
-   solid base color without changing the base color. Apply `glossy` to any
-   solid-coloured button or pill. */
-.glossy {
-  position: relative;
-  isolation: isolate;
-}
-.glossy::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.22) 0%,
-    rgba(255, 255, 255, 0.06) 45%,
-    rgba(0, 0, 0, 0.05) 85%,
-    rgba(0, 0, 0, 0.18) 100%
-  );
-  pointer-events: none;
-  z-index: 1;
-}
-.glossy > * {
-  position: relative;
-  z-index: 2;
-}
-
 .text-balance {
   text-wrap: balance;
 }

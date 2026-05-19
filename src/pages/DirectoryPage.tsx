@@ -118,7 +118,7 @@ export const DirectoryPage = () => {
                     href={selected.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="glossy inline-flex items-center gap-2 bg-lbbc-green text-white px-6 py-3 rounded-sm text-[11px] font-black hover:bg-lbbc-red transition-all shadow-md active:scale-95"
+                    className="inline-flex items-center gap-2 bg-lbbc-green text-white px-6 py-3 rounded-sm text-[11px] font-black hover:bg-lbbc-red transition-all shadow-md active:scale-95"
                   >
                     {t.directory.visitWebsite} <ExternalLink size={13} />
                   </a>
