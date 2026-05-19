@@ -22,14 +22,14 @@ export const Hero = () => {
     },
     {
       id: 2,
-      image: '/images/1G7_hqOMqyE9YeNN58gubHQ2W3gtv5SQI.png',
-      imageWebp: '/images/1G7_hqOMqyE9YeNN58gubHQ2W3gtv5SQI.webp',
+      image: '/images/lbbc-noc-mou-signing.png',
+      imageWebp: '/images/lbbc-noc-mou-signing.webp',
       title: t.hero.slides[1].title,
       subtitle: t.hero.slides[1].subtitle,
       cta1: t.hero.slides[1].cta1,
       cta2: t.hero.slides[1].cta2,
-      link1: 'https://lbbc.glueup.com/event/realising-libyas-energy-ambitions-173494/',
-      link2: 'mailto:events@lbbc.org.uk'
+      link1: '/news/lbbc-noc-mou-energy-forum',
+      link2: '/membership'
     },
     {
       id: 3,
@@ -135,14 +135,14 @@ export const Hero = () => {
                   href={slides[currentSlide].link2}
                   target={slides[currentSlide].link2.startsWith('http') ? "_blank" : undefined}
                   rel={slides[currentSlide].link2.startsWith('http') ? "noopener noreferrer" : undefined}
-                  className="bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 md:px-10 py-3.5 md:py-4 rounded-sm text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] hover:bg-white/10 transition-all active:scale-95 w-full sm:w-auto text-center"
+                  className="bg-slate-900 border border-slate-900 text-white px-8 md:px-10 py-3.5 md:py-4 rounded-sm text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] hover:bg-black transition-all active:scale-95 w-full sm:w-auto text-center"
                 >
                   {slides[currentSlide].cta2}
                 </a>
               ) : (
                 <Link 
                   to={slides[currentSlide].link2 || '#'}
-                  className="bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 md:px-10 py-3.5 md:py-4 rounded-sm text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] hover:bg-white/10 transition-all active:scale-95 w-full sm:w-auto text-center"
+                  className="bg-slate-900 border border-slate-900 text-white px-8 md:px-10 py-3.5 md:py-4 rounded-sm text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] hover:bg-black transition-all active:scale-95 w-full sm:w-auto text-center"
                 >
                   {slides[currentSlide].cta2}
                 </Link>
