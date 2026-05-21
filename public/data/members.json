@@ -1004,6 +1004,17 @@
       "website": "https://www.mees.com/"
     },
     {
+      "name": "Middle East Association",
+      "sector": "International Trade & Development",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/5df5cc92-9cd6-47a7-a325-8ba11bae937f.png",
+      "id": "4401891",
+      "glueupId": "3708250",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "The Middle East Association (MEA) is the UK’s leading business and policy forum promoting trade, investment, and diplomatic engagement with the Middle East and North Africa.OverviewFounded in 1961, the MEA is an independent, not-for-profit membership organization based in London, dedicated to fostering trade, education, investment, and cultural understanding between the UK and the MENA region. It serves as a platform for high-level dialogue among government officials, business leaders, diplomats, and academics, creating a neutral space for strategic discussions and collaboration.",
+      "website": "https://www.the-mea.com/"
+    },
+    {
       "name": "Miller and Lents",
       "sector": "Oil & Gas",
       "logo": null,
@@ -1521,7 +1532,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1779257765988,
+  "timestamp": 1779344234853,
   "source": "live-scrape",
-  "totalMembers": 138
+  "totalMembers": 139
 }
