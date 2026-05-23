@@ -166,17 +166,6 @@
       "website": "https://www.equinor.com"
     },
     {
-      "name": "Eversheds Sutherland",
-      "sector": "Legal",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/3dab1abc-fd09-47ff-80e2-cdb4d218038c.png",
-      "id": "2000101",
-      "glueupId": "1667686",
-      "membershipType": "council",
-      "members": [],
-      "about": "As a global top 10 law practice, Eversheds Sutherland provides legal advice and solutions to an international client base which includes some of the world’s largest multinationals.",
-      "website": "https://www.eversheds-sutherland.com"
-    },
-    {
       "name": "Expertise Consultancy",
       "sector": "Logistics & Supply Chain",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/43bc1a4b-73dc-4eea-899d-854644a33277.png",
@@ -186,17 +175,6 @@
       "members": [],
       "about": "Expertise Consultancy offers the comprehensive capabilities and Deep industry knowledge necessary to help you operate in the most fluid and complex scenarios within such a fragile environment. We use a consultative approach to operational, logistics and security in Libya.At Expertise Consultancy, we combine our insights and skills to transform your processes and strategies, and in turn, provide you with a unique operating capability in a challenging environment. we are proud to utilise our unique capabilities within Libya to be able to provide our clients with turnkey security and logistical solutions.",
       "website": "https://www.expertiseconsultancy.com"
-    },
-    {
-      "name": "Global Consolidated Contractors International",
-      "sector": "Construction",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/2d54e490-0cc2-4f20-912d-4029a1f04cac.png",
-      "id": "2820826",
-      "glueupId": "2332755",
-      "membershipType": "council",
-      "members": [],
-      "about": null,
-      "website": "https://www.gcc-intl.com/"
     },
     {
       "name": "Gulfsands Petroleum Plc",
@@ -586,7 +564,7 @@
       "website": null
     },
     {
-      "name": "Black Rock oil and gas",
+      "name": "Black Rock for Oil Services",
       "sector": "Oil & Gas",
       "logo": null,
       "id": "3349232",
@@ -762,6 +740,17 @@
       "website": "https://www.e-ssltd.co.uk"
     },
     {
+      "name": "Eversheds Sutherland (International) LLP",
+      "sector": "Legal",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/3dab1abc-fd09-47ff-80e2-cdb4d218038c.png",
+      "id": "2000101",
+      "glueupId": "1667686",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "As a global top 10 law practice, Eversheds Sutherland provides legal advice and solutions to an international client base which includes some of the world’s largest multinationals.",
+      "website": "https://www.eversheds-sutherland.com"
+    },
+    {
       "name": "Foreign, Commonwealth & Development Office",
       "sector": "Other",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/401aa56d-11ab-42c1-b6a2-1dc508bc6c1a.png",
@@ -828,6 +817,17 @@
       "website": "https://WWW.GIBUKPLC.COM"
     },
     {
+      "name": "Global  Consolidated Contractors International Ltd",
+      "sector": "Construction",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/2d54e490-0cc2-4f20-912d-4029a1f04cac.png",
+      "id": "2820826",
+      "glueupId": "2332755",
+      "membershipType": "corporate",
+      "members": [],
+      "about": null,
+      "website": "https://www.gcc-intl.com/"
+    },
+    {
       "name": "InnoGrow Sàrl",
       "sector": "Business Consulting",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/048dc66e-4ad3-4f4a-a1b5-8797065e0ffb.png",
@@ -850,7 +850,7 @@
       "website": "https://www.itkan.ly"
     },
     {
-      "name": "John Reid & Sons",
+      "name": "John Reid & Sons (Strucsteel) Ltd",
       "sector": "Construction",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/b5d00279-31c3-4e63-857a-9694e937fa8e.png",
       "id": "2002253",
@@ -1532,7 +1532,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1779430582964,
+  "timestamp": 1779515099282,
   "source": "live-scrape",
   "totalMembers": 139
 }
