@@ -221,17 +221,6 @@
       "website": "https://www.kashadah.com"
     },
     {
-      "name": "Libya Holdings",
-      "sector": "Other",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/7e0f337b-c586-4fb6-8c6c-0bb906f40a51.png",
-      "id": "2000118",
-      "glueupId": "1667703",
-      "membershipType": "council",
-      "members": [],
-      "about": "In addition to its direct investment activities, Libya Holdings has entered into several strategic partnerships with large international companies to create operating businesses in Libya. Libya Holdings provides its partners with local knowledge, a network of contacts, operational support and seed capital.",
-      "website": "https://www.libyaholdings.com"
-    },
-    {
       "name": "METLEN Energy & Metals SA",
       "sector": "Energy",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/22c436eb-fe60-4f4b-91df-2012736ad49b.png",
@@ -252,17 +241,6 @@
       "members": [],
       "about": "Free Zones are one of the most important resources that serve as national economic growth drivers. They have become popular globally due to their effective role in encouraging foreign direct investment and facilitating the global trade by offering a set of incentives such as tax and customs duty exemption and simplified administrative procedures.Free zones are designated and organized by law to host industrial, commercial, and service operations that are available to all those interested in investing in Libya.Based on the Libyan government regulations to take advantage of the superb country location and to promote and diversify the national economy, Misurata Free Zone (MFZ) was established in 2000 as one of series of economic development projects.Misurata Free Zone (MFZ) is the first free-trade zone established in Libya, based on Act No (9/2000) for free zones and transit trade. The core objectives of MFZ are to increase the revenue sources, to contribute in supporting the local economy, and to provide employment and training opportunities. Such goals are achieved by creating an attractive investment environment where all free-trade activities are facilitated and liberalized.MFZ strives to be the world’s gateway to Africa and open the doors to both local and foreign investors to develop the international trade and investment at this transit location.VisionTo be recognized as a leading trade and investment hub in the Mediterranean.MissionWe are committed to providing a safe and attractive environment for local and foreign investors and to meeting the customers’ needs by offering a wide range of facilities and business support services.",
       "website": "https://mfzly.com"
-    },
-    {
-      "name": "Murzuq Oil",
-      "sector": "Energy",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/d4ae7c54-1169-415b-b3e6-f5ae61d3e2fd.png",
-      "id": "2000109",
-      "glueupId": "1667694",
-      "membershipType": "council",
-      "members": [],
-      "about": "Murzuq Oil Services Limited’s purpose is to advise and support the NOC and its affiliates in their mission to develop Libya’s energy assets for the advancement of Libya and its citizens.",
-      "website": "https://murzuqoilservices.co.uk"
     },
     {
       "name": "North south global sl",
@@ -454,7 +432,7 @@
       "website": "https://www.alberta.com.mt"
     },
     {
-      "name": "Albertson",
+      "name": "Albertson Solicitors",
       "sector": "Law Practice",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/58a9e656-d59b-4599-ba0e-56fa776ad0fb.png",
       "id": "3282885",
@@ -509,7 +487,7 @@
       "website": "https://www.ash-os.com"
     },
     {
-      "name": "Atava Education and Training",
+      "name": "Atava Education & Training",
       "sector": "Education Management",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/8f8325f5-929b-463c-8a90-3a4a6e63fcc6.png",
       "id": "2763917",
@@ -520,7 +498,7 @@
       "website": "https://www.atava.co.uk"
     },
     {
-      "name": "Audere Group",
+      "name": "Audere Group Ltd",
       "sector": "Other",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/92f85dea-3939-4126-9c02-8be402388d62.png",
       "id": "3925844",
@@ -927,6 +905,17 @@
       "website": "https://www.linkedin.com/company/leptis-business-services/about"
     },
     {
+      "name": "LH Severus Investment Partner",
+      "sector": "Other",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/08ea34fd-27b5-418b-9a35-23dd0319e796.png",
+      "id": "2000118",
+      "glueupId": "1667703",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "Facilitating the growth and developmentof commercial enterprise in LibyaWe help facilitate the growth and development of commercial enterprise in Libya by forming strategic partnerships with international and domestic companies in targeted industry sectors, including oil & gas, infrastructure and financial services.The focus of activities for LHS has been in providing its commercial partners with the local knowledge, network of contacts, operational support and seed capital for co-investments that will be required to create and grow successful enterprises in Libya.",
+      "website": "https://www.libyaholdings.com"
+    },
+    {
       "name": "Libya United Security",
       "sector": "Security & Investigations",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/73b8bd1e-e315-4a9c-956b-2e875e6f104e.png",
@@ -1070,6 +1059,17 @@
       "website": null
     },
     {
+      "name": "Murzuq Oil Services Limited",
+      "sector": "Energy",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/d4ae7c54-1169-415b-b3e6-f5ae61d3e2fd.png",
+      "id": "2000109",
+      "glueupId": "1667694",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "Murzuq Oil Services Limited’s purpose is to advise and support the NOC and its affiliates in their mission to develop Libya’s energy assets for the advancement of Libya and its citizens.",
+      "website": "https://murzuqoilservices.co.uk"
+    },
+    {
       "name": "Naas Corp Ltd",
       "sector": "Energy",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/52f7bc0b-070a-41c8-91da-0faf5d52778a.png",
@@ -1136,17 +1136,6 @@
       "website": "https://www.palmcityresidences.com"
     },
     {
-      "name": "Petro-Vision",
-      "sector": "Energy",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/1ac87f4c-0ea8-43b1-9d7b-fabd0468fcd3.png",
-      "id": "3034527",
-      "glueupId": "2486543",
-      "membershipType": "corporate",
-      "members": [],
-      "about": "PetroVision is an energy consultancy firm designed toprovide integrated and specialized services to the energy sector and financial Institutions.We are an ISO9001:2015 standard certified company with offices in London, Lagos and Cape Town.",
-      "website": "https://petro-vision.com/"
-    },
-    {
       "name": "Petrofac Services Ltd",
       "sector": "Energy",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/f136a599-5ab9-4cdf-9c86-a9cf189035e0.png",
@@ -1158,7 +1147,7 @@
       "website": "http://www.petrofac.com"
     },
     {
-      "name": "PetroGas Oil Services",
+      "name": "PetroGas",
       "sector": "Oil & Gas",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/d722ffb3-eb11-4334-a842-a03ee2d904ee.png",
       "id": "3537758",
@@ -1178,6 +1167,17 @@
       "members": [],
       "about": "PetroStrat is a leading provider of integrated geoscience services, delivering best-in-class geological solutions to the energy industry globally.",
       "website": "https://www.petrostrat.com"
+    },
+    {
+      "name": "PetroVision Energy Services",
+      "sector": "Energy",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/1ac87f4c-0ea8-43b1-9d7b-fabd0468fcd3.png",
+      "id": "3034527",
+      "glueupId": "2486543",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "PetroVision is an energy consultancy firm designed toprovide integrated and specialized services to the energy sector and financial Institutions.We are an ISO9001:2015 standard certified company with offices in London, Lagos and Cape Town.",
+      "website": "https://petro-vision.com/"
     },
     {
       "name": "PLanit Travel UK",
@@ -1204,7 +1204,7 @@
     {
       "name": "Premier Corex Limited",
       "sector": "Other",
-      "logo": null,
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/9485193a-3ae3-4b43-92c1-2d3d9a01ab30.png",
       "id": "4330946",
       "glueupId": "3660338",
       "membershipType": "corporate",
@@ -1257,7 +1257,7 @@
       "website": "https://relyon.com/"
     },
     {
-      "name": "Rida technical services",
+      "name": "Rida TS",
       "sector": "Oil & Gas",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/55115740-06ac-422c-802a-d2e6288b60b4.png",
       "id": "4221532",
@@ -1389,9 +1389,9 @@
       "website": "https://www.tgs.com/"
     },
     {
-      "name": "The Engineer for technical and oil Services Co. (ETOS Co.)",
-      "sector": "Oil & Gas",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/76a34502-e39f-4a42-9a4f-a7ebff58b7e3.png",
+      "name": "The Engineers for Technical and Oil Services Co. (ETOS)",
+      "sector": "Energy",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/3c3dc2e5-dc65-4c94-bb31-4107f2a1de28.png",
       "id": "2708442",
       "glueupId": "2209382",
       "membershipType": "corporate",
@@ -1400,26 +1400,15 @@
       "website": "https://www.etos.com.ly"
     },
     {
-      "name": "The Engineers for Technical and Oil Services Co. (ETOS",
-      "sector": "Oil & Gas",
-      "logo": null,
+      "name": "The Engineers for Technical and Oil Services Co. (ETOS)",
+      "sector": "Energy",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/3c3dc2e5-dc65-4c94-bb31-4107f2a1de28.png",
       "id": "4255908",
       "glueupId": "3592283",
       "membershipType": "corporate",
       "members": [],
-      "about": "The Engineers for Technical and Oil Services (ETOS) is a service provider capable of providing a wide range of services in the energy sector, both for onshore and offshore projects in the Oil, Gas, Chemical and Associated Industries.ETOS offers a complete services including Project Management, Engineering, Procurement, Construction Management, Training and related activities. The Company is a registered and based on Tripoli, Libya with the basis of strong organization and extensive experience in the Oil and Gas Industry.",
+      "about": "ETOS is a leading service provider specializing in the energy sector. We offer a comprehensive range of solutions for both onshore and offshore projects across the oil, gas, chemical, and related industries. Our team of experienced engineers is dedicated to delivering exceptional results and meeting the unique needs of our clients.Our areas of expertise include:- General Oil and Gas Maintenance: Comprehensive maintenance services for oil and gas facilities.- Tank Repair and Construction: Specialized expertise in repairing and constructing various types of tanks.- Technical Support Services: Providing technical assistance and support for a wide range of energy sector projects.- Procurement: Efficient and effective procurement of equipment, materials, and supplies.- Engineering (FEED): Front-end engineering design services to support project development.",
       "website": "https://www.etos.com.ly"
-    },
-    {
-      "name": "The University of Bradford",
-      "sector": "Higher Education",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/0dec6f06-b09e-4c3d-8d5a-e4478148dae3.png",
-      "id": "2713430",
-      "glueupId": "2214860",
-      "membershipType": "corporate",
-      "members": [],
-      "about": "A higher educational setting located in Bradford/ West Yorkshire/ England",
-      "website": "https://www.bradford.ac.uk/external/"
     },
     {
       "name": "Trafigura",
@@ -1444,7 +1433,7 @@
       "website": "https://www.tumifirm.com/"
     },
     {
-      "name": "United Development Petroleum Services (UDP Oilfield Services CO.)",
+      "name": "United Development Petroleum Co. (UDP Oilfield Services)",
       "sector": "Oil & Gas",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/4743a783-0feb-4849-a692-dd2be8fc54da.png",
       "id": "4355633",
@@ -1453,6 +1442,17 @@
       "members": [],
       "about": null,
       "website": "https://www.udp.com.ly"
+    },
+    {
+      "name": "University of Bradford",
+      "sector": "Higher Education",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/0dec6f06-b09e-4c3d-8d5a-e4478148dae3.png",
+      "id": "2713430",
+      "glueupId": "2214860",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "A higher educational setting located in Bradford/ West Yorkshire/ England",
+      "website": "https://www.bradford.ac.uk/external/"
     },
     {
       "name": "Wazen Oil Services",
@@ -1468,12 +1468,12 @@
     {
       "name": "West London Chambers of Commerce",
       "sector": "Other",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/bcf3ceea-7cad-4294-b7a4-cf6111ca9c4e.png",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/435b55d3-c26b-4d42-ace8-667ea5399a36.png",
       "id": "2892388",
       "glueupId": "2380130",
       "membershipType": "corporate",
       "members": [],
-      "about": null,
+      "about": "Covering Hounslow, Ealing, Hammersmith & FulhamWest London Chambers of Commerce is a highly proactive, government award winning, and royally recognised organisation.We can help your business grow through networking, training and introductions, to maximise marketing and business opportunities using our:• 8,500 subscribers/digital members• 1800+ members, representing 100,000+ local employees• 100+ general events per year including• 20 International Trade eventsWe are also members of London’s Local Chambers with over 5000 members, and we have joint events with our neighbours, we can help fast-track your business to growth.We are now the second largest and fastest growing Chamber of Commerce in London and South of England",
       "website": null
     },
     {
@@ -1532,7 +1532,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1779776035128,
+  "timestamp": 1779863248667,
   "source": "live-scrape",
   "totalMembers": 139
 }
