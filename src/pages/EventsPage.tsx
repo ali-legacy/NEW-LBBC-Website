@@ -21,6 +21,7 @@ export const EventsPage = () => {
   const { hash } = useLocation();
   const [eventsData, setEventsData] = useState<{ upcoming: Event[]; past: Event[] } | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [fetchError, setFetchError] = useState(false);
   const [activeTab, setActiveTab] = useState<Tab>('upcoming');
 
   useEffect(() => {
@@ -34,9 +35,9 @@ export const EventsPage = () => {
 
   useEffect(() => {
     fetch('/data/events.json')
-      .then(r => r.ok ? r.json() : null)
-      .then(data => { if (data) setEventsData(data); })
-      .catch(() => {})
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(data => { setEventsData(data); })
+      .catch(() => setFetchError(true))
       .finally(() => setIsLoading(false));
   }, []);
 
@@ -124,8 +125,21 @@ export const EventsPage = () => {
             ))}
           </div>
 
+          {/* Fetch error */}
+          {fetchError && (
+            <div className="text-center py-24 space-y-4">
+              <p className="text-slate-500 font-semibold">Unable to load events. Please try again.</p>
+              <button
+                onClick={() => { setFetchError(false); setIsLoading(true); fetch('/data/events.json').then(r => r.ok ? r.json() : Promise.reject()).then(data => setEventsData(data)).catch(() => setFetchError(true)).finally(() => setIsLoading(false)); }}
+                className="bg-lbbc-green text-white px-6 py-2 rounded-sm text-xs font-black uppercase tracking-widest hover:bg-lbbc-red transition-colors"
+              >
+                Retry
+              </button>
+            </div>
+          )}
+
           {/* Skeleton loading */}
-          {isLoading && (
+          {!fetchError && isLoading && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {Array.from({ length: 6 }).map((_, i) => (
                 <div key={i} className="bg-white rounded-xl border border-slate-100 overflow-hidden animate-pulse">
@@ -142,7 +156,7 @@ export const EventsPage = () => {
           )}
 
           {/* Event cards */}
-          {!isLoading && (
+          {!isLoading && !fetchError && (
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Linkedin, Mail } from 'lucide-react';
+import { X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const BioModal = ({ person, isOpen, onClose }: { person: any, isOpen: boolean, onClose: () => void }) => {
@@ -23,18 +23,20 @@ export const BioModal = ({ person, isOpen, onClose }: { person: any, isOpen: boo
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             className="relative w-full max-w-4xl bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-2xl flex flex-col-reverse md:flex-row max-h-[90vh]"
           >
-            <button 
+            <button
               onClick={onClose}
+              aria-label="Close"
               className="absolute top-4 right-4 z-20 p-2 bg-slate-100/80 hover:bg-slate-200 rounded-full transition-colors text-slate-800 md:text-white md:bg-black/20 backdrop-blur-sm"
             >
               <X size={20} />
             </button>
 
             <div className="hidden md:block md:w-2/5 relative bg-slate-100 flex-shrink-0">
-              <img 
-                src={person.image} 
-                alt={person.name} 
+              <img
+                src={person.image}
+                alt={person.name}
                 className="w-full h-full object-cover"
+                loading="lazy"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -48,10 +50,6 @@ export const BioModal = ({ person, isOpen, onClose }: { person: any, isOpen: boo
                 <p className="text-slate-600 leading-relaxed text-base md:text-lg whitespace-pre-line">
                   {person.bio || t.about.leadershipBioFallback.replace('{name}', person.name).replace('{role}', person.role)}
                 </p>
-              </div>
-              <div className="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-slate-100 flex items-center gap-6">
-                <a href="#" className="text-slate-400 hover:text-lbbc-red transition-colors"><Linkedin size={20} /></a>
-                <a href="#" className="text-slate-400 hover:text-lbbc-red transition-colors"><Mail size={20} /></a>
               </div>
             </div>
           </motion.div>
@@ -82,8 +80,9 @@ export const GovernanceModal = ({ policy, isOpen, onClose }: { policy: any, isOp
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             className="relative w-full max-w-2xl bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-2xl p-8 md:p-12 max-h-[90vh] overflow-y-auto"
           >
-            <button 
+            <button
               onClick={onClose}
+              aria-label="Close"
               className="absolute top-4 right-4 z-20 p-2 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors text-slate-800"
             >
               <X size={20} />

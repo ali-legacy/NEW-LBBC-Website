@@ -53,9 +53,9 @@ export const SpotlightPage = () => {
             {/* Sidebar */}
             <div className="lg:w-1/3 space-y-12">
               <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 space-y-6">
-                <h4 className="font-black text-slate-900 uppercase tracking-widest text-xs">About LBBC</h4>
+                <h4 className="font-black text-slate-900 uppercase tracking-widest text-xs">{t.featured.aboutLbbc}</h4>
                 <p className="text-sm text-slate-500 leading-relaxed">
-                  The Libyan British Business Council (LBBC) is a non-profit membership organization established to promote trade and investment between the United Kingdom and Libya.
+                  {t.featured.aboutLbbcText}
                 </p>
               </div>
               <div className="space-y-6">

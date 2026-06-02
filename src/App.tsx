@@ -39,6 +39,7 @@ interface ErrorBoundaryState { hasError: boolean }
 class ErrorBoundary extends Component<{ children: ReactNode }, ErrorBoundaryState> {
   state = { hasError: false };
   static getDerivedStateFromError() { return { hasError: true }; }
+  componentDidCatch(error: Error, info: React.ErrorInfo) { console.error('ErrorBoundary:', error, info); }
   render() {
     return this.state.hasError ? <ErrorFallback /> : this.props.children;
   }

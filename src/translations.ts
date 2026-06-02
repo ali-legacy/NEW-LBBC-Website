@@ -172,6 +172,8 @@ export const translations = {
       text: "Explore the outcomes of the Libya Energy Forum, where the NOC's largest London delegation formalised its partnership with the LBBC through a landmark Memorandum of Understanding, strengthening UK–Libya energy ties.",
       cta: 'Read Full Story',
       allNews: 'All News',
+      aboutLbbc: 'About LBBC',
+      aboutLbbcText: 'The Libyan British Business Council (LBBC) is a non-profit membership organisation established to promote trade and investment between the United Kingdom and Libya.',
       fullStory: {
         title: 'LBBC Member Spotlight: Capterio',
         p1: 'This week, the LBBC spotlight is on our member Capterio, which has played a central role in the conversation on how Libya can turn gas flaring from waste into value.',
@@ -188,7 +190,8 @@ export const translations = {
       title: 'Latest from the LBBC',
       cta: 'Discover More News',
       more: 'Discover More News',
-      exclusive: 'Join for Exclusive Insights'
+      exclusive: 'Join for Exclusive Insights',
+      shareArticle: 'Share Article'
     },
     resources: {
       tag: 'RESOURCES',
@@ -600,6 +603,8 @@ export const translations = {
       text: 'استكشف نتائج منتدى ليبيا للطاقة، حيث رسّخ أكبر وفد للمؤسسة الوطنية للنفط في لندن شراكته مع المجلس الليبي البريطاني للأعمال من خلال مذكرة تفاهم تاريخية، تعزّز العلاقات في قطاع الطاقة بين المملكة المتحدة وليبيا.',
       cta: 'اقرأ القصة الكاملة',
       allNews: 'كل الأخبار',
+      aboutLbbc: 'عن المجلس',
+      aboutLbbcText: 'المجلس الليبي البريطاني للأعمال هو منظمة عضوية غير ربحية تأسست لتعزيز التجارة والاستثمار بين المملكة المتحدة وليبيا.',
       fullStory: {
         title: 'تسليط الضوء على عضو المجلس: كابتيريو',
         p1: 'هذا الأسبوع، نسلط الضوء على عضو المجلس، شركة كابتيريو، التي لعبت دوراً مركزياً في الحوار حول كيفية تحويل حرق الغاز في ليبيا من هدر إلى قيمة.',
@@ -616,7 +621,8 @@ export const translations = {
       title: 'آخر أخبار المجلس',
       cta: 'اكتشف المزيد من الأخبار',
       more: 'اكتشف المزيد من الأخبار',
-      exclusive: 'انضم للحصول على رؤى حصرية'
+      exclusive: 'انضم للحصول على رؤى حصرية',
+      shareArticle: 'مشاركة المقال'
     },
     resources: {
       tag: 'المصادر',

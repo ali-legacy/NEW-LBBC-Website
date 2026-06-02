@@ -20,6 +20,7 @@ export const DirectoryPage = () => {
   const { t } = useLanguage();
   const [members, setMembers] = useState<{ council: Member[]; corporate: Member[] } | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [fetchError, setFetchError] = useState(false);
   const [activeTab, setActiveTab] = useState<Tab>('council');
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState<Member | null>(null);
@@ -27,9 +28,9 @@ export const DirectoryPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     fetch('/data/members.json')
-      .then(r => r.ok ? r.json() : null)
-      .then(data => { if (data) setMembers(data); })
-      .catch(() => {})
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(data => { setMembers(data); })
+      .catch(() => setFetchError(true))
       .finally(() => setIsLoading(false));
   }, []);
 
@@ -97,7 +98,7 @@ export const DirectoryPage = () => {
                     </div>
                   </div>
                 </div>
-                <button onClick={() => setSelected(null)} className="text-slate-400 hover:text-slate-600 transition-colors ms-4 flex-shrink-0">
+                <button onClick={() => setSelected(null)} aria-label="Close" className="text-slate-400 hover:text-slate-600 transition-colors ms-4 flex-shrink-0">
                   <X size={20} />
                 </button>
               </div>
@@ -210,7 +211,19 @@ export const DirectoryPage = () => {
       <section className="py-12 md:py-16 bg-slate-50/50 min-h-[400px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-          {isLoading && (
+          {fetchError && (
+            <div className="text-center py-24 space-y-4">
+              <p className="text-slate-500 font-semibold">Unable to load members. Please try again.</p>
+              <button
+                onClick={() => { setFetchError(false); setIsLoading(true); fetch('/data/members.json').then(r => r.ok ? r.json() : Promise.reject()).then(data => setMembers(data)).catch(() => setFetchError(true)).finally(() => setIsLoading(false)); }}
+                className="bg-lbbc-green text-white px-6 py-2 rounded-sm text-xs font-black uppercase tracking-widest hover:bg-lbbc-red transition-colors"
+              >
+                Retry
+              </button>
+            </div>
+          )}
+
+          {!fetchError && isLoading && (
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
               {Array.from({ length: 20 }).map((_, i) => (
                 <div key={i} className="bg-white rounded-xl border border-slate-100 p-6 animate-pulse">
@@ -222,14 +235,14 @@ export const DirectoryPage = () => {
             </div>
           )}
 
-          {!isLoading && filtered.length === 0 && (
+          {!isLoading && !fetchError && filtered.length === 0 && (
             <div className="text-center py-24 text-slate-400">
               <Building2 size={40} className="mx-auto mb-4 opacity-30" />
               <p className="font-bold text-sm">{t.directory.noMembers}</p>
             </div>
           )}
 
-          {!isLoading && filtered.length > 0 && (
+          {!isLoading && !fetchError && filtered.length > 0 && (
             <>
               <p className="text-xs font-bold text-slate-400 mb-6">
                 {t.directory.showing} {filtered.length} {filtered.length === 1 ? t.directory.memberSingular : t.directory.memberPlural}

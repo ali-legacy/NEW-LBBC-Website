@@ -70,7 +70,7 @@ export const NewsDetailPage = () => {
                   </div>
                 </div>
                 <button className="flex items-center gap-2 text-lbbc-green font-black text-[10px] uppercase tracking-widest hover:text-lbbc-red transition-colors">
-                  <Share2 size={16} /> Share Article
+                  <Share2 size={16} /> {t.news.shareArticle}
                 </button>
               </div>
             </div>

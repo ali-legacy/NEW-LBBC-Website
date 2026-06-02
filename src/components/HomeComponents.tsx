@@ -65,6 +65,7 @@ export const MemberDirectory = () => {
                       src={member.logo}
                       alt={member.name}
                       className="max-w-full max-h-full object-contain"
+                      loading="lazy"
                       referrerPolicy="no-referrer"
                     />
                   ) : (
@@ -164,6 +165,7 @@ export const UpcomingEvents = () => {
                   src={event.image}
                   alt={event.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-4 left-4">
@@ -275,6 +277,7 @@ export const LatestNews = () => {
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
                   referrerPolicy="no-referrer"
                 />
               </div>

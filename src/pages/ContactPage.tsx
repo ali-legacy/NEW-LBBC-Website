@@ -19,7 +19,7 @@ export const ContactPage = () => {
     const script = document.createElement('script');
     script.src = "https://elfsightcdn.com/platform.js";
     script.async = true;
-    script.onerror = () => console.warn('Elfsight script failed to load.');
+    script.onerror = () => {};
     document.body.appendChild(script);
     return () => { if (document.body.contains(script)) document.body.removeChild(script); };
   }, []);
