@@ -44,7 +44,7 @@ export const NewsDetailPage = () => {
       {/* Featured Image */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 -mt-8 md:-mt-12 relative z-10">
         <div className="aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
-          <img src={item.image} alt={item.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <img src={('headerImage' in item ? (item as any).headerImage : null) ?? item.image} alt={item.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         </div>
       </section>
 
