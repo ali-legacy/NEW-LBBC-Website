@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Mail, Phone, ArrowRight, ChevronDown, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { Mail, Phone, ArrowRight, ChevronDown, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { SEO } from '../components/SEO';
 
@@ -100,10 +100,6 @@ export const ContactPage = () => {
                   <h3 className="text-xl font-extrabold text-slate-900 tracking-tight">Libyan British Business Council</h3>
                 </div>
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-slate-50 p-3 rounded-sm border border-slate-100"><MapPin size={18} className="text-lbbc-green" /></div>
-                    <div className="text-slate-600 text-sm leading-relaxed font-medium"><p>PO LBBC 2004</p><p>PO Box 537</p><p>HORLEY, RH6 6GD</p></div>
-                  </div>
                   <div className="flex items-start gap-4">
                     <div className="bg-slate-50 p-3 rounded-sm border border-slate-100"><Mail size={18} className="text-lbbc-green" /></div>
                     <div className="space-y-3">

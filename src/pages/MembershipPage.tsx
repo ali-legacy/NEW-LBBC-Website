@@ -20,20 +20,23 @@ export const MembershipPage = () => {
     {
       ...t.membership.council,
       color: 'lbbc-green',
-      link: location === 'uk' 
+      price: location === 'uk' ? '£1,500' : '£500',
+      link: location === 'uk'
         ? { label: t.membership.joinNow, url: 'https://lbbc.glueup.com/membership/21386/apply/' }
         : { label: t.membership.joinNow, url: 'https://lbbc.glueup.com/membership/21396/apply/' }
     },
     {
       ...t.membership.corporate,
-      color: 'slate-900',
+      color: 'lbbc-green',
+      price: location === 'uk' ? '£500' : '£250',
       link: location === 'uk'
         ? { label: t.membership.joinNow, url: 'https://lbbc.glueup.com/membership/21476/apply/' }
         : { label: t.membership.joinNow, url: 'https://lbbc.glueup.com/membership/21397/apply/' }
     },
     {
       ...t.membership.soleTrader,
-      color: 'slate-900',
+      color: 'lbbc-green',
+      price: '£250',
       link: { label: t.membership.joinNow, url: 'https://lbbc.glueup.com/membership/21477/apply/' }
     }
   ];
@@ -209,6 +212,10 @@ export const MembershipPage = () => {
                         {tier.tag}
                       </span>
                     </div>
+                    <div className="text-right">
+                      <span className="text-2xl font-black text-lbbc-green">{tier.price}</span>
+                      <span className="text-[10px] text-slate-400 block font-bold">/yr</span>
+                    </div>
                   </div>
                 </div>
                 <div className="p-6 space-y-6">
@@ -251,13 +258,11 @@ export const MembershipPage = () => {
                   </div>
 
                   <div className="pt-6 border-t border-slate-100 flex flex-col gap-3">
-                    <a 
+                    <a
                       href={tier.link.url}
-                      target="_blank" 
+                      target="_blank"
                       rel="noopener noreferrer"
-                      className={`w-full py-4 rounded-sm font-black text-[10px] uppercase tracking-widest text-center transition-all shadow-md ${
-                        tier.name === t.membership.council.name ? 'bg-lbbc-green text-white hover:bg-lbbc-accent' : 'bg-slate-900 text-white hover:bg-slate-800'
-                      }`}
+                      className="w-full py-4 rounded-sm font-black text-[10px] uppercase tracking-widest text-center transition-all shadow-md bg-lbbc-green text-white hover:bg-lbbc-accent"
                     >
                       {tier.link.label}
                     </a>
@@ -299,6 +304,21 @@ export const MembershipPage = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200">
+                <tr className="bg-lbbc-green/5">
+                  <td className="px-6 py-8 font-extrabold text-slate-900 border-r border-slate-100 bg-slate-50/50">{t.membership.price}</td>
+                  <td className="px-6 py-8 text-center border-r border-slate-100">
+                    <span className="text-3xl font-black text-lbbc-green">{tiers[0].price}</span>
+                    <span className="text-xs text-slate-400 block font-bold mt-1">/yr</span>
+                  </td>
+                  <td className="px-6 py-8 text-center border-r border-slate-100">
+                    <span className="text-3xl font-black text-lbbc-green">{tiers[1].price}</span>
+                    <span className="text-xs text-slate-400 block font-bold mt-1">/yr</span>
+                  </td>
+                  <td className="px-6 py-8 text-center">
+                    <span className="text-3xl font-black text-lbbc-green">{tiers[2].price}</span>
+                    <span className="text-xs text-slate-400 block font-bold mt-1">/yr</span>
+                  </td>
+                </tr>
                 <tr className="hover:bg-slate-50 transition-colors">
                   <td className="px-6 py-8 font-extrabold text-slate-900 border-r border-slate-100 bg-slate-50/50">{t.membership.term}</td>
                   <td className="px-6 py-8 text-center text-slate-600 font-medium border-r border-slate-100">{t.membership.council.term}</td>
@@ -428,10 +448,10 @@ export const MembershipPage = () => {
                     <a href={tiers[0].link.url} target="_blank" rel="noopener noreferrer" className="bg-lbbc-green text-white px-4 py-3 rounded-sm font-black text-[9px] uppercase tracking-widest hover:bg-lbbc-accent transition-all shadow-md w-full max-w-[200px] text-center inline-block">{tiers[0].link.label}</a>
                   </td>
                   <td className="px-6 py-10 text-center border-r border-slate-100">
-                    <a href={tiers[1].link.url} target="_blank" rel="noopener noreferrer" className="bg-slate-900 text-white px-4 py-3 rounded-sm font-black text-[9px] uppercase tracking-widest hover:bg-slate-800 transition-all shadow-md w-full max-w-[200px] text-center inline-block">{tiers[1].link.label}</a>
+                    <a href={tiers[1].link.url} target="_blank" rel="noopener noreferrer" className="bg-lbbc-green text-white px-4 py-3 rounded-sm font-black text-[9px] uppercase tracking-widest hover:bg-lbbc-accent transition-all shadow-md w-full max-w-[200px] text-center inline-block">{tiers[1].link.label}</a>
                   </td>
                   <td className="px-6 py-10 text-center">
-                    <a href={tiers[2].link.url} target="_blank" rel="noopener noreferrer" className="bg-slate-900 text-white px-4 py-3 rounded-sm font-black text-[9px] uppercase tracking-widest hover:bg-slate-800 transition-all shadow-md w-full max-w-[200px] text-center inline-block">{tiers[2].link.label}</a>
+                    <a href={tiers[2].link.url} target="_blank" rel="noopener noreferrer" className="bg-lbbc-green text-white px-4 py-3 rounded-sm font-black text-[9px] uppercase tracking-widest hover:bg-lbbc-accent transition-all shadow-md w-full max-w-[200px] text-center inline-block">{tiers[2].link.label}</a>
                   </td>
                 </tr>
               </tbody>

@@ -145,14 +145,15 @@ Bob has over 25 years of management experience, in both private and public secto
   ];
 
   const partners = [
-    { name: 'British Embassy', logo: '/images/15wu-9uxhuoq3tQF9RdMj5JKCm4UQlOXl.png' },
-    { name: 'UK FCDO', logo: '/images/14Vz7QDoZA0mY0wfWOYtv4oNXC-fWsfIA.png' },
-    { name: 'UK DIT', logo: '/images/1WITAc3xTAWHEMWnfMZXvr8HR3beKE-S2.png' },
-    { name: 'NOC', logo: '/images/1298kn4VMFdwtdchqygp_Edk5XbaBty8B.png' },
-    { name: 'REAOL', logo: '/images/1WjTH2bcM6soZgKQuXBbmGgwQobDMiFNg.png' },
-    { name: 'ARAB BANKERS ASSOCIATION', logo: '/images/1SG9DMnjp0UJAz6Akdl2ie5yHiNyjEcW5.png' },
-    { name: 'EIC', logo: '/images/16lXOVQpw5HTD8EU2ZwP2dT3Iwl44teja.png' },
-    { name: 'LEGACY', logo: '/images/1wOfJy8X8F_NxWU16vEquTjxDMaTws2Fs.png' }
+    { name: 'British Embassy', logo: '/images/15wu-9uxhuoq3tQF9RdMj5JKCm4UQlOXl.png', url: 'https://www.gov.uk/world/organisations/british-embassy-tripoli' },
+    { name: 'UK FCDO', logo: '/images/14Vz7QDoZA0mY0wfWOYtv4oNXC-fWsfIA.png', url: 'https://www.gov.uk/government/organisations/foreign-commonwealth-development-office' },
+    { name: 'UK DIT', logo: '/images/1WITAc3xTAWHEMWnfMZXvr8HR3beKE-S2.png', url: 'https://www.gov.uk/government/organisations/department-for-international-trade' },
+    { name: 'NOC', logo: '/images/1298kn4VMFdwtdchqygp_Edk5XbaBty8B.png', url: 'https://noc.ly/en/' },
+    { name: 'REAOL', logo: '/images/1WjTH2bcM6soZgKQuXBbmGgwQobDMiFNg.png', url: 'https://reaol.gov.ly/en/' },
+    // { name: 'ARAB BANKERS ASSOCIATION', logo: '/images/1SG9DMnjp0UJAz6Akdl2ie5yHiNyjEcW5.png', url: '' }, // hidden — partnership pending
+    { name: 'Middle East Association', logo: '/images/partners/middle-east-association-logo.png', url: 'https://my-site-6fblg7vm-hoptonmea.wix-vibe.com/' },
+    { name: 'EIC', logo: '/images/16lXOVQpw5HTD8EU2ZwP2dT3Iwl44teja.png', url: 'https://www.the-eic.com/' },
+    { name: 'LEGACY', logo: '/images/1wOfJy8X8F_NxWU16vEquTjxDMaTws2Fs.png', url: 'https://legacy.ly' }
   ];
 
   return (
@@ -371,17 +372,17 @@ Bob has over 25 years of management experience, in both private and public secto
 
           <div className="flex flex-wrap justify-center gap-6 md:gap-10 items-center">
             {partners.map((partner) => (
-              <div key={partner.name} className="flex flex-col items-center gap-4 group w-full sm:w-[calc(50%-20px)] lg:w-[calc(25%-30px)] max-w-[320px]">
+              <a key={partner.name} href={partner.url} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-4 group w-full sm:w-[calc(50%-20px)] lg:w-[calc(25%-30px)] max-w-[320px]">
                 <div className="h-32 md:h-48 w-full flex items-center justify-center transition-all bg-slate-50 rounded-2xl p-6 md:p-10 border border-transparent hover:border-slate-100 hover:bg-white hover:shadow-xl">
-                  <img 
-                    src={partner.logo} 
-                    alt={partner.name} 
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
                     className="max-h-[70%] max-w-[85%] object-contain transition-all duration-500 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
                 </div>
                 <span className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 text-center group-hover:text-lbbc-green transition-colors">{partner.name}</span>
-              </div>
+              </a>
             ))}
           </div>
         </div>

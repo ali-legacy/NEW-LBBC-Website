@@ -41,38 +41,38 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-white mb-6 md:mb-8 uppercase tracking-widest text-xs md:text-sm border-b border-white/15 pb-4">{t.footer.partners}</h4>
             <div className="grid grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-              <div className="group">
+              <a href="https://www.gov.uk/world/organisations/british-embassy-tripoli" target="_blank" rel="noopener noreferrer" className="group">
                 <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 overflow-hidden transition-all group-hover:scale-[1.02] shadow-lg">
                   <picture>
                     <source srcSet="/images/15wu-9uxhuoq3tQF9RdMj5JKCm4UQlOXl.webp" type="image/webp" />
                     <img src="/images/15wu-9uxhuoq3tQF9RdMj5JKCm4UQlOXl.png" alt="British Embassy" className="max-h-full max-w-full object-contain" loading="lazy" />
                   </picture>
                 </div>
-              </div>
-              <div className="group">
+              </a>
+              <a href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office" target="_blank" rel="noopener noreferrer" className="group">
                 <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 overflow-hidden transition-all group-hover:scale-[1.02] shadow-lg">
                   <picture>
                     <source srcSet="/images/14Vz7QDoZA0mY0wfWOYtv4oNXC-fWsfIA.webp" type="image/webp" />
                     <img src="/images/14Vz7QDoZA0mY0wfWOYtv4oNXC-fWsfIA.png" alt="UK FCDO" className="max-h-full max-w-full object-contain" loading="lazy" />
                   </picture>
                 </div>
-              </div>
-              <div className="group">
+              </a>
+              <a href="https://noc.ly/en/" target="_blank" rel="noopener noreferrer" className="group">
                 <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 overflow-hidden transition-all group-hover:scale-[1.02] shadow-lg">
                   <picture>
                     <source srcSet="/images/1298kn4VMFdwtdchqygp_Edk5XbaBty8B.webp" type="image/webp" />
                     <img src="/images/1298kn4VMFdwtdchqygp_Edk5XbaBty8B.png" alt="NOC" className="max-h-full max-w-full object-contain" loading="lazy" />
                   </picture>
                 </div>
-              </div>
-              <div className="group">
+              </a>
+              <a href="https://reaol.gov.ly/en/" target="_blank" rel="noopener noreferrer" className="group">
                 <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 overflow-hidden transition-all group-hover:scale-[1.02] shadow-lg">
                   <picture>
                     <source srcSet="/images/1WjTH2bcM6soZgKQuXBbmGgwQobDMiFNg.webp" type="image/webp" />
                     <img src="/images/1WjTH2bcM6soZgKQuXBbmGgwQobDMiFNg.png" alt="REAOL" className="max-h-full max-w-full object-contain" loading="lazy" />
                   </picture>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -80,30 +80,30 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-white mb-6 md:mb-8 uppercase tracking-widest text-xs md:text-sm border-b border-white/15 pb-4">{t.footer.sponsors}</h4>
             <div className="grid grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-              <div className="group">
+              <a href="https://www.bank-abc.com/en" target="_blank" rel="noopener noreferrer" className="group">
                 <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 overflow-hidden transition-all group-hover:scale-[1.02] shadow-lg">
                   <picture>
                     <source srcSet="/images/19aNWVHPT2e7qVKzaGZ1FKDt7i7Ffygu-.webp" type="image/webp" />
-                    <img src="/images/19aNWVHPT2e7qVKzaGZ1FKDt7i7Ffygu-.png" alt="Sponsor 1" className="max-h-full max-w-full object-contain" loading="lazy" />
+                    <img src="/images/19aNWVHPT2e7qVKzaGZ1FKDt7i7Ffygu-.png" alt="Bank ABC" className="max-h-full max-w-full object-contain" loading="lazy" />
                   </picture>
                 </div>
-              </div>
-              <div className="group">
+              </a>
+              <a href="https://www.bacb.co.uk/" target="_blank" rel="noopener noreferrer" className="group">
                 <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 overflow-hidden transition-all group-hover:scale-[1.02] shadow-lg">
                   <picture>
                     <source srcSet="/images/1LGlEbIlkn_Dxfh9ZidHXLUpFopfhBTfW.webp" type="image/webp" />
-                    <img src="/images/1LGlEbIlkn_Dxfh9ZidHXLUpFopfhBTfW.png" alt="Sponsor 2" className="max-h-full max-w-full object-contain" loading="lazy" />
+                    <img src="/images/1LGlEbIlkn_Dxfh9ZidHXLUpFopfhBTfW.png" alt="BACB" className="max-h-full max-w-full object-contain" loading="lazy" />
                   </picture>
                 </div>
-              </div>
-              <div className="group">
+              </a>
+              <a href="https://lhseverus.com/" target="_blank" rel="noopener noreferrer" className="group">
                 <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl w-full flex items-center justify-center h-20 md:h-24 overflow-hidden transition-all group-hover:scale-[1.02] shadow-lg">
                   <picture>
                     <source srcSet="/images/1BVL2nJgbXbjecGcFNW9WbU74MbOAnD0P.webp" type="image/webp" />
-                    <img src="/images/1BVL2nJgbXbjecGcFNW9WbU74MbOAnD0P.png" alt="Sponsor 3" className="max-h-full max-w-full object-contain" loading="lazy" />
+                    <img src="/images/1BVL2nJgbXbjecGcFNW9WbU74MbOAnD0P.png" alt="LH Severus" className="max-h-full max-w-full object-contain" loading="lazy" />
                   </picture>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
