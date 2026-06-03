@@ -22,13 +22,17 @@ export const ResourcesPage = () => {
     }
   }, [hash]);
 
-  const pdfs = [
-    { id: 1, title: 'UK-Libya Trade Guide 2026', category: 'REGULATORY' },
-    { id: 2, title: 'Investment Opportunities in Energy', category: 'MARKET INSIGHT' },
-    { id: 3, title: 'Legal Framework for Foreign Entities', category: 'LEGAL' },
-    { id: 4, title: 'Customs and Logistics Handbook', category: 'LOGISTICS' },
-    { id: 5, title: 'Banking and Finance Sector Overview', category: 'FINANCE' },
-    { id: 6, title: 'Infrastructure Development Roadmap', category: 'INFRASTRUCTURE' },
+  type Resource =
+    | { id: number; type?: 'pdf'; title: string; category: string; href?: string; btnLabel?: string }
+    | { id: number; type: 'link'; title: string; category: string; href: string; btnLabel: string; logo: string };
+
+  const pdfs: Resource[] = [
+    { id: 1, type: 'pdf', title: 'Guide on Travel to Libya 2026', category: 'TRAVEL', href: '/resources/visiting-libya-travel-guide-2026.pdf', btnLabel: 'Travel Guide' },
+    { id: 2, type: 'link', title: 'Export Documentation Services by the ABCC', category: 'LOGISTICS', href: 'https://abcc.org.uk/trade-services/', btnLabel: 'Visit ABCC Trade Services', logo: '/images/partners/abcc-logo.jpg' },
+    { id: 3, title: 'UK-Libya Trade Guide 2026', category: 'REGULATORY' },
+    { id: 4, title: 'Investment Opportunities in Energy', category: 'MARKET INSIGHT' },
+    { id: 5, title: 'Legal Framework for Foreign Entities', category: 'LEGAL' },
+    { id: 6, title: 'Banking and Finance Sector Overview', category: 'FINANCE' },
   ];
 
   const news = newsData;
@@ -77,33 +81,59 @@ export const ResourcesPage = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
             {pdfs.slice(0, visiblePdfs).map((pdf) => (
-              <motion.div 
+              <motion.div
                 key={pdf.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="flex flex-col h-full group"
               >
-                <div 
-                  className="w-full aspect-[3/4] rounded-xl overflow-hidden shadow-lg relative bg-white border border-slate-200 flex flex-col items-center justify-center cursor-pointer group-hover:shadow-2xl transition-all duration-500"
-                >
+                <div className="w-full aspect-[3/4] rounded-xl overflow-hidden shadow-lg relative bg-white border border-slate-200 flex flex-col items-center justify-center cursor-pointer group-hover:shadow-2xl transition-all duration-500">
                   <div className="absolute inset-0 bg-gradient-to-br from-lbbc-green/5 to-lbbc-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <FileText size={80} className="text-slate-200 group-hover:text-lbbc-green/20 transition-colors mb-4" />
-                  <span className="text-slate-400 font-bold text-[10px] uppercase tracking-widest group-hover:text-lbbc-green transition-colors">{t.resources.clickToOpen}</span>
+                  {pdf.type === 'link' && 'logo' in pdf ? (
+                    <img src={pdf.logo} alt={pdf.title} className="w-3/4 h-3/4 object-contain p-4" />
+                  ) : (
+                    <>
+                      <FileText size={80} className="text-slate-200 group-hover:text-lbbc-green/20 transition-colors mb-4" />
+                      <span className="text-slate-400 font-bold text-[10px] uppercase tracking-widest group-hover:text-lbbc-green transition-colors">{t.resources.clickToOpen}</span>
+                    </>
+                  )}
                   <div className="absolute top-4 right-4 bg-lbbc-red text-white p-2 rounded-lg shadow-md transform translate-x-2 -translate-y-2 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                     <ExternalLink size={16} />
                   </div>
                 </div>
-                
+
                 <div className="flex flex-col flex-grow pt-6">
                   <div className="space-y-2 mb-6">
                     <span className="text-lbbc-green font-black text-[9px] tracking-widest uppercase">{pdf.category}</span>
                     <h3 className="text-sm md:text-base font-extrabold text-slate-900 group-hover:text-lbbc-red transition-colors leading-tight min-h-[3rem] line-clamp-2">{pdf.title}</h3>
                   </div>
-                  <button className="mt-auto flex items-center justify-center gap-2 bg-slate-900 text-white px-4 py-3 rounded-sm text-[9px] font-bold uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-lg group/btn">
-                    <Download size={14} className="group-hover/btn:translate-y-0.5 transition-transform" />
-                    {t.resources.download}
-                  </button>
+                  {pdf.type === 'link' ? (
+                    <a
+                      href={'href' in pdf ? pdf.href : undefined}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto flex items-center justify-center gap-2 bg-lbbc-green text-white px-4 py-3 rounded-sm text-[9px] font-bold uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-lg"
+                    >
+                      <ExternalLink size={14} />
+                      {'btnLabel' in pdf ? pdf.btnLabel : ''}
+                    </a>
+                  ) : 'href' in pdf && pdf.href ? (
+                    <a
+                      href={pdf.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto flex items-center justify-center gap-2 bg-lbbc-green text-white px-4 py-3 rounded-sm text-[9px] font-bold uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-lg group/btn"
+                    >
+                      <Download size={14} className="group-hover/btn:translate-y-0.5 transition-transform" />
+                      {'btnLabel' in pdf && pdf.btnLabel ? pdf.btnLabel : t.resources.download}
+                    </a>
+                  ) : (
+                    <button className="mt-auto flex items-center justify-center gap-2 bg-slate-900 text-white px-4 py-3 rounded-sm text-[9px] font-bold uppercase tracking-widest hover:bg-lbbc-red transition-all shadow-lg group/btn">
+                      <Download size={14} className="group-hover/btn:translate-y-0.5 transition-transform" />
+                      {t.resources.download}
+                    </button>
+                  )}
                 </div>
               </motion.div>
             ))}
