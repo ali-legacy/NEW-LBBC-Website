@@ -23,11 +23,11 @@ export const ResourcesPage = () => {
   }, [hash]);
 
   type Resource =
-    | { id: number; type?: 'pdf'; title: string; category: string; href?: string; btnLabel?: string }
+    | { id: number; type?: 'pdf'; title: string; category: string; href?: string; btnLabel?: string; cover?: string }
     | { id: number; type: 'link'; title: string; category: string; href: string; btnLabel: string; logo: string };
 
   const pdfs: Resource[] = [
-    { id: 1, type: 'pdf', title: 'Guide on Travel to Libya 2026', category: 'TRAVEL', href: '/resources/visiting-libya-travel-guide-2026.pdf', btnLabel: 'Travel Guide' },
+    { id: 1, type: 'pdf', title: 'Guide on Travel to Libya 2026', category: 'TRAVEL', href: '/resources/visiting-libya-travel-guide-2026.pdf', btnLabel: 'Travel Guide', cover: '/images/travel-guide-cover.jpg' },
     { id: 2, type: 'link', title: 'Export Documentation Services by the ABCC', category: 'LOGISTICS', href: 'https://abcc.org.uk/trade-services/', btnLabel: 'Visit ABCC Trade Services', logo: '/images/partners/abcc-logo.jpg' },
     { id: 3, title: 'UK-Libya Trade Guide 2026', category: 'REGULATORY' },
     { id: 4, title: 'Investment Opportunities in Energy', category: 'MARKET INSIGHT' },
@@ -92,6 +92,8 @@ export const ResourcesPage = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-lbbc-green/5 to-lbbc-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   {pdf.type === 'link' && 'logo' in pdf ? (
                     <img src={pdf.logo} alt={pdf.title} className="w-3/4 h-3/4 object-contain p-4" />
+                  ) : 'cover' in pdf && pdf.cover ? (
+                    <img src={pdf.cover} alt={pdf.title} className="w-full h-full object-cover" />
                   ) : (
                     <>
                       <FileText size={80} className="text-slate-200 group-hover:text-lbbc-green/20 transition-colors mb-4" />
