@@ -168,10 +168,10 @@ export const Navbar = () => {
             </Link>
           </div>
           
-          <div className="hidden lg:flex items-center space-x-12">
+          <div className="hidden lg:flex items-center gap-7 xl:gap-9">
             {navLinks.map((link) => (
-              <div 
-                key={link.name} 
+              <div
+                key={link.name}
                 className="relative group"
                 onMouseEnter={() => link.dropdown && setActiveDropdown(link.name)}
                 onMouseLeave={() => link.dropdown && setActiveDropdown(null)}
@@ -179,7 +179,7 @@ export const Navbar = () => {
                 <div className="flex items-center gap-1 cursor-pointer h-5">
                   <Link
                     to={link.href}
-                    className={`text-[12px] font-black leading-none transition-colors uppercase tracking-[0.25em] ${location.pathname === link.href ? 'text-lbbc-green' : 'text-slate-800 hover:text-lbbc-red'}`}
+                    className={`text-[10px] font-black leading-none transition-colors uppercase tracking-[0.15em] ${location.pathname === link.href ? 'text-lbbc-green' : 'text-slate-800 hover:text-lbbc-red'}`}
                   >
                     {link.name}
                   </Link>
