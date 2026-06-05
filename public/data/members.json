@@ -586,6 +586,17 @@
       "website": "https://www.capterio.com"
     },
     {
+      "name": "Chevron",
+      "sector": "Other",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/83c2b4c4-954d-435a-8f3a-f04283cc0f93.png",
+      "id": "4396325",
+      "glueupId": "3704550",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "Chevron's operations in the UK have been a significant part of its global energy strategy. The company has a long-standing presence in the North Sea, with a 19.4% non-operated working interest in the Clair Field. Chevron's investment in technology and innovation has been crucial in maximizing resource recovery and improving operational efficiency. The company's global technology centre in the UK supports a diverse range of operations and development projects.",
+      "website": "https://www.chevron.com/"
+    },
+    {
       "name": "Chris Penketh Associates Ltd.",
       "sector": "Business Consulting",
       "logo": null,
@@ -804,6 +815,17 @@
       "members": [],
       "about": null,
       "website": "https://www.gcc-intl.com/"
+    },
+    {
+      "name": "Horizon Engage",
+      "sector": "Business Consulting",
+      "logo": null,
+      "id": "4475316",
+      "glueupId": "3762488",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "Above ground risk advisory",
+      "website": null
     },
     {
       "name": "InnoGrow Sàrl",
@@ -1532,7 +1554,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1780555795327,
+  "timestamp": 1780641545445,
   "source": "live-scrape",
-  "totalMembers": 139
+  "totalMembers": 141
 }
