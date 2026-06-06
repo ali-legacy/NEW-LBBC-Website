@@ -509,6 +509,17 @@
       "website": "https://auderegroup.com/"
     },
     {
+      "name": "Awardbrand Limited",
+      "sector": "Education Management",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/818a2fd8-9522-409e-bc2d-3b4fd3cdd7f1.png",
+      "id": "4444442",
+      "glueupId": "3732539",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "The Company specialises and provides Global Sourcing, Engineering, Procurement, Management, Training and Services to its clients in various industrial and technical requirements of materials and services.Awardbrand Limited is proud of its enviable reputation in achieving the highest possible standards in providing superior and first-class services to its clients. Awardbrand Limited has a competitive and cost-effective pricing structure.  The Company is also heavily focused on gaining trust, respect and confidence of the client and maintaining and honest and open professional relationship.Awardbrand's main focus is to deliver quality products and services that meet or exceeds the client's expectations.",
+      "website": "https://www.awardbrand.co.uk"
+    },
+    {
       "name": "Bab Libya",
       "sector": "Healthcare",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/9e4f0bb2-c3e0-48dc-b67c-7a2efa4f0ecd.png",
@@ -1521,17 +1532,6 @@
       "website": "https://www.wel.com.mt/"
     },
     {
-      "name": "Zalmat Office for Accounting and Auditing",
-      "sector": "Accounting",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/2a3d984b-5dba-4ed0-aded-d9e710cce329.png",
-      "id": "2827856",
-      "glueupId": "2336581",
-      "membershipType": "corporate",
-      "members": [],
-      "about": "Founded in 1976, Zalmat Office is specialised in Accounting and Auditing for foreign and local companies. Accounting and Auditing Services include tax, social security and labour office.",
-      "website": "https://www.zalmat.com"
-    },
-    {
       "name": "Zulal Water Technology",
       "sector": "Energy",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/4e9ca4d0-b902-4861-8a51-1c083251375d.png",
@@ -1554,7 +1554,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1780641545445,
+  "timestamp": 1780725558792,
   "source": "live-scrape",
   "totalMembers": 141
 }
