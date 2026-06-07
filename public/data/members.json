@@ -674,17 +674,6 @@
       "website": null
     },
     {
-      "name": "DFAS Co",
-      "sector": "Financial Services",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/4dcaf108-1ac6-4f4e-9053-356e54d41c77.png",
-      "id": "2001808",
-      "glueupId": "1670351",
-      "membershipType": "corporate",
-      "members": [],
-      "about": "Our Core ValuesProvide the customer with the best ideas of business and create new business opportunities.Help customers to setup their Business strategies to achieve their targets.Provide the Customer with Financial consulting that help them  to lower Cost and increase Profits.",
-      "website": "https://www.dfas.ly"
-    },
-    {
       "name": "EF EDUCATION FIRST",
       "sector": "Education Management",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/8d1517e3-a5c3-421c-b996-ca74b25c32ba.png",
@@ -1554,7 +1543,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1780725558792,
+  "timestamp": 1780814220918,
   "source": "live-scrape",
-  "totalMembers": 141
+  "totalMembers": 140
 }
