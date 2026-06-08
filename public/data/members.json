@@ -399,6 +399,17 @@
       "website": "https://www.ghattour.com"
     },
     {
+      "name": "Al Motahedoon Company Chartered Accountants and Registered Auditors - LLC member firm of PwC",
+      "sector": "Accounting",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/32bcb49c-cb36-4745-95db-59fdf6886235.png",
+      "id": "4475434",
+      "glueupId": "3762563",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "Al Motahedoon full member firm of PricewaterhouseCoopers, is one of the world's \"Big Four\" professional services networks, providing industry-leading services in auditing, tax consulting, legal services, and management consulting",
+      "website": "https://www.pwc.com/m1/en/about-us/office-locations-middle-east/libya.html"
+    },
+    {
       "name": "Al Sahl Group Holding",
       "sector": "Other",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/c4d6c7f8-fbd1-4a21-8d5f-b14a155857b8.png",
@@ -1543,7 +1554,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1780814220918,
+  "timestamp": 1780901547654,
   "source": "live-scrape",
-  "totalMembers": 140
+  "totalMembers": 141
 }
