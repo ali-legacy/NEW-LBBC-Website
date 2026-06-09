@@ -25,7 +25,11 @@ export const EventsPage = () => {
   const [activeTab, setActiveTab] = useState<Tab>('upcoming');
 
   useEffect(() => {
-    if (hash) {
+    if (hash === '#past') {
+      setActiveTab('past');
+      const element = document.getElementById('upcoming');
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    } else if (hash) {
       const element = document.getElementById(hash.substring(1));
       if (element) element.scrollIntoView({ behavior: 'smooth' });
     } else {
@@ -262,6 +266,19 @@ export const EventsPage = () => {
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">{t.events.sponsorsTitle}</h2>
           </div>
           <div className="max-w-3xl mx-auto text-center space-y-8">
+            {/* Sponsor logos */}
+            <div className="flex flex-wrap items-center justify-center gap-6 mb-4">
+              {[
+                { src: '/images/1GaKHyh3sGNZ4J22uMJ0RHM4wHTZ5FvXN.png', alt: 'Bank ABC', href: 'https://bank-abc.com' },
+                { src: '/images/1KjCsgV1zJO6HkxdXWVIsltBVnoiQRY9H.jpg', alt: 'BACB', href: 'https://www.bacb.co.uk' },
+                { src: '/images/1Gvq_EVuoyOiiBD4ZQvVIOwMOVlMQAC0h.png', alt: 'LH Severus', href: 'https://lhseverus.com' },
+              ].map(sponsor => (
+                <a key={sponsor.alt} href={sponsor.href} target="_blank" rel="noopener noreferrer"
+                  className="bg-white rounded-xl border border-slate-100 shadow-sm px-6 py-4 flex items-center justify-center hover:shadow-md transition-shadow">
+                  <img src={sponsor.src} alt={sponsor.alt} className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
+                </a>
+              ))}
+            </div>
             <p className="text-slate-600 leading-relaxed text-sm md:text-base">
               {t.events.sponsorsDesc}
             </p>

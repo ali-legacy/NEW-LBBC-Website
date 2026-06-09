@@ -134,13 +134,19 @@ Alan is also a guest lecturer at King’s College London, Brunel University and 
 
 Alan joined the LBBC Board in July 2025.`
     },
-    { 
-      name: 'Bob Phillips', 
-      role: 'Division Director, Mott Macdonald', 
+    {
+      name: 'Bob Phillips',
+      role: 'Division Director, Mott Macdonald',
       image: '/images/1P57XX0ZF3fPpDKyYJqQKLrlVwTpDs6ko.png',
       bio: `Bob Phillips is a Director of Mott MacDonald and is primarily responsible for business development across North Africa and Country Manager for Libya. He has been responsible for managing a wide range of management, commercial and technical advisory services on pan-sector infrastructure redevelopment with a particular focus on the more challenging post conflict global environments and fragile states.
 
 Bob has over 25 years of management experience, in both private and public sectors, encompassing extensive international stakeholder engagement at government and ministerial level. He was appointed to the Board of the LBBC in 2016.`
+    },
+    {
+      name: 'Damian Austin',
+      role: 'Acting Chief Executive Officer and Chief Banking Officer, BACB',
+      image: '/images/damian-austin.jpg',
+      bio: `As Acting Chief Executive Officer at British Arab Commercial Bank (BACB), a UK regulated Wholesale Bank, Damian leads the Bank's strategy and growth initiatives whilst overseeing the Wholesale Banking Business lines incorporating Global Transaction Banking, Treasury Sales, and Real Estate financing. BACB leverage their trade finance and investment expertise to enable clients, countries, and communities to prosper. They are a trusted partner operating in Africa, the Middle East and Asia facilitating trade flows and connecting these markets and trade corridors across the globe. Damian previously held the title of Chief Banking Officer (CBO) at BACB and has over 30 years' Banking experience facilitating trade and investment into specialist and emerging markets and has held, prior to BACB, senior positions at Bank ABC, Barclays, and HSBC. Damian was appointed to the Board in June 2026.`
     }
   ];
 

@@ -76,7 +76,7 @@ export const Navbar = () => {
       href: '/events',
       dropdown: [
         { name: t.nav.upcoming, href: '/events#upcoming' },
-        { name: t.nav.archive, href: '/events#archive' },
+        { name: t.nav.archive, href: '/events#past' },
       ]
     },
     { name: t.nav.directory, href: '/directory' },
