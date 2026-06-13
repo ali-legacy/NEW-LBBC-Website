@@ -498,6 +498,17 @@
       "website": "https://www.ash-os.com"
     },
     {
+      "name": "Arup",
+      "sector": "Civil Engineering",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/6da41362-e634-4b0e-8926-ce85b7748a0f.png",
+      "id": "2002242",
+      "glueupId": "1670620",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "Arup is an independent firm of designers, planners, engineers, consultants and technical specialists working across every aspect of today’s built environment. Together we help clients solve their most complex challenges, turning exciting ideas into tangible reality as we strive to find a better way to shape a better world.From almost 100 offices around the globe, Arup’s 13,500 staff deliver innovative projects worldwide. In property, infrastructure or consulting, the firm is committed to delivering the highest quality work on projects as diverse as Marina Bay Sands in Singapore to High Speed Rail in the UK or the Øresund Link between Denmark and Sweden.We Shape a Better World.",
+      "website": "https://www.arup.com"
+    },
+    {
       "name": "Atava Education & Training",
       "sector": "Education Management",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/8f8325f5-929b-463c-8a90-3a4a6e63fcc6.png",
@@ -1554,7 +1565,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1781247007221,
+  "timestamp": 1781331815669,
   "source": "live-scrape",
-  "totalMembers": 141
+  "totalMembers": 142
 }
