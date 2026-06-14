@@ -67,17 +67,6 @@
       "website": "https://blackgoldac.com/"
     },
     {
-      "name": "Blue Sky Oilfield Supply & Services",
-      "sector": "Energy",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/59497a10-635f-4cd3-b88e-43b6876174e7.png",
-      "id": "2000182",
-      "glueupId": "1667743",
-      "membershipType": "council",
-      "members": [],
-      "about": null,
-      "website": "https://www.bsoservices.ly"
-    },
-    {
       "name": "BP",
       "sector": "Energy",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/889bc71a-1a1a-466c-bea8-a74495f611ca.png",
@@ -1565,7 +1554,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1781331815669,
+  "timestamp": 1781419726713,
   "source": "live-scrape",
-  "totalMembers": 142
+  "totalMembers": 141
 }
