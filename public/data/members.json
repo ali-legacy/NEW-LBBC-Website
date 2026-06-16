@@ -1169,17 +1169,6 @@
       "website": "https://www.palmcityresidences.com"
     },
     {
-      "name": "Petrofac Services Ltd",
-      "sector": "Energy",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/f136a599-5ab9-4cdf-9c86-a9cf189035e0.png",
-      "id": "2002265",
-      "glueupId": "1670643",
-      "membershipType": "corporate",
-      "members": [],
-      "about": "As a leading international service provider, we help our clients meet the world’s evolving energy needs. Petrofac knows what it takes to design, build, operate, maintain and decommission offshore and onshore, traditional and new energy facilities; we do it every day. Rely on our long and successful track record, flexible commercial models and proven digital approaches. For ultra-efficient, assured delivery, turn to Petrofac.",
-      "website": "http://www.petrofac.com"
-    },
-    {
       "name": "PetroGas",
       "sector": "Oil & Gas",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/d722ffb3-eb11-4334-a842-a03ee2d904ee.png",
@@ -1554,7 +1543,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1781508538801,
+  "timestamp": 1781595286908,
   "source": "live-scrape",
-  "totalMembers": 141
+  "totalMembers": 140
 }

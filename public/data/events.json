@@ -10,6 +10,15 @@
       "type": "Event"
     },
     {
+      "id": "184657",
+      "title": "LBBC Webinar - From Politics to Private Sector: How the Libyan Markets Are Evolving",
+      "date": "Jul 9, 2026 (11:00 - 12:00) (GMT+1)",
+      "location": "",
+      "image": "https://lbbc.glueup.com/resources/public/images/fixed-width/600/32f56a70-b559-4a61-9542-fd6a3eee63e9.jpg",
+      "link": "https://lbbc.glueup.com/event/lbbc-webinar-from-politics-to-private-sector-how-the-libyan-markets-are-evolving-184657/?pk_campaign=widget-event-list",
+      "type": "Event"
+    },
+    {
       "id": "168108",
       "title": "Libya Energy Transition Summit",
       "date": "Nov 3 - 5, 2026",
@@ -66,6 +75,6 @@
       "type": "Event"
     }
   ],
-  "timestamp": 1781508512881,
+  "timestamp": 1781595256815,
   "source": "live-scrape"
 }
