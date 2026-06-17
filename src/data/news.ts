@@ -2,6 +2,7 @@ export const newsData = [
   {
     id: 'fcdo-tripoli-travel-advice-update',
     image: '/images/articles/fcdo-tripoli-travel-advice.jpg',
+    imageContain: true,
     category: 'TRAVEL',
     title: 'FCDO Updates Travel Advice for Tripoli',
     date: 'JUNE 17, 2026',

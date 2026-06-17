@@ -267,15 +267,18 @@ export const EventsPage = () => {
           </div>
           <div className="max-w-3xl mx-auto text-center space-y-8">
             {/* Sponsor logos */}
-            <div className="flex flex-wrap items-center justify-center gap-6 mb-4">
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 mb-4">
               {[
-                { src: '/images/19aNWVHPT2e7qVKzaGZ1FKDt7i7Ffygu-.png', alt: 'Bank ABC', href: 'https://bank-abc.com' },
-                { src: '/images/1LGlEbIlkn_Dxfh9ZidHXLUpFopfhBTfW.png', alt: 'BACB', href: 'https://www.bacb.co.uk' },
-                { src: '/images/1BVL2nJgbXbjecGcFNW9WbU74MbOAnD0P.png', alt: 'LH Severus', href: 'https://lhseverus.com' },
+                { id: '19aNWVHPT2e7qVKzaGZ1FKDt7i7Ffygu-', alt: 'Bank ABC', href: 'https://bank-abc.com' },
+                { id: '1LGlEbIlkn_Dxfh9ZidHXLUpFopfhBTfW', alt: 'BACB', href: 'https://www.bacb.co.uk' },
+                { id: '1BVL2nJgbXbjecGcFNW9WbU74MbOAnD0P', alt: 'LH Severus', href: 'https://lhseverus.com' },
               ].map(sponsor => (
                 <a key={sponsor.alt} href={sponsor.href} target="_blank" rel="noopener noreferrer"
-                  className="bg-white rounded-xl border border-slate-100 shadow-sm px-6 py-4 flex items-center justify-center hover:shadow-md transition-shadow">
-                  <img src={sponsor.src} alt={sponsor.alt} className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
+                  className="bg-white rounded-2xl border border-slate-100 shadow-sm px-8 py-6 flex items-center justify-center hover:shadow-md transition-shadow w-44 md:w-52 h-28 md:h-32">
+                  <picture>
+                    <source srcSet={`/images/${sponsor.id}.webp`} type="image/webp" />
+                    <img src={`/images/${sponsor.id}.png`} alt={sponsor.alt} className="max-h-16 md:max-h-20 w-auto max-w-full object-contain" referrerPolicy="no-referrer" />
+                  </picture>
                 </a>
               ))}
             </div>
