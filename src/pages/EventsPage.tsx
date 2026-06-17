@@ -265,23 +265,26 @@ export const EventsPage = () => {
             <span className="text-lbbc-red font-bold text-[11px] block mb-4">{t.events.sponsorsTag}</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">{t.events.sponsorsTitle}</h2>
           </div>
+          {/* Sponsor logo wall */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6 mb-16">
+            {[
+              { src: '/images/sponsors/bank-abc.jpg', alt: 'Bank ABC' },
+              { src: '/images/sponsors/bacb.jpg', alt: 'BACB' },
+              { src: '/images/sponsors/metlen.jpg', alt: 'Metlen Energy & Metals' },
+              { src: '/images/sponsors/promergon.jpg', alt: 'Promergon' },
+              { src: '/images/sponsors/libya-holdings.jpg', alt: 'Libya Holdings' },
+              { src: '/images/sponsors/expertise-consultancy.webp', alt: 'Expertise Consultancy' },
+              { src: '/images/sponsors/medship-group.png', alt: 'Medship Group' },
+              { src: '/images/sponsors/crowd-digital.jpg', alt: 'Crowd Digital' },
+            ].map(sponsor => (
+              <div key={sponsor.alt}
+                className="bg-white rounded-2xl border border-slate-100 shadow-sm flex items-center justify-center p-5 md:p-6 h-32 md:h-36 hover:shadow-md transition-shadow">
+                <img src={sponsor.src} alt={sponsor.alt} loading="lazy"
+                  className="max-h-16 md:max-h-20 max-w-[88%] w-auto object-contain" referrerPolicy="no-referrer" />
+              </div>
+            ))}
+          </div>
           <div className="max-w-3xl mx-auto text-center space-y-8">
-            {/* Sponsor logos */}
-            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 mb-4">
-              {[
-                { id: '19aNWVHPT2e7qVKzaGZ1FKDt7i7Ffygu-', alt: 'Bank ABC', href: 'https://bank-abc.com' },
-                { id: '1LGlEbIlkn_Dxfh9ZidHXLUpFopfhBTfW', alt: 'BACB', href: 'https://www.bacb.co.uk' },
-                { id: '1BVL2nJgbXbjecGcFNW9WbU74MbOAnD0P', alt: 'LH Severus', href: 'https://lhseverus.com' },
-              ].map(sponsor => (
-                <a key={sponsor.alt} href={sponsor.href} target="_blank" rel="noopener noreferrer"
-                  className="bg-white rounded-2xl border border-slate-100 shadow-sm px-8 py-6 flex items-center justify-center hover:shadow-md transition-shadow w-44 md:w-52 h-28 md:h-32">
-                  <picture>
-                    <source srcSet={`/images/${sponsor.id}.webp`} type="image/webp" />
-                    <img src={`/images/${sponsor.id}.png`} alt={sponsor.alt} className="max-h-16 md:max-h-20 w-auto max-w-full object-contain" referrerPolicy="no-referrer" />
-                  </picture>
-                </a>
-              ))}
-            </div>
             <p className="text-slate-600 leading-relaxed text-sm md:text-base">
               {t.events.sponsorsDesc}
             </p>
