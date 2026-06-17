@@ -839,6 +839,17 @@
       "website": null
     },
     {
+      "name": "Informmi",
+      "sector": "Research",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/2e13b84e-3e5c-43f9-87f2-2f5be2ff2c57.png",
+      "id": "4493508",
+      "glueupId": "3778105",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "Informmi leverages its broad network of  local researchers, professionals, and officials across the EMEA region to provide truly bespoke research and analytical services to our clients",
+      "website": "https://www.informmi.com/home"
+    },
+    {
       "name": "InnoGrow Sàrl",
       "sector": "Business Consulting",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/048dc66e-4ad3-4f4a-a1b5-8797065e0ffb.png",
@@ -1312,6 +1323,17 @@
       "website": "https://www.rpsgroup.com/sectors/energy-consultants/"
     },
     {
+      "name": "RSK Environment Limited",
+      "sector": "Business Consulting",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/5a71f8de-932f-47e2-8785-fa605eb280ae.png",
+      "id": "4208941",
+      "glueupId": "3546892",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "RSK is Europe's largest privately owned environmental and sustainability consultancy and a leading integrated multidisciplinary environmental, engineering and technical services provider.",
+      "website": "https://www.rskgroup.com"
+    },
+    {
       "name": "Sail Consulting",
       "sector": "Other",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/598a4b66-d96f-4208-955c-06fba2930098.png",
@@ -1543,7 +1565,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1781595286908,
+  "timestamp": 1781680850626,
   "source": "live-scrape",
-  "totalMembers": 140
+  "totalMembers": 142
 }
