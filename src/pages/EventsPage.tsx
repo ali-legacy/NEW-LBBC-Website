@@ -269,9 +269,9 @@ export const EventsPage = () => {
             {/* Sponsor logos */}
             <div className="flex flex-wrap items-center justify-center gap-6 mb-4">
               {[
-                { src: '/images/1GaKHyh3sGNZ4J22uMJ0RHM4wHTZ5FvXN.png', alt: 'Bank ABC', href: 'https://bank-abc.com' },
-                { src: '/images/1KjCsgV1zJO6HkxdXWVIsltBVnoiQRY9H.jpg', alt: 'BACB', href: 'https://www.bacb.co.uk' },
-                { src: '/images/1Gvq_EVuoyOiiBD4ZQvVIOwMOVlMQAC0h.png', alt: 'LH Severus', href: 'https://lhseverus.com' },
+                { src: '/images/19aNWVHPT2e7qVKzaGZ1FKDt7i7Ffygu-.png', alt: 'Bank ABC', href: 'https://bank-abc.com' },
+                { src: '/images/1LGlEbIlkn_Dxfh9ZidHXLUpFopfhBTfW.png', alt: 'BACB', href: 'https://www.bacb.co.uk' },
+                { src: '/images/1BVL2nJgbXbjecGcFNW9WbU74MbOAnD0P.png', alt: 'LH Severus', href: 'https://lhseverus.com' },
               ].map(sponsor => (
                 <a key={sponsor.alt} href={sponsor.href} target="_blank" rel="noopener noreferrer"
                   className="bg-white rounded-xl border border-slate-100 shadow-sm px-6 py-4 flex items-center justify-center hover:shadow-md transition-shadow">

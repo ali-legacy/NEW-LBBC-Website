@@ -24,12 +24,12 @@ export const ResourcesPage = () => {
 
   type Resource =
     | { id: number; type?: 'pdf'; title: string; category: string; href?: string; btnLabel?: string; cover?: string }
-    | { id: number; type: 'link'; title: string; category: string; href: string; btnLabel: string; logo: string; logoPosition?: 'center' | 'bottom-right' };
+    | { id: number; type: 'link'; title: string; category: string; href: string; btnLabel: string; logo: string };
 
   const pdfs: Resource[] = [
     { id: 1, type: 'pdf', title: 'Guide on Travel to Libya 2026', category: 'TRAVEL', href: '/resources/visiting-libya-travel-guide-2026.pdf', btnLabel: 'Travel Guide', cover: '/images/travel-guide-cover.jpg' },
     { id: 2, type: 'link', title: 'Export Documentation Services by the ABCC', category: 'LOGISTICS', href: 'https://abcc.org.uk/trade-services/', btnLabel: 'Visit ABCC Trade Services', logo: '/images/partners/abcc-logo.jpg' },
-    { id: 3, type: 'link', title: 'Legal Guide on Doing Business in Libya', category: 'LEGAL', href: 'https://practiceguides.chambers.com/practice-guides/doing-business-in-2025/libya', btnLabel: 'View Legal Guide', logo: '/images/partners/zahaf-logo.webp', logoPosition: 'bottom-right' },
+    { id: 3, type: 'link', title: 'Legal Guide on Doing Business in Libya', category: 'LEGAL', href: 'https://practiceguides.chambers.com/practice-guides/doing-business-in-2025/libya', btnLabel: 'View Legal Guide', logo: '/images/partners/zahaf-logo.webp' },
     { id: 4, title: 'UK-Libya Trade Guide 2026', category: 'REGULATORY' },
     { id: 5, title: 'Investment Opportunities in Energy', category: 'MARKET INSIGHT' },
     { id: 6, title: 'Banking and Finance Sector Overview', category: 'FINANCE' },
@@ -90,13 +90,7 @@ export const ResourcesPage = () => {
               >
                 <div className="w-full aspect-[3/4] rounded-xl overflow-hidden shadow-lg relative bg-white border border-slate-200 flex flex-col items-center justify-center cursor-pointer group-hover:shadow-2xl transition-all duration-500">
                   <div className="absolute inset-0 bg-gradient-to-br from-lbbc-green/5 to-lbbc-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  {pdf.type === 'link' && 'logo' in pdf && 'logoPosition' in pdf && pdf.logoPosition === 'bottom-right' ? (
-                    <>
-                      <FileText size={60} className="text-slate-200 group-hover:text-lbbc-green/20 transition-colors mb-3" />
-                      <span className="text-slate-400 font-bold text-[10px] uppercase tracking-widest group-hover:text-lbbc-green transition-colors">{t.resources.clickToOpen}</span>
-                      <img src={pdf.logo} alt="Zahaf & Partners" className="absolute bottom-3 right-3 w-20 object-contain" />
-                    </>
-                  ) : pdf.type === 'link' && 'logo' in pdf ? (
+                  {pdf.type === 'link' && 'logo' in pdf ? (
                     <img src={pdf.logo} alt={pdf.title} className="w-3/4 h-3/4 object-contain p-4" />
                   ) : 'cover' in pdf && pdf.cover ? (
                     <img src={pdf.cover} alt={pdf.title} className="w-full h-full object-cover" />

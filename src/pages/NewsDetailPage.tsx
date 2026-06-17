@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowLeft, ArrowRight, Share2, Tag } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 import { useLanguage } from '../context/LanguageContext';
 import { SEO } from '../components/SEO';
 import { newsData } from '../data/news';
@@ -53,10 +54,20 @@ export const NewsDetailPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-3/4">
-              <div className="prose prose-slate prose-lg max-w-none text-slate-600 leading-relaxed space-y-8">
-                {item.content.split('\n\n').map((para, i) => (
-                  <p key={i}>{para}</p>
-                ))}
+              <div className="prose prose-slate prose-lg max-w-none text-slate-600 leading-relaxed">
+                <ReactMarkdown
+                  components={{
+                    a: ({ href, children }) => {
+                      const linkClass = 'text-lbbc-green font-bold underline hover:text-lbbc-red transition-colors';
+                      if (href && href.startsWith('/')) {
+                        return <Link to={href} className={linkClass}>{children}</Link>;
+                      }
+                      return <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass}>{children}</a>;
+                    },
+                  }}
+                >
+                  {item.content}
+                </ReactMarkdown>
               </div>
               
               <div className="mt-16 pt-8 border-t border-slate-100 flex flex-wrap items-center justify-between gap-6">
