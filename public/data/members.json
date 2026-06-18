@@ -1324,7 +1324,7 @@
     },
     {
       "name": "RSK Environment Limited",
-      "sector": "Business Consulting",
+      "sector": "Environmental Services",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/5a71f8de-932f-47e2-8785-fa605eb280ae.png",
       "id": "4208941",
       "glueupId": "3546892",
@@ -1455,6 +1455,17 @@
       "website": "https://www.etos.com.ly"
     },
     {
+      "name": "The Libyan Consultancy Group (LGC)",
+      "sector": "Accounting",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/4ece8200-60ce-43a6-bd61-092bdae5cd57.png",
+      "id": "4493651",
+      "glueupId": "3778192",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "The Libyan Consultancy Group (LGC) is a leading Libyan professional services firm providing consultancy, accounting, auditing, taxation, business advisory, capacity building, and corporate support services to public and private sector clients. LGC supports local and international organizations operating in Libya through tailored business solutions, market insights, compliance services, and strategic advisory.",
+      "website": "https://tlgconsultancy.com/"
+    },
+    {
       "name": "Trafigura",
       "sector": "Energy",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/b4bd033c-8d1a-4992-bd0d-aae380930ee7.png",
@@ -1565,7 +1576,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1781680850626,
+  "timestamp": 1781765984532,
   "source": "live-scrape",
-  "totalMembers": 142
+  "totalMembers": 143
 }
