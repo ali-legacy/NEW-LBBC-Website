@@ -1158,17 +1158,6 @@
       "website": "http://www.notzstucki.com"
     },
     {
-      "name": "Oberon Solutions",
-      "sector": "Oil & Gas",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/f94fd18d-2e11-4a8b-ae12-fca9d6aa9f5e.png",
-      "id": "3091872",
-      "glueupId": "2523138",
-      "membershipType": "corporate",
-      "members": [],
-      "about": "HR, Payroll and Recruitment.  Primarily providing international workers across the globe, specifically within the oil and gas sector.",
-      "website": "https://www.oberon-solutions.co.uk/"
-    },
-    {
       "name": "Palm City Residences",
       "sector": "Real Estate",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/8e7ab52b-9e56-468c-bf3b-59cc773f904a.png",
@@ -1576,7 +1565,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1781937417676,
+  "timestamp": 1782025060205,
   "source": "live-scrape",
-  "totalMembers": 143
+  "totalMembers": 142
 }
