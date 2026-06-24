@@ -1422,6 +1422,17 @@
       "website": "https://www.tgs.com/"
     },
     {
+      "name": "The Best Security Company (TBS)",
+      "sector": "Security & Investigations",
+      "logo": null,
+      "id": "4489812",
+      "glueupId": "3774812",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "TBS is a Libya-based security, logistics and operational support provider, supporting international and local clients with reliable in-country capability, trusted local networks and a practical understanding of Libya’s operating environment.As a local provider, we understand the realities of working across Libya, from movement coordination and access challenges to local liaison, supplier control and day-to-day operational support. Our approach combines practical ground knowledge with the structure, discretion and professional standards expected by international organisations.We help clients move, meet, mobilise and operate with confidence across Libya, providing dependable support for corporate visits, project activity, secure logistics, risk management and wider operational requirements.",
+      "website": "https://www.tbs-libya.com"
+    },
+    {
       "name": "The Engineers for Technical and Oil Services Co. (ETOS)",
       "sector": "Energy",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/3c3dc2e5-dc65-4c94-bb31-4107f2a1de28.png",
@@ -1565,7 +1576,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1782195312943,
+  "timestamp": 1782281584441,
   "source": "live-scrape",
-  "totalMembers": 142
+  "totalMembers": 143
 }
