@@ -410,17 +410,6 @@
       "website": "https://alsahlgroup.com/"
     },
     {
-      "name": "Albaraka Insurance Company",
-      "sector": "Insurance",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/ff073715-4603-4b20-89be-73922d5e53ee.png",
-      "id": "2467631",
-      "glueupId": "2029348",
-      "membershipType": "corporate",
-      "members": [],
-      "about": "A leading insurance provider , offers wide range of insurance solutions.",
-      "website": "http://albaraka-insurance.ly/albaraka/"
-    },
-    {
       "name": "Alberta",
       "sector": "Logistics & Supply Chain",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/9f51d6ae-1e59-4421-8f7d-4283839fa2e0.png",
@@ -683,17 +672,6 @@
       "members": [],
       "about": "We are the department for economic growth. We support businesses to invest, grow and export, creating jobs and opportunities across the country.DBT is a ministerial department, supported by 19 agencies and public bodies.",
       "website": null
-    },
-    {
-      "name": "EF EDUCATION FIRST",
-      "sector": "Education Management",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/8d1517e3-a5c3-421c-b996-ca74b25c32ba.png",
-      "id": "2468229",
-      "glueupId": "2029982",
-      "membershipType": "corporate",
-      "members": [],
-      "about": "EF EDUCATION FIRST is an International Education Company offering study abroad, language learning, cultural exchange and academic programs around the world. With EF International Language Centers we offer English language courses in 8 locations in the UK, 1 in Ireland, 1 in Malta, 1 in South Africa, 10 in the US, 3 in Canada, 3 in Australia, 1 in New Zealand and 1 in Singapore. We also offer French language courses in Paris and Nice; Spanish in Barcelona, and Malaga; German in Munich and Berlin; Italian in Rome; Japanese in Tokyo; Mandarin in Singapore, and Korean in Seoul.In addition to the language study abroad, EF offers wide range of programs that might be of interest to you and your students like the University Pathway programs in the UK, US or Australia, and the Pre Master/Pre MBA in the UK and US.Until we meet, please review the below information about EF Programs and destinations and I am more than happy to answer any question you may have.Language courses: https://www.ef.com/wwar/ils/e-brochure/?mc=wwAcademic Year abroad: https://www.ef.com/wwar/aya/e-brochure/?mc=wwUniversity Preparation: https://www.ef.com/upa/e-brochure/?mc=we",
-      "website": "https://www.ef.com"
     },
     {
       "name": "Emirates National Oil Company - UK Branch",
@@ -1576,7 +1554,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1782539926882,
+  "timestamp": 1782627990292,
   "source": "live-scrape",
-  "totalMembers": 143
+  "totalMembers": 141
 }
