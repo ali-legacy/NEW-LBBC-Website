@@ -32,6 +32,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Enable GitHub Pages and switch its build source to "GitHub Actions"
+      # via the API, so this deploy works even if Pages was previously set to
+      # "Deploy from a branch". (enablement: true creates/updates the Pages site.)
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       # Build the Vite app directly. We intentionally do NOT run `npm run build`,
       # because that also runs the GlueUp scraper (needs credentials). The member
       # and event data is already committed under public/data/ by the scheduled
