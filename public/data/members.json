@@ -542,17 +542,6 @@
       "website": "https://www.berlitzmanchester.com"
     },
     {
-      "name": "Bhai",
-      "sector": "Other",
-      "logo": null,
-      "id": "2011852",
-      "glueupId": "1679881",
-      "membershipType": "corporate",
-      "members": [],
-      "about": null,
-      "website": null
-    },
-    {
       "name": "Black Rock for Oil Services",
       "sector": "Oil & Gas",
       "logo": null,
@@ -1367,6 +1356,17 @@
       "website": "https://sonomatic.com/"
     },
     {
+      "name": "Tatiana Bhai Branding and Communications",
+      "sector": "Other",
+      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/466b3f23-e30b-4041-88b2-0bb1d2b9f1bb.png",
+      "id": "2011852",
+      "glueupId": "1679881",
+      "membershipType": "corporate",
+      "members": [],
+      "about": "Tatiana brings to the council her twenty years of country branding expertise and a successful track record of working in Libya since the beginning of her career. With Tatiana’s oversight and management, her extensive network of repeat clients enhance their business images abroad using the platform of leading global news publications. Tatiana has authored numerous socio-economic reports on Libya and a two volume Libyan modern history book due for publication in 2026.",
+      "website": "https://www.theimc.co.uk"
+    },
+    {
       "name": "Technical Solutions To Industry FZE",
       "sector": "Energy",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/a34d4a82-f495-4bba-b60d-b237ebb4d493.png",
@@ -1554,7 +1554,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1782800390829,
+  "timestamp": 1782887986974,
   "source": "live-scrape",
   "totalMembers": 141
 }

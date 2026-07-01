@@ -10,6 +10,15 @@
       "type": "Event"
     },
     {
+      "id": "186452",
+      "title": "The Global Competitive Urban Planning Initiative, Benghazi",
+      "date": "Sep 6 - 8, 2026",
+      "location": "Benghazi, Benghazi district, Libya",
+      "image": "https://lbbc.glueup.com/resources/public/images/fixed-width/600/6ffc3f6b-0575-4eb4-be76-8df3579caef7.jpg",
+      "link": "https://lbbc.glueup.com/event/the-global-competitive-urban-planning-initiative-benghazi-186452/?pk_campaign=widget-event-list",
+      "type": "Event"
+    },
+    {
       "id": "168108",
       "title": "Libya Energy Transition Summit",
       "date": "Nov 3 - 5, 2026",
@@ -66,6 +75,6 @@
       "type": "Event"
     }
   ],
-  "timestamp": 1782800361467,
+  "timestamp": 1782887956915,
   "source": "live-scrape"
 }
