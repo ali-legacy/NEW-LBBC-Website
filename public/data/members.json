@@ -221,17 +221,6 @@
       "website": "https://www.metlengroup.com/"
     },
     {
-      "name": "Misurata Free Zone",
-      "sector": "Business Sustainability",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/98592d3e-e9dc-4857-9a9c-a4976b8f1fcc.png",
-      "id": "2000187",
-      "glueupId": "1667748",
-      "membershipType": "council",
-      "members": [],
-      "about": "Free Zones are one of the most important resources that serve as national economic growth drivers. They have become popular globally due to their effective role in encouraging foreign direct investment and facilitating the global trade by offering a set of incentives such as tax and customs duty exemption and simplified administrative procedures.Free zones are designated and organized by law to host industrial, commercial, and service operations that are available to all those interested in investing in Libya.Based on the Libyan government regulations to take advantage of the superb country location and to promote and diversify the national economy, Misurata Free Zone (MFZ) was established in 2000 as one of series of economic development projects.Misurata Free Zone (MFZ) is the first free-trade zone established in Libya, based on Act No (9/2000) for free zones and transit trade. The core objectives of MFZ are to increase the revenue sources, to contribute in supporting the local economy, and to provide employment and training opportunities. Such goals are achieved by creating an attractive investment environment where all free-trade activities are facilitated and liberalized.MFZ strives to be the world’s gateway to Africa and open the doors to both local and foreign investors to develop the international trade and investment at this transit location.VisionTo be recognized as a leading trade and investment hub in the Mediterranean.MissionWe are committed to providing a safe and attractive environment for local and foreign investors and to meeting the customers’ needs by offering a wide range of facilities and business support services.",
-      "website": "https://mfzly.com"
-    },
-    {
       "name": "North south global sl",
       "sector": "Energy",
       "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/15dbe389-51a6-4cac-9c9f-3a46400455f9.png",
@@ -749,17 +738,6 @@
       "members": [],
       "about": "GardaWorld Security supports companies seeking to conduct business in challenging and emerging markets. We ensure that clients are able to concentrate on their core business, leaving us and our partners to deal with matters relating to the management of security and risk.We have been supporting clients in Libya since 2011. Since then we have developed an extensive countrywide network, managed from our regional operations center in Tripoli. Our clients in Libya include governments, NGOs, infrastructure and the oil and gas sector.We are able to support clients who are seeking to work in Libya, whether they are returning to the country or exploring it as a potential new market and tailor our support to individual client requirements. We provide a range of risk management solutions including: secure transportation and accommodation, medical and logistical services, communications and embedded staff.We permanently maintain in-country resources to deliver scalable, flexible risk management solutions with teams capable of supporting short notice client requirements, whatever their size and nature.We are fully licensed and compliant with local regulatory standards and the only international security company in Libya to be certified to ANSI.ASIS PSC.1-2012 and ISO 9001, 14001, 22301 and OHSAS 18001. GardaWorld is the only private security company in the world to achieve this level of externally certified compliance.",
       "website": "http://www.garda.com/en-int"
-    },
-    {
-      "name": "Gazelle Express Services",
-      "sector": "Package/Freight Delivery",
-      "logo": "https://lbbc.glueup.com/resources/public/images/logo/200x100/0aa64583-573e-47c7-8747-84b6b7b1f3ef.png",
-      "id": "2903394",
-      "glueupId": "2388867",
-      "membershipType": "corporate",
-      "members": [],
-      "about": "Gazelle Express Services, established in 1986, is a leading freight forwarding and logistics company based in Libya. With extensive expertise in courier, air, sea, and road freight, Gazelle Express specializes in providing tailored solutions for various sectors, including oil & gas, healthcare, and diplomatic missions. Renowned for its efficiency and reliability, the company offers services ranging from customs clearance and warehousing to supply chain management, ensuring seamless operations for local and international clients.As a trusted partner for global logistics, Gazelle Express is committed to fostering trade and investment opportunities, aligning with Libya’s growing economic potential.",
-      "website": "https://www.gazelle-express.com"
     },
     {
       "name": "Gemstones Services Ltd",
@@ -1554,7 +1532,7 @@
       "website": "https://www.3dengineeringsurveys.com"
     }
   ],
-  "timestamp": 1782887986974,
+  "timestamp": 1782972382998,
   "source": "live-scrape",
-  "totalMembers": 141
+  "totalMembers": 139
 }
