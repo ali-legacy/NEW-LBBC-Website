@@ -3,6 +3,12 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # The GlueUp scraper commits data with "[skip ci]", which skips this
+  # workflow's push trigger. Re-run the deploy when the scraper finishes so
+  # refreshed member/event data is rebuilt and published to the live site.
+  workflow_run:
+    workflows: ["Scrape GlueUp Data"]
+    types: [completed]
   workflow_dispatch:
 
 # Allow this workflow to publish to GitHub Pages
